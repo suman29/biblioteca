@@ -21,4 +21,12 @@ public class BookFileReaderTest {
         assertThat(listOfBooks, is(empty()));
     }
 
+    @Test
+    public void checkIfBooksAreBeingReadFromFile() {
+        String filePath = System.getProperty("user.dir") + File.separator + "BookList.txt";
+        BookFileReader bookFileReader = new BookFileReader(filePath);
+        ArrayList<String> listOfBooks = bookFileReader.getListOfAvailableBooks();
+
+        assertThat(listOfBooks, is(notNullValue()));
+    }
 }
