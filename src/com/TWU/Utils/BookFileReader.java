@@ -13,12 +13,9 @@ public class BookFileReader {
         this.filePath = filePath;
     }
 
-
     public ArrayList<String> getListOfAvailableBooks() {
-
         ArrayList<String> bookList = new ArrayList<>();
         BufferedReader br = null;
-
         try {
             String currentBookLine;
             br = new BufferedReader(new FileReader(filePath));
@@ -36,10 +33,6 @@ public class BookFileReader {
                 ex.printStackTrace();
             }
         }
-
         return bookList;
-
     }
-
-
 }
