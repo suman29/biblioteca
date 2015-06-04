@@ -11,7 +11,7 @@ public class Library {
         this.booksAvailable = file.getListOfAvailableBooks();
     }
 
-    public ArrayList<String> getBooksAvailable(){
+    public ArrayList<String> getBooksAvailable() {
         return booksAvailable;
     }
 }
