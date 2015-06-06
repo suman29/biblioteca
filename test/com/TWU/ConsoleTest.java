@@ -35,16 +35,16 @@ public class ConsoleTest {
 
     @Test
     public void checkThatTheListOfBooksIsPrinted() throws Exception {
-        BookFileReader bookFileReaderStub = mock(BookFileReader.class);
+        Library libraryStub = mock(Library.class);
         ArrayList<String> listOfBooks = new ArrayList<>();
         listOfBooks.add("Book 1");
         listOfBooks.add("Book 2");
         listOfBooks.add("Book 3");
-        when(bookFileReaderStub.getListOfAvailableBooks())
+        when(libraryStub.getBooksAvailable())
                 .thenReturn(listOfBooks);
-        Library library = new Library(bookFileReaderStub);
+
         Console console = new Console();
-        console.displayListOfBooks(library.getBooksAvailable());
+        console.displayListOfBooks(libraryStub.getBooksAvailable());
 
         String actualOutput = outputStream.toString();
         String expectedOutput = "Book 1" + System.lineSeparator() +

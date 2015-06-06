@@ -14,16 +14,13 @@ import static org.mockito.Mockito.when;
 public class LibraryTest {
 
     @Test
-    public void checkIfBooksAvailableIsNotNullAfterInitialisation() {
-        BookFileReader bookFileReaderStub = mock(BookFileReader.class);
+    public void checkIfBooksAvailableIsNotNullWhenOperated() {
+        ArrayList<String> books = new ArrayList<>();
+        books.add("Book 1");
+        books.add("Book 2");
+        books.add("Book 3");
 
-        ArrayList<String> listOfBooks = new ArrayList<>();
-        listOfBooks.add("Book 1");
-        listOfBooks.add("Book 2");
-        listOfBooks.add("Book 3");
-        when(bookFileReaderStub.getListOfAvailableBooks())
-                .thenReturn(listOfBooks);
-        Library library = new Library(bookFileReaderStub);
+        Library library = new Library(books);
 
         ArrayList<String> actualListOfAvailableBooks = library.getBooksAvailable();
         assertThat(actualListOfAvailableBooks, is(notNullValue()));
