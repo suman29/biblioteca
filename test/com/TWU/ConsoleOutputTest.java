@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class ConsoleTest {
+public class ConsoleOutputTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -22,8 +22,8 @@ public class ConsoleTest {
 
     @Test
     public void checkIfThereIsAWelcomeMessageBeingPrinted() {
-        Console console = new Console();
-        console.displayWelcomeMessage();
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        consoleOutput.displayWelcomeMessage();
 
         String welcomeMsg = outputStream.toString();
 
@@ -36,8 +36,8 @@ public class ConsoleTest {
         ArrayList<Book> listOfBooks = new ArrayList<>();
         listOfBooks.add(new Book("Head First Java", "Kathy", 1995));
         listOfBooks.add(new Book("Learning C", "John", 2000));
-        Console console = new Console();
-        console.displayListOfBooks(new Books(listOfBooks));
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        consoleOutput.displayListOfBooks(new Books(listOfBooks));
 
         String expectedOutput = "Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
                 "Learning C                                        John                          2000 " + System.lineSeparator();
@@ -50,11 +50,11 @@ public class ConsoleTest {
 
     @Test
     public void checkIfTheMainMenuIsPrinted() {
-        Console console = new Console();
-        console.displayMainMenu();
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        consoleOutput.displayMainMenu();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "List Books";
+        String expectedOutput = "1. List Books";
 
         assertEquals(expectedOutput, actualOutput);
     }

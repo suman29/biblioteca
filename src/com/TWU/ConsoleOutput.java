@@ -1,6 +1,6 @@
 package com.TWU;
 
-public class Console {
+public class ConsoleOutput {
 
     public void displayWelcomeMessage() {
         System.out.println("Welcome");
@@ -11,7 +11,7 @@ public class Console {
     }
 
     public void displayMainMenu() {
-        System.out.print("List Books");
+        System.out.print("1. List Books");
     }
 
 }

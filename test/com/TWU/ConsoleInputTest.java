@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class ConsoleInputTest {
 
     @Test
-    public void checkIfTheUserGivesAValidInput() {
+    public void checkIfTheUserGivesAnIntegerInput() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
         System.setIn(byteArrayInputStream);
         ConsoleInput consoleInput = new ConsoleInput();
