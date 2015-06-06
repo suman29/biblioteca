@@ -42,15 +42,15 @@ public class ConsoleTest {
         Console console = new Console();
         console.displayListOfBooks(new Books(listOfBooks));
 
-        String expectedOutput = "Head First Java Kathy 1995" + System.lineSeparator() +
-                "Learning C John 2000" + System.lineSeparator();
+        String expectedOutput = "Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
+                "Learning C                                        John                          2000 " + System.lineSeparator();
         when(booksStub.toString())
                 .thenReturn(expectedOutput);
         String actualOutput = outputStream.toString();
 
-        assertEquals(actualOutput, expectedOutput);
+        assertEquals(expectedOutput, actualOutput);
     }
-
+    
     @After
     public void tearDown() throws Exception {
         System.setOut(null);

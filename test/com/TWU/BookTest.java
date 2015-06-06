@@ -13,7 +13,7 @@ public class BookTest {
         Book book = new Book(name, author, year);
 
         String actualFormat = book.toString();
-        String expectedFormat = "Introduction to Algorithms John 1920";
+        String expectedFormat = "Introduction to Algorithms                        John                          1920 ";
 
         assertEquals(actualFormat, expectedFormat);
     }

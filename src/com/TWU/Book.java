@@ -11,7 +11,7 @@ public class Book {
     }
 
     @Override
-    public String toString(){
-        return (name+" "+author+" "+year);
+    public String toString() {
+        return (String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year));
     }
 }
