@@ -1,6 +1,8 @@
 package com.TWU;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Library {
     private ArrayList<String> booksAvailable;
@@ -9,7 +11,7 @@ public class Library {
         this.booksAvailable = books;
     }
 
-    public ArrayList<String> getBooksAvailable() {
-        return booksAvailable;
+    public List<String> getBooksAvailable() {
+        return Collections.unmodifiableList(booksAvailable);
     }
 }
