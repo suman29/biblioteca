@@ -10,4 +10,8 @@ public class Console {
         System.out.print(bookList.toString());
     }
 
+    public void displayMainMenu() {
+        System.out.print("List Books");
+    }
+
 }

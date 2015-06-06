@@ -50,7 +50,18 @@ public class ConsoleTest {
 
         assertEquals(expectedOutput, actualOutput);
     }
-    
+
+    @Test
+    public void checkIfTheMainMenuIsPrinted() {
+        Console console = new Console();
+        console.displayMainMenu();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "List Books";
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
