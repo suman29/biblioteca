@@ -1,6 +1,5 @@
 package com.TWU;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Console {
@@ -9,9 +8,9 @@ public class Console {
         System.out.println("Welcome");
     }
 
-    public void displayListOfBooks(List<String> bookList) {
-        for (String book : bookList) {
-            System.out.println(book);
+    public void displayListOfBooks(List<Book> bookList) {
+        for (Book book : bookList) {
+            System.out.println(book.toString());
         }
     }
 }

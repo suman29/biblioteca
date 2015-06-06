@@ -36,10 +36,10 @@ public class ConsoleTest {
     @Test
     public void checkThatTheListOfBooksIsPrinted() throws Exception {
         Library libraryStub = mock(Library.class);
-        ArrayList<String> listOfBooks = new ArrayList<>();
-        listOfBooks.add("Book 1");
-        listOfBooks.add("Book 2");
-        listOfBooks.add("Book 3");
+        ArrayList<Book> listOfBooks = new ArrayList<>();
+        listOfBooks.add(new Book("Head First Java","Kathy",1995));
+        listOfBooks.add(new Book("Learning C","John",2000));
+
         when(libraryStub.getBooksAvailable())
                 .thenReturn(listOfBooks);
 
@@ -47,9 +47,8 @@ public class ConsoleTest {
         console.displayListOfBooks(libraryStub.getBooksAvailable());
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "Book 1" + System.lineSeparator() +
-                "Book 2" + System.lineSeparator() +
-                "Book 3" + System.lineSeparator();
+        String expectedOutput = "Head First Java Kathy 1995"+ System.lineSeparator() +
+                "Learning C John 2000"+ System.lineSeparator();
 
         assertThat(actualOutput, is(expectedOutput));
     }

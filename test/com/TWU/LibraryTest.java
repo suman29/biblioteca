@@ -8,12 +8,12 @@ public class LibraryTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void checkIfBooksAvailableIsNotModifiable() {
-        ArrayList<String> books = new ArrayList<>();
-        books.add("Book 1");
-        books.add("Book 2");
-        books.add("Book 3");
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Head First Java", "Kathy", 1995));
+        books.add(new Book("Head First Java", "Kathy", 1995));
+        books.add(new Book("Head First Java", "Kathy", 1995));
 
         Library library = new Library(books);
-        library.getBooksAvailable().add("book 3");
+        library.getBooksAvailable().add(new Book("Head First Java", "Kathy", 1995));
     }
 }
