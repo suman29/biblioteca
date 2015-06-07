@@ -21,5 +21,4 @@ public class BooksTest {
 
         assertEquals(expectedFormat, actualFormat);
     }
-
 }

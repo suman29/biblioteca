@@ -14,4 +14,7 @@ public class ConsoleOutput {
         System.out.print("1. List Books");
     }
 
+    public void displayWhenInvalidMainMenuIsSelected() {
+        System.out.print("Select a valid option!");
+    }
 }

@@ -59,6 +59,17 @@ public class ConsoleOutputTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void checkIfUserDoesNotGivesAValidInputThenMessageIsPrinted() {
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        consoleOutput.displayWhenInvalidMainMenuIsSelected();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Select a valid option!";
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);

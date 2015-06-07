@@ -2,9 +2,7 @@ package com.TWU;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-
 import java.io.InputStreamReader;
-
 
 public class ConsoleInput {
     private BufferedReader br;
