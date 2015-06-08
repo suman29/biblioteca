@@ -13,7 +13,13 @@ public class ConsoleInput {
 
     public int takeUserInputForMainMenu() {
         try {
-            return Integer.parseInt(br.readLine());
+            ConsoleOutput consoleOutput = new ConsoleOutput();
+            int input = Integer.parseInt(br.readLine());
+            if (input == 1)
+                return input;
+            else {
+                return 0;
+            }
         } catch (IOException e) {
             return 0;
         }

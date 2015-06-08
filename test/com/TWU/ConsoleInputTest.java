@@ -19,4 +19,16 @@ public class ConsoleInputTest {
 
         assertEquals(expectedInput, actualInput);
     }
+
+    @Test
+    public void checkIfTheUserGivesSomeInvalidInputInTheMainMenu() {
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("0".getBytes());
+        System.setIn(byteArrayInputStream);
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        int actualInput = consoleInput.takeUserInputForMainMenu();
+        int expectedInput = 0;
+
+        assertEquals(expectedInput, actualInput);
+    }
 }
