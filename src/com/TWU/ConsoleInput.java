@@ -15,7 +15,7 @@ public class ConsoleInput {
         try {
             ConsoleOutput consoleOutput = new ConsoleOutput();
             int input = Integer.parseInt(br.readLine());
-            if (input == 1)
+            if (input >= 1)
                 return input;
             else {
                 return 0;
