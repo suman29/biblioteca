@@ -11,7 +11,7 @@ public class ConsoleOutput {
     }
 
     public void displayMainMenu() {
-        System.out.print("1. List Books");
+        System.out.print(new Menu().toString());
     }
 
     public void displayWhenInvalidMainMenuIsSelected() {
