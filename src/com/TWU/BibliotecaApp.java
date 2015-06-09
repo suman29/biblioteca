@@ -4,24 +4,28 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
     MenuView menuView;
+    BooksView booksView;
+    Books books;
     ConsoleOutput consoleOutput;
     ArrayList<Book> initialBookList;
+
 
     public BibliotecaApp() {
         initialBookList = new ArrayList<>();
         initialBookList.add(new Book("Lets C", "Yashwant", 1990));
         initialBookList.add(new Book("Head First Java", "Kathy", 1993));
         initialBookList.add(new Book("Learn Java", "John", 2000));
-        menuView = new MenuView();
+        books = new Books(initialBookList);
+        booksView = new BooksView(books);
         consoleOutput = new ConsoleOutput();
+        menuView = new MenuView();
     }
 
     public void start() {
         consoleOutput.displayWelcomeMessage();
-        MenuView menuView = new MenuView();
-        menuView.displayListOfMenu((new Menu()).toString());
+        menuView.displayListOfMenu((new Menu()));
         menuView.takeUserInputForMainMenu();
-        consoleOutput.displayListOfBooks(new Books(initialBookList));
+        booksView.displayListOfBooks();
     }
 
     public static void main(String args[]){

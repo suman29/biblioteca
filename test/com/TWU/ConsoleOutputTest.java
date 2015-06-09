@@ -31,24 +31,6 @@ public class ConsoleOutputTest {
     }
 
     @Test
-    public void checkThatTheListOfBooksIsPrinted() throws Exception {
-        Books booksStub = mock(Books.class);
-        ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(new Book("Head First Java", "Kathy", 1995));
-        listOfBooks.add(new Book("Learning C", "John", 2000));
-        ConsoleOutput consoleOutput = new ConsoleOutput();
-        consoleOutput.displayListOfBooks(new Books(listOfBooks));
-
-        String expectedOutput = "Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
-                "Learning C                                        John                          2000 " + System.lineSeparator();
-        when(booksStub.toString())
-                .thenReturn(expectedOutput);
-        String actualOutput = outputStream.toString();
-
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
     public void checkIfUserDoesNotGivesAValidInputThenMessageIsPrinted() {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         consoleOutput.displayWhenInvalidMainMenuIsSelected();

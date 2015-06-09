@@ -5,14 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MenuView {
-    BufferedReader br;
+    private BufferedReader br;
+
 
     public MenuView() {
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public void displayListOfMenu(String menuString) {
-        System.out.print(menuString);
+    public void displayListOfMenu(Menu menuList) {
+        System.out.print(menuList.toString());
     }
 
     public int takeUserInputForMainMenu() {
@@ -25,5 +26,9 @@ public class MenuView {
         } catch (IOException e) {
             return -1;
         }
+    }
+
+    public void actionToBePerformed() {
+
     }
 }

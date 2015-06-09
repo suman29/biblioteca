@@ -11,17 +11,13 @@ public class Menu {
         menuList.put(1, "List Of Books");
     }
 
-    public void actionsMappedBasedOnOptions(){
-
-    }
-
     @Override
     public String toString() {
         String mainMenu = "";
         for (Map.Entry m : menuList.entrySet()) {
             mainMenu += (m.getKey() + ". " + m.getValue());
         }
-        mainMenu += "\nEnter your choice: ";
+        mainMenu += "\nEnter your choice:";
         return mainMenu;
     }
 }

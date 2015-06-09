@@ -17,11 +17,14 @@ public class MenuViewTest {
     public void setUp() throws Exception {
         System.setOut(new PrintStream(outputStream));
     }
+
     @Test
     public void shouldPrintTheCorrectMenu() {
-        String menuString = "1.List Of Books\nEnter the choice:\n";
+        Menu menu = new Menu();
+
+        String menuString = "1. List Of Books\nEnter your choice:";
         MenuView menuView = new MenuView();
-        menuView.displayListOfMenu(menuString);
+        menuView.displayListOfMenu(menu);
 
         assertEquals(menuString, outputStream.toString());
     }
@@ -30,9 +33,9 @@ public class MenuViewTest {
     public void checkIfTheUserGivesAnIntegerInput() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
         System.setIn(byteArrayInputStream);
-        ConsoleInput consoleInput = new ConsoleInput();
+        MenuView menuView = new MenuView();
 
-        int actualInput = consoleInput.takeUserInputForMainMenu();
+        int actualInput = menuView.takeUserInputForMainMenu();
         int expectedInput = 1;
 
         assertEquals(expectedInput, actualInput);
