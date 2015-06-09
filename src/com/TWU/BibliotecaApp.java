@@ -23,7 +23,7 @@ public class BibliotecaApp {
 
     public void start() {
         consoleOutput.displayWelcomeMessage();
-        menuView.displayListOfMenu((new Menu()));
+        menuView.displayListOfMenu((new Menu(booksView)));
         menuView.takeUserInputForMainMenu();
         booksView.displayListOfBooks();
     }

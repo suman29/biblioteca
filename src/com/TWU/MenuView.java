@@ -27,8 +27,4 @@ public class MenuView {
             return -1;
         }
     }
-
-    public void actionToBePerformed() {
-
-    }
 }

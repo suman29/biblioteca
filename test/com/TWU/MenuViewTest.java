@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class MenuViewTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -20,7 +21,8 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        Menu menu = new Menu();
+        BooksView booksViewStub = mock(BooksView.class);
+        Menu menu = new Menu(booksViewStub);
 
         String menuString = "1. List Of Books\nEnter your choice:";
         MenuView menuView = new MenuView();

@@ -7,8 +7,13 @@ public class Menu {
     HashMap<Integer, String> menuList = new HashMap<>();
     HashMap<Integer, Options> mappedOptions = new HashMap<>();
 
-    public Menu() {
+    public Menu(BooksView booksView) {
         menuList.put(1, "List Of Books");
+        mappedOptions.put(1,new ListBooks(booksView));
+    }
+
+    public void performAction(int option) {
+        mappedOptions.get(option).perform();
     }
 
     @Override
