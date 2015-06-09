@@ -14,4 +14,16 @@ public class MenuView {
     public void displayListOfMenu(String menuString) {
         System.out.print(menuString);
     }
+
+    public int takeUserInputForMainMenu() {
+        try {
+            int input = Integer.parseInt(br.readLine());
+            if (input > 0)
+                return input;
+            else
+                return -1;
+        } catch (IOException e) {
+            return -1;
+        }
+    }
 }
