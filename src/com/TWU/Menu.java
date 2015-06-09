@@ -5,9 +5,14 @@ import java.util.Map;
 
 public class Menu {
     HashMap<Integer, String> menuList = new HashMap<>();
+    HashMap<Integer, Options> mappedOptions = new HashMap<>();
 
     public Menu() {
         menuList.put(1, "List Of Books");
+    }
+
+    public void actionsMappedBasedOnOptions(){
+
     }
 
     @Override
