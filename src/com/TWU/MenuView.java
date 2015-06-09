@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 public class MenuView {
     private BufferedReader br;
 
-
     public MenuView() {
         br = new BufferedReader(new InputStreamReader(System.in));
     }
@@ -26,5 +25,9 @@ public class MenuView {
         } catch (IOException e) {
             return -1;
         }
+    }
+
+    public void errorMessage() {
+        System.out.println("Select a valid option!");
     }
 }

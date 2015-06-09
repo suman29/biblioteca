@@ -9,7 +9,7 @@ public class Menu {
 
     public Menu(BooksView booksView) {
         menuList.put(1, "List Of Books");
-        mappedOptions.put(1,new ListBooks(booksView));
+        mappedOptions.put(1, new ListBooks(booksView));
     }
 
     public void performAction(int option) {
@@ -24,5 +24,9 @@ public class Menu {
         }
         mainMenu += "\nEnter your choice:";
         return mainMenu;
+    }
+
+    public boolean isValidInput(int input) {
+        return input >= 1 && input <= 2;
     }
 }

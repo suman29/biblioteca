@@ -6,6 +6,7 @@ public class BibliotecaApp {
     MenuView menuView;
     BooksView booksView;
     Books books;
+    Menu menu;
     ConsoleOutput consoleOutput;
     ArrayList<Book> initialBookList;
 
@@ -19,13 +20,17 @@ public class BibliotecaApp {
         booksView = new BooksView(books);
         consoleOutput = new ConsoleOutput();
         menuView = new MenuView();
+        menu = new Menu(booksView);
     }
 
     public void start() {
         consoleOutput.displayWelcomeMessage();
-        menuView.displayListOfMenu((new Menu(booksView)));
-        menuView.takeUserInputForMainMenu();
-        booksView.displayListOfBooks();
+        menuView.displayListOfMenu(menu);
+        int input = menuView.takeUserInputForMainMenu();
+        if(menu.isValidInput(input))
+            menu.performAction(input);
+        else
+            menuView.errorMessage();
     }
 
     public static void main(String args[]){
