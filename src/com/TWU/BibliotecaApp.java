@@ -9,9 +9,9 @@ public class BibliotecaApp {
 
     public BibliotecaApp() {
         initialBookList = new ArrayList<>();
-        initialBookList.add(new Book("book1", "author1", 1920));
-        initialBookList.add(new Book("book1", "author1", 1920));
-        initialBookList.add(new Book("book1", "author1", 1920));
+        initialBookList.add(new Book("Lets C", "Yashwant", 1990));
+        initialBookList.add(new Book("Head First Java", "Kathy", 1993));
+        initialBookList.add(new Book("Learn Java", "John", 2000));
         consoleInput = new ConsoleInput();
         consoleOutput = new ConsoleOutput();
     }

@@ -16,6 +16,7 @@ public class Menu {
         for (Map.Entry m : menuList.entrySet()) {
             mainMenu += (m.getKey() + ". " + m.getValue());
         }
+        mainMenu += "\nEnter your choice: ";
         return mainMenu;
     }
 }
