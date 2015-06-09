@@ -3,7 +3,7 @@ package com.TWU;
 import java.util.ArrayList;
 
 public class BibliotecaApp {
-    ConsoleInput consoleInput;
+    MenuView menuView;
     ConsoleOutput consoleOutput;
     ArrayList<Book> initialBookList;
 
@@ -12,14 +12,15 @@ public class BibliotecaApp {
         initialBookList.add(new Book("Lets C", "Yashwant", 1990));
         initialBookList.add(new Book("Head First Java", "Kathy", 1993));
         initialBookList.add(new Book("Learn Java", "John", 2000));
-        consoleInput = new ConsoleInput();
+        menuView = new MenuView();
         consoleOutput = new ConsoleOutput();
     }
 
     public void start() {
         consoleOutput.displayWelcomeMessage();
-        consoleOutput.displayMainMenu();
-        consoleInput.takeUserInputForMainMenu();
+        MenuView menuView = new MenuView();
+        menuView.displayListOfMenu((new Menu()).toString());
+        menuView.takeUserInputForMainMenu();
         consoleOutput.displayListOfBooks(new Books(initialBookList));
     }
 

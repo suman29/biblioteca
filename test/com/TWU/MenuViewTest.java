@@ -1,5 +1,6 @@
 package com.TWU;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,5 +36,11 @@ public class MenuViewTest {
         int expectedInput = 1;
 
         assertEquals(expectedInput, actualInput);
+    }
+
+
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
     }
 }

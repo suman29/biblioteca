@@ -10,10 +10,6 @@ public class ConsoleOutput {
         System.out.print(bookList.toString());
     }
 
-    public void displayMainMenu() {
-        System.out.print(new Menu().toString());
-    }
-
     public void displayWhenInvalidMainMenuIsSelected() {
         System.out.print("Select a valid option!");
     }

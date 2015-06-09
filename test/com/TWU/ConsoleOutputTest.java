@@ -49,17 +49,6 @@ public class ConsoleOutputTest {
     }
 
     @Test
-    public void checkIfTheMainMenuIsPrinted() {
-        ConsoleOutput consoleOutput = new ConsoleOutput();
-        consoleOutput.displayMainMenu();
-
-        String actualOutput = outputStream.toString();
-        String expectedOutput = "1. List Books";
-
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
     public void checkIfUserDoesNotGivesAValidInputThenMessageIsPrinted() {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         consoleOutput.displayWhenInvalidMainMenuIsSelected();
