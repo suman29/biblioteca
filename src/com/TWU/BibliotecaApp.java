@@ -25,15 +25,21 @@ public class BibliotecaApp {
 
     public void start() {
         consoleOutput.displayWelcomeMessage();
-        menuView.displayListOfMenu(menu);
-        int input = menuView.takeUserInputForMainMenu();
-        if(menu.isValidInput(input))
-            menu.performAction(input);
-        else
-            menuView.errorMessage();
+        menuIteration();
     }
 
-    public static void main(String args[]){
+    private void menuIteration() {
+        while (true) {
+            menuView.displayListOfMenu(menu);
+            int input = menuView.takeUserInputForMainMenu();
+            if (menu.isValidInput(input))
+                menu.performAction(input);
+            else
+                menuView.errorMessage();
+        }
+    }
+
+    public static void main(String args[]) {
         BibliotecaApp app = new BibliotecaApp();
         app.start();
     }
