@@ -24,7 +24,7 @@ public class MenuViewTest {
         BooksView booksViewStub = mock(BooksView.class);
         Menu menu = new Menu(booksViewStub);
 
-        String menuString = "1. List Of Books\nEnter your choice:";
+        String menuString = "1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator()+"Enter your choice:";
         MenuView menuView = new MenuView();
         menuView.displayListOfMenu(menu);
 

@@ -9,7 +9,9 @@ public class Menu {
 
     public Menu(BooksView booksView) {
         menuList.put(1, "List Of Books");
+        menuList.put(2, "Quit");
         mappedOptions.put(1, new ListBooks(booksView));
+        mappedOptions.put(2, new ExitOption());
     }
 
     public void performAction(int option) {
@@ -20,9 +22,9 @@ public class Menu {
     public String toString() {
         String mainMenu = "";
         for (Map.Entry m : menuList.entrySet()) {
-            mainMenu += (m.getKey() + ". " + m.getValue());
+            mainMenu += (m.getKey() + ". " + m.getValue() + System.lineSeparator());
         }
-        mainMenu += "\nEnter your choice:";
+        mainMenu += "Enter your choice:";
         return mainMenu;
     }
 
