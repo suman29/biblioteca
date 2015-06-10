@@ -11,7 +11,7 @@ public class Menu {
         menuList.put(1, "List Of Books");
         menuList.put(2, "Quit");
         mappedOptions.put(1, new ListBooks(booksView));
-        mappedOptions.put(2, new ExitOption());
+        mappedOptions.put(2, new QuitOption());
     }
 
     public void performAction(int option) {
