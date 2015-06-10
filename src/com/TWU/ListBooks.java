@@ -1,6 +1,6 @@
 package com.TWU;
 
-public class ListBooks implements Options {
+public class ListBooks implements Option {
     BooksView booksView;
 
     public ListBooks(BooksView booksView) {

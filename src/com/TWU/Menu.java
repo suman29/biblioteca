@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Menu {
     HashMap<Integer, String> menuList = new HashMap<>();
-    HashMap<Integer, Options> mappedOptions = new HashMap<>();
+    HashMap<Integer, Option> mappedOptions = new HashMap<>();
 
     public Menu(BooksView booksView) {
         menuList.put(1, "List Of Books");
