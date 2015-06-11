@@ -1,4 +1,4 @@
-<project name="Biblioteca" default="test">
+<project  default="test">
     <property name="lib.dir" value="lib"/>
 
     <path id="classpath">
