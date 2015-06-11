@@ -5,22 +5,17 @@ import java.util.ArrayList;
 public class BibliotecaApp {
     MenuView menuView;
     BooksView booksView;
-    Books books;
     Menu menu;
+    int input;
     ConsoleOutput consoleOutput;
-    ArrayList<Book> initialBookList;
 
 
-    public BibliotecaApp() {
-        initialBookList = new ArrayList<>();
-        initialBookList.add(new Book("Lets C", "Yashwant", 1990));
-        initialBookList.add(new Book("Head First Java", "Kathy", 1993));
-        initialBookList.add(new Book("Learn Java", "John", 2000));
-        books = new Books(initialBookList);
+    public BibliotecaApp(Books books, ConsoleOutput consoleOutput) {
         booksView = new BooksView(books);
-        consoleOutput = new ConsoleOutput();
+        this.consoleOutput = consoleOutput;
         menuView = new MenuView();
         menu = new Menu(booksView);
+        input = 1;
     }
 
     public void start() {
@@ -29,9 +24,9 @@ public class BibliotecaApp {
     }
 
     private void menuIteration() {
-        while (true) {
+        while (input > 0) {
             menuView.displayListOfMenu(menu);
-            int input = menuView.takeUserInputForMainMenu();
+            input = menuView.takeUserInputForMainMenu();
             if (menu.isValidInput(input))
                 menu.performAction(input);
             else
@@ -40,7 +35,17 @@ public class BibliotecaApp {
     }
 
     public static void main(String args[]) {
-        BibliotecaApp app = new BibliotecaApp();
+
+        ArrayList<Book> initialBookList;
+        initialBookList = new ArrayList<>();
+        initialBookList.add(new Book("Lets C", "Yashwant", 1990));
+        initialBookList.add(new Book("Head First Java", "Kathy", 1993));
+        initialBookList.add(new Book("Learn Java", "John", 2000));
+
+        Books books = new Books(initialBookList);
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+
+        BibliotecaApp app = new BibliotecaApp(books, consoleOutput);
         app.start();
     }
 }
