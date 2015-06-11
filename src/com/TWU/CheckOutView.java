@@ -5,15 +5,15 @@ import java.io.IOException;
 
 public class CheckOutView {
 
-    private BufferedReader bufferedReaderr;
+    private BufferedReader bufferedReader;
 
     public CheckOutView(BufferedReader bufferedReader) {
-        this.bufferedReaderr = bufferedReader;
+        this.bufferedReader = bufferedReader;
     }
 
     public int takeUserInputForCheckOutBook() {
         try {
-            int input = Integer.parseInt(bufferedReaderr.readLine());
+            int input = Integer.parseInt(bufferedReader.readLine());
             if (input > 0)
                 return input;
             else

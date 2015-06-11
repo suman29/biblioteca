@@ -29,8 +29,8 @@ public class BooksViewTest {
         BooksView booksView = new BooksView(new Books(listOfBooks));
         booksView.displayListOfBooks();
 
-        String expectedOutput = "Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
-                "Learning C                                        John                          2000 " + System.lineSeparator();
+        String expectedOutput = "1.  Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
+                "2.  Learning C                                        John                          2000 " + System.lineSeparator();
         when(booksStub.toString())
                 .thenReturn(expectedOutput);
         String actualOutput = outputStream.toString();

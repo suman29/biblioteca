@@ -23,7 +23,8 @@ public class BibliotecaApp {
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
         menuList.put(1, "List Of Books");
-        menuList.put(2, "Quit");
+        menuList.put(2, "Checkout Books");
+        menuList.put(3, "Quit");
         mappedOptions.put(1, new ListBooks(booksView));
         mappedOptions.put(2, new QuitOption());
 

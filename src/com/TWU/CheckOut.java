@@ -1,0 +1,18 @@
+package com.twu;
+
+public class CheckOut implements Option {
+
+    private CheckOutView checkOutView;
+    private Library library;
+
+    public CheckOut(CheckOutView checkOutView, Library library) {
+        this.checkOutView = checkOutView;
+        this.library = library;
+    }
+
+    @Override
+    public void perform() {
+        int bookIndex = checkOutView.takeUserInputForCheckOutBook();
+        library.checkOutBook(bookIndex);
+    }
+}

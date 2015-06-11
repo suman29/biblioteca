@@ -28,6 +28,6 @@ public class Menu {
     }
 
     public boolean isValidInput(int input) {
-        return input >= 1 && input <= 2;
+        return input >= 1 && input <= 3;
     }
 }
