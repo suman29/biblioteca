@@ -16,7 +16,7 @@ public class BibliotecaSetUpTest {
         Menu menu = mock(Menu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
 
-        BibliotecaSetUp bibliotecaSetUp = new BibliotecaSetUp(menuViewStub, menu,1, consoleOutputStub);
+        BibliotecaSetUp bibliotecaSetUp = new BibliotecaSetUp(menuViewStub, menu, 1, consoleOutputStub);
         bibliotecaSetUp.start();
 
         verify(menuViewStub).displayListOfMenu(menu);

@@ -5,13 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 
 public class MenuViewTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -35,10 +32,14 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        Menu menuList = new Menu(booksViewStub,this.menuList,mappedOptions);
+        Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
 
         String menuString = "1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:";
-        MenuView menuView = new MenuView();
+
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
+        InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        MenuView menuView = new MenuView(bufferedReader);
         menuView.displayListOfMenu(menuList);
 
         assertEquals(menuString, outputStream.toString());
@@ -48,7 +49,9 @@ public class MenuViewTest {
     public void checkIfTheUserGivesAnIntegerInput() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
         System.setIn(byteArrayInputStream);
-        MenuView menuView = new MenuView();
+        InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        MenuView menuView = new MenuView(bufferedReader);
 
         int actualInput = menuView.takeUserInputForMainMenu();
         int expectedInput = 1;

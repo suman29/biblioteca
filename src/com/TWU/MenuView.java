@@ -2,13 +2,12 @@ package com.twu;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class MenuView {
     private BufferedReader br;
 
-    public MenuView() {
-        br = new BufferedReader(new InputStreamReader(System.in));
+    public MenuView(BufferedReader br) {
+        this.br = br;
     }
 
     public void displayListOfMenu(Menu menuList) {

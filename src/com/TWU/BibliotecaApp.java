@@ -1,5 +1,7 @@
 package com.twu;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,14 +20,18 @@ public class BibliotecaApp {
 
         Books books = new Books(initializeListOfBooks());
         BooksView booksView = new BooksView(books);
-        HashMap<Integer, String> menuList = new HashMap<>() ;
+        HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
         menuList.put(1, "List Of Books");
         menuList.put(2, "Quit");
         mappedOptions.put(1, new ListBooks(booksView));
         mappedOptions.put(2, new QuitOption());
 
-        BibliotecaSetUp bibliotecaSetUp = new BibliotecaSetUp(new MenuView(), new Menu(booksView,menuList,mappedOptions), 1, new ConsoleOutput());
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        MenuView menuView = new MenuView(bufferedReader);
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        Menu menu = new Menu(booksView, menuList, mappedOptions);
+        BibliotecaSetUp bibliotecaSetUp = new BibliotecaSetUp(menuView, menu, 1, consoleOutput);
         bibliotecaSetUp.start();
     }
 }
