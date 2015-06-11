@@ -12,6 +12,7 @@ public class CheckOut implements Option {
 
     @Override
     public void perform() {
+        checkOutView.displayListOfBooks();
         int bookIndex = checkOutView.takeUserInputForCheckOutBook();
         library.checkOutBook(bookIndex);
     }

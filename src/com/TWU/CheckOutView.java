@@ -6,9 +6,11 @@ import java.io.IOException;
 public class CheckOutView {
 
     private BufferedReader bufferedReader;
+    private BooksView booksView;
 
-    public CheckOutView(BufferedReader bufferedReader) {
+    public CheckOutView(BufferedReader bufferedReader,BooksView booksView) {
         this.bufferedReader = bufferedReader;
+        this.booksView = booksView;
     }
 
     public int takeUserInputForCheckOutBook() {
@@ -21,5 +23,9 @@ public class CheckOutView {
         } catch (IOException e) {
             return -1;
         }
+    }
+
+    public void displayListOfBooks() {
+        booksView.displayListOfBooks();
     }
 }
