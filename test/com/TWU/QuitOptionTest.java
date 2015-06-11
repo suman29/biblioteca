@@ -1,4 +1,4 @@
-package com.TWU;
+package com.twu;
 
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,17 +1,16 @@
-package com.TWU;
+package com.twu;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Menu {
-    HashMap<Integer, String> menuList = new HashMap<>();
-    HashMap<Integer, Option> mappedOptions = new HashMap<>();
+    HashMap<Integer, String> menuList ;
+    HashMap<Integer, Option> mappedOptions ;
 
-    public Menu(BooksView booksView) {
-        menuList.put(1, "List Of Books");
-        menuList.put(2, "Quit");
-        mappedOptions.put(1, new ListBooks(booksView));
-        mappedOptions.put(2, new QuitOption());
+    public Menu(BooksView booksView,HashMap<Integer, String> menuList,HashMap<Integer, Option> mappedOptions ) {
+        this.mappedOptions = mappedOptions;
+        this.menuList = menuList;
+
     }
 
     public void performAction(int option) {

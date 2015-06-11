@@ -1,9 +1,9 @@
-package com.TWU;
+package com.twu;
 
 import java.util.ArrayList;
 
 public class Books {
-    private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books;
 
     public Books(ArrayList<Book> books) {
         this.books = books;

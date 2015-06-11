@@ -1,4 +1,4 @@
-package com.TWU.Utils;
+package com.twu.utils;
 
 import org.junit.Test;
 

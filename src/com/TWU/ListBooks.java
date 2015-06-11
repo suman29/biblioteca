@@ -1,4 +1,4 @@
-package com.TWU;
+package com.twu;
 
 public class ListBooks implements Option {
     BooksView booksView;

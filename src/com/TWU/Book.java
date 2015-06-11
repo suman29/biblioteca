@@ -1,4 +1,4 @@
-package com.TWU;
+package com.twu;
 
 public class Book {
     private String name, author;
