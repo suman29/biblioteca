@@ -13,7 +13,7 @@ public class Library {
     }
 
     public void checkOutBook(int bookIndex) {
-        Book checkedOut = booksAvailable.remove(bookIndex);
+        Book checkedOut = booksAvailable.remove(bookIndex-1);
         booksCheckedOut.add(checkedOut);
     }
 }

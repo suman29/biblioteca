@@ -23,7 +23,7 @@ public class Menu {
         for (Map.Entry m : menuList.entrySet()) {
             mainMenu += (m.getKey() + ". " + m.getValue() + System.lineSeparator());
         }
-        mainMenu += "Enter your choice:";
+        mainMenu += "Enter your choice:\n\n";
         return mainMenu;
     }
 

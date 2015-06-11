@@ -15,6 +15,6 @@ public class Books {
         int index = 0;
         for (Book book : books)
             list += (++index)+".  " + book.toString() + System.lineSeparator();
-        return list;
+        return list+System.lineSeparator();
     }
 }

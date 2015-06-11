@@ -17,7 +17,7 @@ public class BooksTest {
 
         String expectedFormat = books.toString();
         String actualFormat = "1.  Head First Java                                   Kathy                         1995 " + System.lineSeparator() +
-                "2.  Learning C                                        John                          2000 " + System.lineSeparator();
+                "2.  Learning C                                        John                          2000 " + System.lineSeparator()+System.lineSeparator();
 
         assertEquals(expectedFormat, actualFormat);
     }
