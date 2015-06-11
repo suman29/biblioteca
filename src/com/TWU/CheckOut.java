@@ -15,5 +15,6 @@ public class CheckOut implements Option {
         checkOutView.displayListOfBooks();
         int bookIndex = checkOutView.takeUserInputForCheckOutBook();
         library.checkOutBook(bookIndex);
+        checkOutView.displayBookCheckedOutSuccessfully();
     }
 }

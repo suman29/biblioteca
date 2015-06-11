@@ -48,6 +48,18 @@ public class CheckOutViewTest {
         Mockito.verify(booksView).displayListOfBooks();
     }
 
+    @Test
+    public void shouldPrintSuccessfulMessageAfterBookBeingCheckedOut() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        CheckOutView checkOutView = new CheckOutView(bufferedReader, booksView);
+        checkOutView.displayBookCheckedOutSuccessfully();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Thank you! Enjoy the book"+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);

@@ -28,4 +28,8 @@ public class CheckOutView {
     public void displayListOfBooks() {
         booksView.displayListOfBooks();
     }
+
+    public void displayBookCheckedOutSuccessfully() {
+        System.out.println("Thank you! Enjoy the book");
+    }
 }
