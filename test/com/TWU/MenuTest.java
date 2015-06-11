@@ -35,7 +35,7 @@ public class MenuTest {
         Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
 
         String actualOutput = menuList.toString();
-        String expectedOutput = "1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:\n\n";
+        String expectedOutput = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:\n\n";
 
         assertEquals(expectedOutput, actualOutput);
     }

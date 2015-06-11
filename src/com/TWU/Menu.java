@@ -19,7 +19,7 @@ public class Menu {
 
     @Override
     public String toString() {
-        String mainMenu = "";
+        String mainMenu = "\n";
         for (Map.Entry m : menuList.entrySet()) {
             mainMenu += (m.getKey() + ". " + m.getValue() + System.lineSeparator());
         }

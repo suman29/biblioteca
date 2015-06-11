@@ -34,7 +34,7 @@ public class MenuViewTest {
     public void shouldPrintTheCorrectMenu() {
         Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
 
-        String menuString = "1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:";
+        String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:"+System.lineSeparator()+System.lineSeparator();
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);

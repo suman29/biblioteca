@@ -12,8 +12,12 @@ public class Library {
         this.booksAvailable = booksAvailable;
     }
 
-    public void checkOutBook(int bookIndex) {
-        Book checkedOut = booksAvailable.remove(bookIndex-1);
-        booksCheckedOut.add(checkedOut);
+    public boolean checkOutBook(int bookIndex) {
+        try {
+            Book checkedOut = booksAvailable.remove(bookIndex - 1);
+            return booksCheckedOut.add(checkedOut);
+        } catch (IndexOutOfBoundsException ex) {
+            return false;
+        }
     }
 }

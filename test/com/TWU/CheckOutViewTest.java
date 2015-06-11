@@ -60,6 +60,18 @@ public class CheckOutViewTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldPrintMessageAfterBookBeingNotCheckedOut() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        CheckOutView checkOutView = new CheckOutView(bufferedReader, booksView);
+        checkOutView.displayBookNotCheckedOutSuccessfully();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "That book is not available."+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);

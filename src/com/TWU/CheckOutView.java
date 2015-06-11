@@ -32,4 +32,8 @@ public class CheckOutView {
     public void displayBookCheckedOutSuccessfully() {
         System.out.println("Thank you! Enjoy the book");
     }
+
+    public void displayBookNotCheckedOutSuccessfully() {
+        System.out.println("That book is not available.");
+    }
 }
