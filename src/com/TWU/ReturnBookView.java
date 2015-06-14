@@ -31,4 +31,8 @@ public class ReturnBookView {
     public void displayBookReturnedSuccessfully() {
         System.out.println("Thank you for returning the book.");
     }
+
+    public void displayMessageWhenBookNotReturnedSuccessfully() {
+        System.out.println("That is not a valid book to return.");
+    }
 }
