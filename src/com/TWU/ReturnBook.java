@@ -14,7 +14,9 @@ public class ReturnBook implements Option {
     public void perform() {
         returnBookView.displayListOfBooks();
         int index = returnBookView.takeUserInputForReturningBook();
-        if(library.returnBook(index));
-        returnBookView.displayBookReturnedSuccessfully();
+        if (library.returnBook(index))
+            returnBookView.displayBookReturnedSuccessfully();
+        else
+            returnBookView.displayMessageWhenBookNotReturnedSuccessfully();
     }
 }
