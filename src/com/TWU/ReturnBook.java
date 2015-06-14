@@ -12,6 +12,7 @@ public class ReturnBook implements Option{
 
     @Override
     public void perform() {
+        library.initialiseCheckedOutBooks();
         returnBookView.displayListOfBooks();
         int index =returnBookView.takeUserInputForReturningBook();
 
