@@ -26,4 +26,22 @@ public class LibraryTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldBeAbleToAddReturnedBookWhenUserSelectsABook() {
+        ArrayList<Book> booksCheckedOut = new ArrayList<>();
+        ArrayList<Book> booksAvailable = new ArrayList<>();
+        booksCheckedOut.add(new Book("abc", "xyz", 1908));
+        booksCheckedOut.add(new Book("abc", "xyz", 1908));
+        booksCheckedOut.add(new Book("abc", "xyz", 1908));
+        Library library = new Library(booksCheckedOut, booksAvailable);
+
+        int bookIndex = 2;
+        library.returnBook(bookIndex);
+
+        int actualOutput = booksAvailable.size();
+        int expectedOutput = 1;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
 }

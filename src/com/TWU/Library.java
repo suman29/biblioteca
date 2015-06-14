@@ -20,4 +20,14 @@ public class Library {
             return false;
         }
     }
+
+    public boolean returnBook(int bookIndex) {
+        try {
+            Book returnedBook = booksCheckedOut.remove(bookIndex - 1);
+            return booksAvailable.add(returnedBook);
+        } catch (IndexOutOfBoundsException ex) {
+            return false;
+        }
+
+    }
 }
