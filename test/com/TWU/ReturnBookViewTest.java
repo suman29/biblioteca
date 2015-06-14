@@ -31,7 +31,7 @@ public class ReturnBookViewTest {
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        ReturnBookView returnBookView = new ReturnBookView(bufferedReader,booksView);
+        ReturnBookView returnBookView = new ReturnBookView(bufferedReader, booksView);
 
         int actualInput = returnBookView.takeUserInputForReturningBook();
         int expectedInput = 1;
@@ -42,10 +42,22 @@ public class ReturnBookViewTest {
     @Test
     public void shouldBeAbleToDisplayList() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        ReturnBookView returnBookView = new ReturnBookView(bufferedReader,booksView);
+        ReturnBookView returnBookView = new ReturnBookView(bufferedReader, booksView);
         returnBookView.displayListOfBooks();
 
         Mockito.verify(booksView).displayListOfBooks();
+    }
+
+    @Test
+    public void shouldPrintMessageAfterBookBeingReturned() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        ReturnBookView returnBookView = new ReturnBookView(bufferedReader, booksView);
+        returnBookView.displayBookReturnedSuccessfully();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "Thank you for returning the book." + System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @After

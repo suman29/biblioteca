@@ -7,7 +7,7 @@ public class ReturnBookView {
     private BufferedReader bufferedReader;
     private BooksView booksView;
 
-    public ReturnBookView(BufferedReader bufferedReader,BooksView booksView) {
+    public ReturnBookView(BufferedReader bufferedReader, BooksView booksView) {
         this.bufferedReader = bufferedReader;
         this.booksView = booksView;
     }
@@ -26,5 +26,9 @@ public class ReturnBookView {
 
     public void displayListOfBooks() {
         booksView.displayListOfBooks();
+    }
+
+    public void displayBookReturnedSuccessfully() {
+        System.out.println("Thank you for returning the book.");
     }
 }

@@ -55,7 +55,7 @@ public class CheckOutViewTest {
         checkOutView.displayBookCheckedOutSuccessfully();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "Thank you! Enjoy the book"+System.lineSeparator();
+        String expectedOutput = "Thank you! Enjoy the book" + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -67,7 +67,7 @@ public class CheckOutViewTest {
         checkOutView.displayBookNotCheckedOutSuccessfully();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "That book is not available."+System.lineSeparator();
+        String expectedOutput = "That book is not available." + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

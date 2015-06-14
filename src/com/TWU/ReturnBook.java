@@ -1,6 +1,6 @@
 package com.twu;
 
-public class ReturnBook implements Option{
+public class ReturnBook implements Option {
 
     private Library library;
     ReturnBookView returnBookView;
@@ -12,10 +12,9 @@ public class ReturnBook implements Option{
 
     @Override
     public void perform() {
-        library.initialiseCheckedOutBooks();
         returnBookView.displayListOfBooks();
-        int index =returnBookView.takeUserInputForReturningBook();
-
-        library.returnBook(index);
+        int index = returnBookView.takeUserInputForReturningBook();
+        if(library.returnBook(index));
+        returnBookView.displayBookReturnedSuccessfully();
     }
 }
