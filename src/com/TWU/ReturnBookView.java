@@ -23,4 +23,8 @@ public class ReturnBookView {
             return -1;
         }
     }
+
+    public void displayListOfBooks() {
+        booksView.displayListOfBooks();
+    }
 }

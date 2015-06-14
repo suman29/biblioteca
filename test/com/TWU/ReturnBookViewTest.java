@@ -1,18 +1,26 @@
 package com.twu;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ReturnBookViewTest {
+
+    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+    @Before
+    public void setUp() throws Exception {
+        System.setOut(new PrintStream(outputStream));
+    }
 
     @Mock
     BooksView booksView;
@@ -29,6 +37,20 @@ public class ReturnBookViewTest {
         int expectedInput = 1;
 
         assertEquals(expectedInput, actualInput);
+    }
+
+    @Test
+    public void shouldBeAbleToDisplayList() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        ReturnBookView returnBookView = new ReturnBookView(bufferedReader,booksView);
+        returnBookView.displayListOfBooks();
+
+        Mockito.verify(booksView).displayListOfBooks();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
     }
 
 }
