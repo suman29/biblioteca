@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class CheckedOutBookTest {
@@ -16,5 +17,15 @@ public class CheckedOutBookTest {
         checkedOutBook.addItselfToAvailableListOfBooksIfAppplicable(list);
 
         assertFalse(list.contains(checkedOutBook));
+    }
+
+    @Test
+    public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
+        AvailableBook availableBook = new AvailableBook("God","helpme",2015,10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God","helpme",2015,10);
+
+        CheckedOutBook actualOutput = checkoutBook.create(availableBook);
+
+        assertEquals(actualOutput,checkoutBook);
     }
 }

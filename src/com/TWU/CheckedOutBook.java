@@ -11,4 +11,8 @@ public class CheckedOutBook extends Book {
     @Override
     public void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks) {
     }
+
+    public CheckedOutBook create(AvailableBook availableBook) {
+        return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id);
+    }
 }
