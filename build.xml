@@ -35,7 +35,7 @@
     </target>
 
     <target name="run" depends="compile" description="run the project">
-        <java classpath="out/src/classes/" classname="com.twu.BibliotecaSetUp"/>
+        <java classpath="out/src/classes/" classname="com.twu.BibliotecaApp"/>
     </target>
 
 </project>

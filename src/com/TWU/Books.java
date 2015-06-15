@@ -12,9 +12,8 @@ public class Books {
     @Override
     public String toString() {
         String list = "";
-        int index = 0;
         for (Book book : books)
-            list += (++index) + ".  " + book.toString() + System.lineSeparator();
+            list += book.toString() + System.lineSeparator();
         return list + System.lineSeparator();
     }
 }

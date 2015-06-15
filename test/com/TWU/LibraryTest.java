@@ -12,9 +12,9 @@ public class LibraryTest {
     public void shouldCheckOutABookWhenUserSelectsABook() {
         ArrayList<Book> booksAvailable = new ArrayList<>();
         ArrayList<Book> booksCheckedOut = new ArrayList<>();
-        booksAvailable.add(new Book("abc", "xyz", 1908));
-        booksAvailable.add(new Book("abc", "xyz", 1908));
-        booksAvailable.add(new Book("abc", "xyz", 1908));
+        booksAvailable.add(new Book("abc", "xyz", 1908,1));
+        booksAvailable.add(new Book("abc", "xyz", 1908,2));
+        booksAvailable.add(new Book("abc", "xyz", 1908,3));
         Library library = new Library(booksCheckedOut, booksAvailable);
 
         int bookIndex = 2;
@@ -30,9 +30,9 @@ public class LibraryTest {
     public void shouldBeAbleToAddReturnedBookWhenUserSelectsABook() {
         ArrayList<Book> booksCheckedOut = new ArrayList<>();
         ArrayList<Book> booksAvailable = new ArrayList<>();
-        booksCheckedOut.add(new Book("abc", "xyz", 1908));
-        booksCheckedOut.add(new Book("abc", "xyz", 1908));
-        booksCheckedOut.add(new Book("abc", "xyz", 1908));
+        booksCheckedOut.add(new Book("abc", "xyz", 1908,1));
+        booksCheckedOut.add(new Book("abc", "xyz", 1908,2));
+        booksCheckedOut.add(new Book("abc", "xyz", 1908,3));
         Library library = new Library(booksCheckedOut, booksAvailable);
 
         int bookIndex = 2;

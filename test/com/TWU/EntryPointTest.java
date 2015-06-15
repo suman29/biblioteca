@@ -7,7 +7,7 @@ import java.io.ByteArrayInputStream;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class BibliotecaAppTest {
+public class EntryPointTest {
     @Test
     public void shouldNotContinueLoopIfTheUserSelectsQuit() {
         ByteArrayInputStream inputStream = new ByteArrayInputStream("4".getBytes());
@@ -16,8 +16,8 @@ public class BibliotecaAppTest {
         Menu menu = mock(Menu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(menuViewStub, menu, consoleOutputStub);
-        bibliotecaApp.start();
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, menu, consoleOutputStub);
+        entryPoint.start();
 
         verify(menuViewStub).displayListOfMenu(menu);
     }
@@ -30,8 +30,8 @@ public class BibliotecaAppTest {
         Menu menu = mock(Menu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(menuViewStub, menu, consoleOutputStub);
-        bibliotecaApp.start();
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, menu, consoleOutputStub);
+        entryPoint.start();
 
         verify(menuViewStub).displayListOfMenu(menu);
         verify(menuViewStub).displayListOfMenu(menu);

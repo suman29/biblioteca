@@ -24,8 +24,8 @@ public class BooksViewTest {
     public void shouldDisplayListOfBooks() {
         Books booksStub = mock(Books.class);
         ArrayList<Book> listOfBooks = new ArrayList<>();
-        listOfBooks.add(new Book("Head First Java", "Kathy", 1995));
-        listOfBooks.add(new Book("Learning C", "John", 2000));
+        listOfBooks.add(new Book("Head First Java", "Kathy", 1995,1));
+        listOfBooks.add(new Book("Learning C", "John", 2000,2));
         BooksView booksView = new BooksView(new Books(listOfBooks));
         booksView.displayListOfBooks();
 
