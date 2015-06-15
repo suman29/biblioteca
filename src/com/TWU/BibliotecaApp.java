@@ -38,8 +38,8 @@ public class BibliotecaApp {
         ArrayList<Book> availableBookList;
         availableBookList = new ArrayList<>();
         availableBookList.add(new AvailableBook("Lets C", "Yashwant", 1990, 1));
-        availableBookList.add(new AvailableBook("Head First Java", "Kathy", 1993,2));
-        availableBookList.add(new AvailableBook("Learn Java", "John", 2000,3));
+        availableBookList.add(new AvailableBook("Head First Java", "Kathy", 1993, 2));
+        availableBookList.add(new AvailableBook("Learn Java", "John", 2000, 3));
         return availableBookList;
     }
 

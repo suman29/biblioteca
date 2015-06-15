@@ -12,7 +12,7 @@ public class CheckedOutBookTest {
     @Test
     public void shouldNotBeAbleToAddItselfToAvailableListOfBooks() {
         ArrayList<Book> list = new ArrayList<>();
-        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray",2015,9);
+        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9);
 
         checkedOutBook.addItselfToAvailableListOfBooksIfAppplicable(list);
 
@@ -21,11 +21,11 @@ public class CheckedOutBookTest {
 
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
-        AvailableBook availableBook = new AvailableBook("God","helpme",2015,10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God","helpme",2015,10);
+        AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
 
         CheckedOutBook actualOutput = checkoutBook.create(availableBook);
 
-        assertEquals(actualOutput,checkoutBook);
+        assertEquals(actualOutput, checkoutBook);
     }
 }

@@ -11,7 +11,7 @@ public class AvailableBookTest {
     @Test
     public void shouldBeAbleToAddItselfToListOfAvailableBooks() {
         ArrayList<Book> list = new ArrayList<>();
-        AvailableBook availableBook = new AvailableBook("monster", "Ashray",2015,9);
+        AvailableBook availableBook = new AvailableBook("monster", "Ashray", 2015, 9);
 
         availableBook.addItselfToAvailableListOfBooksIfAppplicable(list);
 
@@ -20,8 +20,8 @@ public class AvailableBookTest {
 
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
-        AvailableBook availableBook = new AvailableBook("God","helpme",2015,10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God","helpme",2015,10);
+        AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
 
         AvailableBook actualOutput = availableBook.create(checkoutBook);
 

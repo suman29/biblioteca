@@ -12,7 +12,7 @@ public class CheckedOutBook extends Book {
     public void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks) {
     }
 
-    public CheckedOutBook create(AvailableBook availableBook) {
+    public static CheckedOutBook create(AvailableBook availableBook) {
         return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id);
     }
 }

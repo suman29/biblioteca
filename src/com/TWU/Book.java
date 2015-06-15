@@ -15,7 +15,7 @@ public abstract class Book {
     }
 
     public String toString() {
-        return (id+".  "+String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year));
+        return (id + ".  " + String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year));
     }
 
     @Override

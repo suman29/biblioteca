@@ -12,7 +12,7 @@ public class AvailableBook extends Book {
         availableBooks.add(this);
     }
 
-    public AvailableBook create(CheckedOutBook checkedOutBook) {
+    public static AvailableBook create(CheckedOutBook checkedOutBook) {
         return new AvailableBook(checkedOutBook.name, checkedOutBook.author, checkedOutBook.year, checkedOutBook.id);
     }
 }
