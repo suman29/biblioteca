@@ -1,6 +1,6 @@
 package com.twu;
 
-public class QuitOption implements Option {
+public class QuitAction implements Option {
     @Override
     public void perform() {
         System.exit(1);

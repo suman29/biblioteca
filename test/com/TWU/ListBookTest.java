@@ -10,7 +10,7 @@ public class ListBookTest {
     @Test
     public void shouldBeAbleToDisplayList() {
         BooksView booksViewStub = mock(BooksView.class);
-        ListBooks listBook = new ListBooks(booksViewStub);
+        ListBooksAction listBook = new ListBooksAction(booksViewStub);
         listBook.perform();
 
         Mockito.verify(booksViewStub).displayListOfBooks();

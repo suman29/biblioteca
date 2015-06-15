@@ -1,11 +1,11 @@
 package com.twu;
 
-public class ReturnBook implements Option {
+public class ReturnBookAction implements Option {
 
     private Library library;
     ReturnBookView returnBookView;
 
-    public ReturnBook(Library library, ReturnBookView returnBookView) {
+    public ReturnBookAction(Library library, ReturnBookView returnBookView) {
         this.library = library;
         this.returnBookView = returnBookView;
     }

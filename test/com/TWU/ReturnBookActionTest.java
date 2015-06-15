@@ -9,22 +9,21 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CheckOutTest {
-
+public class ReturnBookActionTest {
     @Mock
     Library library;
 
     @Mock
-    CheckOutView checkOutView;
+    ReturnBookView returnBookView;
 
     @Test
-    public void shouldCheckOutBooks() {
-        when(checkOutView.takeUserInputForCheckOutBook())
+    public void shouldBeAbleToReturnBook() {
+        when(returnBookView.takeUserInputForReturningBook())
                 .thenReturn(1);
-        CheckOut checkOut = new CheckOut(checkOutView, library);
+        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
 
-        checkOut.perform();
-        verify(library).checkOutBook(1);
+        returnBookAction.perform();
+        verify(library).returnBook(1);
     }
 
 }

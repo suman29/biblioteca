@@ -1,9 +1,9 @@
 package com.twu;
 
-public class ListBooks implements Option {
+public class ListBooksAction implements Option {
     BooksView booksView;
 
-    public ListBooks(BooksView booksView) {
+    public ListBooksAction(BooksView booksView) {
         this.booksView = booksView;
     }
 

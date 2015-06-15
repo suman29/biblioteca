@@ -1,11 +1,11 @@
 package com.twu;
 
-public class CheckOut implements Option {
+public class CheckOutAction implements Option {
 
     private CheckOutView checkOutView;
     private Library library;
 
-    public CheckOut(CheckOutView checkOutView, Library library) {
+    public CheckOutAction(CheckOutView checkOutView, Library library) {
         this.checkOutView = checkOutView;
         this.library = library;
     }

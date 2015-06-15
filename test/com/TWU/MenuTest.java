@@ -25,8 +25,8 @@ public class MenuTest {
         mappedOptions = new HashMap<>();
         menuList.put(1, "List Of Books");
         menuList.put(2, "Quit");
-        mappedOptions.put(1, new ListBooks(booksViewStub));
-        mappedOptions.put(2, new QuitOption());
+        mappedOptions.put(1, new ListBooksAction(booksViewStub));
+        mappedOptions.put(2, new QuitAction());
 
     }
 
