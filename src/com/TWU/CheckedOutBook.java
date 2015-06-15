@@ -10,6 +10,5 @@ public class CheckedOutBook extends Book {
 
     @Override
     public void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks) {
-        
     }
 }
