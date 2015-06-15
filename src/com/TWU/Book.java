@@ -1,5 +1,7 @@
 package com.twu;
 
+import java.util.ArrayList;
+
 public abstract class Book {
     private String name, author;
     private int year;
@@ -15,4 +17,6 @@ public abstract class Book {
     public String toString() {
         return (id+".  "+String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year));
     }
+
+    public abstract void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks);
 }
