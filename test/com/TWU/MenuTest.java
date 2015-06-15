@@ -32,7 +32,7 @@ public class MenuTest {
 
     @Test
     public void checkIfMenuIsRepresentedProperly() {
-        Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
+        Menu menuList = new Menu(this.menuList, mappedOptions);
 
         String actualOutput = menuList.toString();
         String expectedOutput = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:\n\n";
@@ -42,7 +42,7 @@ public class MenuTest {
 
     @Test
     public void checkIfCorrectActionIsPerformed() {
-        Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
+        Menu menuList = new Menu(this.menuList, mappedOptions);
 
         menuList.performAction(1);
         Mockito.verify(booksViewStub).displayListOfBooks();

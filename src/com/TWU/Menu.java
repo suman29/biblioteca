@@ -7,7 +7,7 @@ public class Menu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;
 
-    public Menu(BooksView booksView, HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions) {
+    public Menu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions) {
         this.mappedOptions = mappedOptions;
         this.menuList = menuList;
 

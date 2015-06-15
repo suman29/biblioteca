@@ -32,7 +32,7 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        Menu menuList = new Menu(booksViewStub, this.menuList, mappedOptions);
+        Menu menuList = new Menu(this.menuList, mappedOptions);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
 
