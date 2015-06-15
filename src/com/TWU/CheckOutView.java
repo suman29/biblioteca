@@ -30,10 +30,10 @@ public class CheckOutView {
     }
 
     public void displayBookCheckedOutSuccessfully() {
-        System.out.println("Thank you! Enjoy the book");
+        System.out.println(Messages.CHECKOUT_SUCCESSFUL);
     }
 
     public void displayBookNotCheckedOutSuccessfully() {
-        System.out.println("That book is not available.");
+        System.out.println(Messages.CHECKOUT_UNSUCCESSFUL);
     }
 }

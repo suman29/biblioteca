@@ -29,10 +29,10 @@ public class ReturnBookView {
     }
 
     public void displayBookReturnedSuccessfully() {
-        System.out.println("Thank you for returning the book.");
+        System.out.println(Messages.RETURN_SUCCESSFUL);
     }
 
     public void displayMessageWhenBookNotReturnedSuccessfully() {
-        System.out.println("That is not a valid book to return.");
+        System.out.println(Messages.RETURN_NOTSUCCESSFUL);
     }
 }

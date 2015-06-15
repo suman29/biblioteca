@@ -59,9 +59,9 @@ public class BibliotecaSetUp {
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
-        menuList.put(1, "List Of Books");
-        menuList.put(2, "Checkout Book");
-        menuList.put(3, "Return Book");
-        menuList.put(4, "Quit");
+        menuList.put(1, Messages.LIST_BOOKS);
+        menuList.put(2, Messages.CHECKOUT_BOOK);
+        menuList.put(3, Messages.RETURN_BOOK);
+        menuList.put(4, Messages.QUIT);
     }
 }

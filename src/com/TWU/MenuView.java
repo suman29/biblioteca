@@ -27,6 +27,6 @@ public class MenuView {
     }
 
     public void errorMessage() {
-        System.out.println("Select a valid option!");
+        System.out.println(Messages.ERROR_MESSAGE);
     }
 }
