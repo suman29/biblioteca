@@ -12,9 +12,12 @@ public class BibliotecaApp {
     public static void main(String args[]) {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
         ArrayList<Book> availableListOfBooks = availableListOfBooks();
         ArrayList<Book> checkedOutListOfBooks = checkedOutListOfBooks();
         ArrayList<Book> allBooks = new ArrayList<>();
+        NullBook nullBook = new NullBook("","",0,0);
+        allBooks.add(nullBook);
         availableListOfBooks.addAll(checkedOutListOfBooks);
         allBooks = availableListOfBooks;
         Books availableBooks = new Books(availableListOfBooks);
