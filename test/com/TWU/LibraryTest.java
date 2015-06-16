@@ -66,10 +66,10 @@ public class LibraryTest {
 
         ArrayList<Book> abc = new ArrayList<>();
 
-        ArrayList<Book> expectedOutput =booksAvailable;
+        ArrayList<Book> expectedOutput = booksAvailable;
         ArrayList<Book> actualOutput = library.getAvailableBooks(abc);
 
-        assertEquals(expectedOutput,actualOutput);
+        assertEquals(expectedOutput, actualOutput);
 
     }
 

@@ -23,8 +23,8 @@ public class Library {
     public ArrayList<Book> getAvailableBooks(ArrayList<Book> availableBooks) {
         availableBooks.clear();
 
-        for(Book book : allBooks)
-        book.addItselfToAvailableListOfBooksIfApplicable(availableBooks);
+        for (Book book : allBooks)
+            book.addItselfToAvailableListOfBooksIfApplicable(availableBooks);
 
         return availableBooks;
     }

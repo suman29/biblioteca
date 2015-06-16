@@ -21,9 +21,7 @@ public class ReturnBookAction implements Option {
             CheckedOutBook book = (CheckedOutBook) searcher.getBook(library.allBooks, bookName);
             library.returnBook(book);
             returnBookView.displayBookReturnedSuccessfully();
-        }
-
-        catch (Exception e){
+        } catch (Exception e) {
             returnBookView.displayMessageWhenBookNotReturnedSuccessfully();
         }
     }

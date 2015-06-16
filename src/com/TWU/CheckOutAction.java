@@ -14,7 +14,6 @@ public class CheckOutAction implements Option {
 
     @Override
     public void perform() {
-        checkOutView.displayListOfBooks();
         String bookName = checkOutView.takeUserInputForCheckOutBook();
         try {
             AvailableBook book = (AvailableBook) searcher.getBook(library.allBooks, bookName);

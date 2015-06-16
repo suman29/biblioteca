@@ -31,13 +31,13 @@ public class AvailableBookTest {
     @Test
     public void shouldBeAbleToCheckoutItself() {
         ArrayList<Book> list = new ArrayList<>();
-        AvailableBook availableBook = new AvailableBook("god", "helpme" ,2013, 1);
+        AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
         list.add(availableBook);
         availableBook.checkOut(list);
 
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 
-        assertTrue(checkedOutBook instanceof  CheckedOutBook);
+        assertTrue(checkedOutBook instanceof CheckedOutBook);
     }
 
 }
