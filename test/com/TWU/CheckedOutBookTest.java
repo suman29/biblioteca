@@ -8,9 +8,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CheckedOutBookTest {
 
@@ -42,13 +40,13 @@ public class CheckedOutBookTest {
     }
 
     @Test
-    public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned () {
+    public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned() {
         ArrayList<Book> list = new ArrayList<>();
         CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
         list.add(checkoutBook);
         checkoutBook.returnBook(list);
 
-        AvailableBook availableBook= (AvailableBook) list.get(list.indexOf(checkoutBook));
+        AvailableBook availableBook = (AvailableBook) list.get(list.indexOf(checkoutBook));
 
         assertTrue(availableBook instanceof AvailableBook);
     }
@@ -70,7 +68,7 @@ public class CheckedOutBookTest {
         checkoutBook.getAppropriateMessageOnReturnBookAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_SUCCESSFUL+System.lineSeparator();
+        String expectedOutput = Messages.RETURN_SUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

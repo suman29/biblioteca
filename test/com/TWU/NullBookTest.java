@@ -35,7 +35,7 @@ public class NullBookTest {
         nullBook.getAppropriateMessageOnCheckOutAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.CHECKOUT_UNSUCCESSFUL+System.lineSeparator();
+        String expectedOutput = Messages.CHECKOUT_UNSUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -46,7 +46,7 @@ public class NullBookTest {
         nullBook.getAppropriateMessageOnReturnBookAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_NOTSUCCESSFUL+System.lineSeparator();
+        String expectedOutput = Messages.RETURN_NOTSUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

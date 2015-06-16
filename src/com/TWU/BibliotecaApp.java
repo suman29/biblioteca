@@ -16,7 +16,7 @@ public class BibliotecaApp {
         ArrayList<Book> availableListOfBooks = availableListOfBooks();
         ArrayList<Book> checkedOutListOfBooks = checkedOutListOfBooks();
         ArrayList<Book> allBooks = new ArrayList<>();
-        NullBook nullBook = new NullBook("","",0,0);
+        NullBook nullBook = new NullBook("", "", 0, 0);
         allBooks.add(nullBook);
         availableListOfBooks.addAll(checkedOutListOfBooks);
         allBooks.addAll(availableListOfBooks);

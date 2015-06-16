@@ -30,7 +30,7 @@ public class CheckOutActionTest {
         when(searcher.getBook(list, "Good"))
                 .thenReturn(book);
 
-        CheckOutAction checkOutAction = new CheckOutAction(checkOutView,library, searcher);
+        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library, searcher);
         checkOutAction.perform();
 
         verify(library).checkOutBook(book);

@@ -1,7 +1,6 @@
 package com.twu;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 
 public class MenuView {
     private BufferedReader br;
@@ -21,7 +20,7 @@ public class MenuView {
                 return input;
             else
                 return -1;
-        } catch (IOException e) {
+        } catch (Exception e) {
             return -1;
         }
     }

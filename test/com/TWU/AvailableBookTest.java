@@ -58,7 +58,7 @@ public class AvailableBookTest {
         availableBook.getAppropriateMessageOnCheckOutAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.CHECKOUT_SUCCESSFUL+System.lineSeparator();
+        String expectedOutput = Messages.CHECKOUT_SUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }
