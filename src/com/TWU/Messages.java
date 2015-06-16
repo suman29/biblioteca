@@ -20,4 +20,6 @@ public interface Messages {
     String RETURN_MOVIE = "Return Movie";
     String MOVIE_ALREADY_CHECKED = "This movie is already checked out";
     String MOVIE_ALREADY_AVAILABLE = "This movie is already available";
+    String BOOK_ALREADY_AVAILABLE = "This book is already available in library";
+    String BOOK_ALREADY_CHECKED = "This book is already checked out";
 }

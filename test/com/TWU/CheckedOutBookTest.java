@@ -57,7 +57,7 @@ public class CheckedOutBookTest {
         checkoutBook.getAppropriateMessageOnCheckOutAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "";
+        String expectedOutput = Messages.BOOK_ALREADY_CHECKED+System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

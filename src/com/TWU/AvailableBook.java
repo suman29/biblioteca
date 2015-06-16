@@ -19,7 +19,7 @@ public class AvailableBook extends Book {
 
     @Override
     public void getAppropriateMessageOnReturnBookAction() {
-
+        System.out.println(Messages.BOOK_ALREADY_AVAILABLE);
     }
 
     public static AvailableBook create(CheckedOutBook checkedOutBook) {

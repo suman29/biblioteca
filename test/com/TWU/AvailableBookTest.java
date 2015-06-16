@@ -69,7 +69,7 @@ public class AvailableBookTest {
         availableBook.getAppropriateMessageOnReturnBookAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "";
+        String expectedOutput = Messages.BOOK_ALREADY_AVAILABLE+System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

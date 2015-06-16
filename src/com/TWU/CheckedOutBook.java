@@ -14,6 +14,7 @@ public class CheckedOutBook extends Book {
 
     @Override
     public void getAppropriateMessageOnCheckOutAction() {
+        System.out.println(Messages.BOOK_ALREADY_CHECKED);
     }
 
     @Override
