@@ -3,12 +3,12 @@ package com.twu;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ListBookTest {
@@ -23,6 +23,6 @@ public class ListBookTest {
         ListBooksAction listBook = new ListBooksAction(book, library);
         listBook.perform();
 
-        Mockito.verify(library).getAvailableBooks(book);
+       verify(library).getAvailableBooks(book);
     }
 }

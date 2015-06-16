@@ -1,12 +1,16 @@
 package com.twu;
 
+import com.twu.movies.Movie;
+
 import java.util.ArrayList;
 
 public class Library {
-    protected ArrayList<Book> allBooks;
+    private ArrayList<Book> allBooks;
+    private ArrayList<Movie> allMovies;
 
-    public Library(ArrayList<Book> allBooks) {
+    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies) {
         this.allBooks = allBooks;
+        this.allMovies = allMovies;
     }
 
     public void checkOutBook(Book book) {
@@ -26,8 +30,8 @@ public class Library {
         return availableBooks;
     }
 
-    public ArrayList<Book> getBooks() {
-        return allBooks;
+    public ArrayList<Movie> getMovies() {
+        return allMovies;
     }
 
     public Book searcher(String name) {

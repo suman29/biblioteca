@@ -2,6 +2,8 @@ package com.twu;
 
 // Do all The set up needed for the App and starts the App.
 
+import com.twu.movies.Movie;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -27,8 +29,9 @@ public class BibliotecaApp {
 
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
+        ArrayList<Movie> allMovies =new ArrayList<>();
 
-        Library library = new Library(allBooks);
+        Library library = new Library(allBooks,allMovies);
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);

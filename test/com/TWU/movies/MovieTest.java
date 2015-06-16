@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class MovieTest {
     @Test
     public void shouldRepresentMovieInProperFormat() {
-        Movie movie = new CheckedOutMovie("Movie1", 2001, "abc", 1);
+        Movie movie = new Movie("Movie1", 2001, "abc", 1);
 
         String actualOutput = movie.toString();
         String expectedOutput = "Movie1                                            abc                           2001 rating: 1";
@@ -17,7 +17,7 @@ public class MovieTest {
 
     @Test
     public void shouldBeEqualToItself() {
-        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1);
+        Movie firstMovie = new Movie("Movie1", 2001, "abc", 1);
         boolean actual = firstMovie.equals(firstMovie);
 
         assertEquals(true, actual);
@@ -25,8 +25,8 @@ public class MovieTest {
 
     @Test
     public void shouldFollowSymmetricProperty() {
-        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1);
-        Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
+        Movie firstMovie = new Movie("Movie1", 2001, "abc", 1);
+        Movie secondMovie = new Movie("Movie1", 2001, "abc", 1);
         boolean actual = (firstMovie.equals(secondMovie) == secondMovie.equals(firstMovie));
 
         assertEquals(true, actual);
@@ -34,9 +34,9 @@ public class MovieTest {
 
     @Test
     public void shouldFollowTransitiveProperty() {
-        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1);
-        Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
-        Movie thirdMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
+        Movie firstMovie = new Movie("Movie1", 2001, "abc", 1);
+        Movie secondMovie = new Movie("Movie1", 2001, "abc", 1);
+        Movie thirdMovie = new Movie("Movie1", 2001, "abc", 1);
 
         boolean actual = firstMovie.equals(secondMovie) &&
                 secondMovie.equals(thirdMovie) &&
@@ -47,8 +47,8 @@ public class MovieTest {
 
     @Test
     public void shouldHaveSameHashCodeIfMoviesAreEqual() {
-        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1);
-        Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
+        Movie firstMovie = new Movie("Movie1", 2001, "abc", 1);
+        Movie secondMovie = new Movie("Movie1", 2001, "abc", 1);
 
 
         boolean actual = firstMovie.equals(secondMovie) && (firstMovie.hashCode() == secondMovie.hashCode());

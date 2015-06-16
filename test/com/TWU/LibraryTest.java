@@ -1,5 +1,6 @@
 package com.twu;
 
+import com.twu.movies.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -14,6 +15,7 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class LibraryTest {
 
+     ArrayList<Movie> allMovies = new ArrayList<>();
     @Mock
     AvailableBook availableBook;
 
@@ -27,7 +29,7 @@ public class LibraryTest {
         booksAvailable.add(book1);
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
-        Library library = new Library(booksAvailable);
+        Library library = new Library(booksAvailable, allMovies);
 
         library.checkOutBook(availableBook);
 
@@ -42,7 +44,7 @@ public class LibraryTest {
         booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
         booksCheckedOut.add(book1);
         booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3));
-        Library library = new Library(booksAvailable);
+        Library library = new Library(booksAvailable, allMovies);
 
         library.returnBook(book1);
 
@@ -59,7 +61,7 @@ public class LibraryTest {
         allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
         allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2));
         allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
-        Library library = new Library(allBooks);
+        Library library = new Library(allBooks, allMovies);
         ArrayList<Book> booksAvailable = new ArrayList<>();
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
@@ -79,7 +81,7 @@ public class LibraryTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(new AvailableBook("good", "helpMe", 2015, 2));
         bookList.add(availableBook);
-        Library library = new Library(bookList);
+        Library library = new Library(bookList, allMovies);
 
         String name = "God";
         AvailableBook expectedBook = availableBook;

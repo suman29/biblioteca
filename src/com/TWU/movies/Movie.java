@@ -39,4 +39,5 @@ public class Movie {
         result = 31 * result + rating;
         return result;
     }
+
 }
