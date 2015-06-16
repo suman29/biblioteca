@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Searcher {
     public Book getBook(ArrayList<Book> bookList, String name) {
         for (Book book : bookList) {
-            if ((book.name).equals(name))
+            if ((book.name).equalsIgnoreCase(name))
                 return book;
         }
         return bookList.get(0);

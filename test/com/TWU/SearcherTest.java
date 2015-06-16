@@ -12,7 +12,7 @@ public class SearcherTest {
         Searcher searcher = new Searcher();
         AvailableBook availableBook = new AvailableBook("God", "helpMe", 2015, 2);
         ArrayList<Book> bookList = new ArrayList<>();
-        bookList.add(new AvailableBook("god", "helpMe", 2015, 2));
+        bookList.add(new AvailableBook("good", "helpMe", 2015, 2));
         bookList.add(availableBook);
 
         String name = "God";
