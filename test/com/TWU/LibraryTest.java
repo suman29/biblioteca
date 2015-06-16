@@ -108,4 +108,19 @@ public class LibraryTest {
 
         assertEquals(expectedBook, actualBook);
     }
+
+    @Test
+    public void shouldBeAbleToGiveTheDesiredMovie() {
+        Movie movie = new AvailableMovie("Movie1", 2001, "abc", 1);
+        ArrayList<Movie> movieList = new ArrayList<>();
+        movieList.add(new AvailableMovie("Movie2", 2001, "abc", 1));
+        movieList.add(movie);
+        Library library = new Library(books, movieList, new Searcher());
+
+        String name = "Movie1";
+        AvailableMovie expectedMovie = (AvailableMovie) movie;
+        Movie actualMovie = library.movieSearcher(name);
+
+        assertEquals(expectedMovie,actualMovie);
+    }
 }
