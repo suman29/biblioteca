@@ -19,18 +19,15 @@ public class CheckOutActionTest {
     @Mock
     CheckOutView checkOutView;
 
-    @Mock
-    Searcher searcher;
-
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
         ArrayList<Book> list = new ArrayList<>();
         Book book = new CheckedOutBook("", "", 0, 0);
-        when(searcher.getBook(list, "Good"))
+        when(library.searcher("Good"))
                 .thenReturn(book);
 
-        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library, searcher);
+        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library);
         checkOutAction.perform();
 
         verify(library).checkOutBook(book);

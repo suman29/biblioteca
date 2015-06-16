@@ -73,4 +73,19 @@ public class LibraryTest {
 
     }
 
+    @Test
+    public void shouldBeAbleToGiveTheDesiredBook() {
+        AvailableBook availableBook = new AvailableBook("God", "helpMe", 2015, 2);
+        ArrayList<Book> bookList = new ArrayList<>();
+        bookList.add(new AvailableBook("good", "helpMe", 2015, 2));
+        bookList.add(availableBook);
+        Library library = new Library(bookList);
+
+        String name = "God";
+        AvailableBook expectedBook = availableBook;
+        Book actualBook = library.searcher( name);
+
+        assertEquals(expectedBook, actualBook);
+    }
+
 }

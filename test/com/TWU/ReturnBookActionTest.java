@@ -19,9 +19,6 @@ public class ReturnBookActionTest {
     ReturnBookView returnBookView;
 
     @Mock
-    Searcher searcher;
-
-    @Mock
     Book book1;
 
     @Test
@@ -29,10 +26,10 @@ public class ReturnBookActionTest {
         when(returnBookView.takeUserInputForReturningBook()).thenReturn("Good");
         ArrayList<Book> list = new ArrayList<>();
         Book book = new AvailableBook("", "", 0, 0);
-        when(searcher.getBook(list, "Good"))
+        when(library.searcher("Good"))
                 .thenReturn(book);
 
-        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView, searcher);
+        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
         returnBookAction.perform();
 
         verify(library).returnBook(book);

@@ -29,5 +29,13 @@ public class Library {
     public ArrayList<Book> getBooks() {
         return allBooks;
     }
+
+    public Book searcher(String name) {
+        for (Book book : allBooks) {
+            if ((book.name).equalsIgnoreCase(name))
+                return book;
+        }
+        return allBooks.get(0);
+    }
 }
 
