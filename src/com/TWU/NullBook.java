@@ -11,4 +11,14 @@ public class NullBook extends Book {
     public void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks) {
 
     }
+
+    @Override
+    public void getAppropriateMessageOnCheckOutAction() {
+        System.out.println(Messages.CHECKOUT_UNSUCCESSFUL);
+    }
+
+    @Override
+    public void getAppropriateMessageOnReturnBookAction() {
+        System.out.println(Messages.RETURN_NOTSUCCESSFUL);
+    }
 }

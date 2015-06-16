@@ -1,13 +1,25 @@
 package com.twu;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AvailableBookTest {
+
+    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+    @Before
+    public void setUp() throws Exception {
+        System.setOut(new PrintStream(outputStream));
+    }
+
     @Test
     public void shouldBeAbleToAddItselfToListOfAvailableBooks() {
         ArrayList<Book> list = new ArrayList<>();
@@ -38,6 +50,33 @@ public class AvailableBookTest {
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 
         assertTrue(checkedOutBook instanceof CheckedOutBook);
+    }
+
+    @Test
+    public void shouldDisplayAppropriateMessageOnCheckingOut() {
+        AvailableBook availableBook = new AvailableBook("", "", 0, 0);
+        availableBook.getAppropriateMessageOnCheckOutAction();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = Messages.CHECKOUT_SUCCESSFUL+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void shouldDisplayAppropriateMessageOnReturning() {
+        AvailableBook availableBook = new AvailableBook("", "", 0, 0);
+        availableBook.getAppropriateMessageOnReturnBookAction();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "";
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
     }
 
 }

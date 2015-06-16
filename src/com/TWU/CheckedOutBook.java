@@ -12,6 +12,15 @@ public class CheckedOutBook extends Book {
     public void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks) {
     }
 
+    @Override
+    public void getAppropriateMessageOnCheckOutAction() {
+    }
+
+    @Override
+    public void getAppropriateMessageOnReturnBookAction() {
+        System.out.println(Messages.RETURN_SUCCESSFUL);
+    }
+
     public static CheckedOutBook create(AvailableBook availableBook) {
         return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id);
     }

@@ -42,4 +42,8 @@ public abstract class Book {
     }
 
     public abstract void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks);
+
+    public abstract void getAppropriateMessageOnCheckOutAction();
+
+    public abstract void getAppropriateMessageOnReturnBookAction();
 }
