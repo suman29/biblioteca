@@ -16,7 +16,7 @@ public class LibraryTest {
         booksAvailable.add(book1);
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
-        Library library = new Library(booksCheckedOut, booksAvailable);
+        Library library = new Library(booksAvailable);
 
         library.checkOutBook(book1);
 
@@ -34,7 +34,7 @@ public class LibraryTest {
         booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
         booksCheckedOut.add(book1);
         booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3));
-        Library library = new Library(booksCheckedOut, booksAvailable);
+        Library library = new Library(booksAvailable);
 
         library.returnBook(book1);
 

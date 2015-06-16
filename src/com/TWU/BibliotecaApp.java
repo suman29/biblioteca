@@ -22,7 +22,7 @@ public class BibliotecaApp {
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
 
-        Library library = new Library(checkedOutListOfBooks, availableListOfBooks);
+        Library library = new Library(availableListOfBooks);
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);

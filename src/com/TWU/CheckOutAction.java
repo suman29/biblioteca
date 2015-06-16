@@ -18,8 +18,5 @@ public class CheckOutAction implements Option {
         String bookName = checkOutView.takeUserInputForCheckOutBook();
         AvailableBook book = (AvailableBook) searcher.getBook(library.booksAvailable, bookName);
         library.checkOutBook(book);
-//            checkOutView.displayBookCheckedOutSuccessfully();
-//        else
-//            checkOutView.displayBookNotCheckedOutSuccessfully();
     }
 }
