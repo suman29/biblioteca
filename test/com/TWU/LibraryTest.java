@@ -1,5 +1,6 @@
 package com.twu;
 
+import com.twu.movies.AvailableMovie;
 import com.twu.movies.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,11 +17,15 @@ import static org.mockito.Mockito.verify;
 public class LibraryTest {
 
      ArrayList<Movie> allMovies = new ArrayList<>();
+    ArrayList<Book> books = new ArrayList<>();
     @Mock
     AvailableBook availableBook;
 
     @Mock
     CheckedOutBook checkedOutBook;
+
+    @Mock
+    AvailableMovie availableMovie;
 
     @Test
     public void shouldCheckOutABookWhenUserSelectsABook() {
@@ -34,6 +39,20 @@ public class LibraryTest {
         library.checkOutBook(availableBook);
 
         verify(availableBook).checkOut(booksAvailable);
+    }
+
+    @Test
+    public void shouldCheckOutAMovieWhenUserSelectsAMovie() {
+        ArrayList<Movie> moviesAvailable = new ArrayList<>();
+        AvailableMovie availableMovie1 = new AvailableMovie("movie1", 2014, "abc", 5);
+        moviesAvailable.add(availableMovie1);
+        moviesAvailable.add(new AvailableMovie("movie2", 2014, "abc", 5));
+        moviesAvailable.add(new AvailableMovie("movie3", 2014, "abc", 5));
+        Library library = new Library(books, moviesAvailable, new Searcher());
+
+        library.checkOutMovie(availableMovie);
+
+        verify(availableMovie).checkOut(moviesAvailable);
     }
 
     @Test

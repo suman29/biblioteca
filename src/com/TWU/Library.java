@@ -19,6 +19,10 @@ public class Library {
         book.checkOut(allBooks);
     }
 
+    public void checkOutMovie(Movie movie) {
+        movie.checkOut(allMovies);
+    }
+
     public void returnBook(Book book) {
         book.returnBook(allBooks);
     }
