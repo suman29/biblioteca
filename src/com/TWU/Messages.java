@@ -16,4 +16,5 @@ public interface Messages {
     String CHECKOUT_MOVIE_SUCCESSFUL = "Thank you! Enjoy the movie";
     String CHECKOUT_MOVIE_UNSUCCESSFUL = "That movie is not available";
     String RETURN_MOVIE_UNSUCCESSFUL = "That is not a valid movie to return";
+    String RETURN_MOVIE_SUCCESSFUL = "Thank you for returning the movie";
 }

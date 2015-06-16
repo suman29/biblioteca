@@ -1,6 +1,7 @@
 package com.twu.movies;
 
 import com.twu.Messages;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,6 +40,11 @@ public class NullMovieTest {
         String expectedOutput = Messages.RETURN_MOVIE_UNSUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
     }
 
 }

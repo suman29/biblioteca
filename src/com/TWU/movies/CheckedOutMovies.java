@@ -1,5 +1,7 @@
 package com.twu.movies;
 
+import com.twu.Messages;
+
 import java.util.ArrayList;
 
 public class CheckedOutMovies extends Movie {
@@ -31,7 +33,7 @@ public class CheckedOutMovies extends Movie {
 
     @Override
     public void getAppropriateMessageOnReturnMovieAction() {
-
+       System.out.println(Messages.RETURN_MOVIE_SUCCESSFUL);
     }
 
     public static CheckedOutMovies create(AvailableMovie availableMovie) {
