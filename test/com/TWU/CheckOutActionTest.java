@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.ArrayList;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -22,13 +24,16 @@ public class CheckOutActionTest {
 
     @Test
     public void shouldCheckOutBooks() {
-        when(checkOutView.takeUserInputForCheckOutBook())
-                .thenReturn("Book1");
-        AvailableBook book = new AvailableBook("Book1", "abx", 1234, 2);
-        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library, searcher);
+        when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
+        ArrayList<Book> list = new ArrayList<>();
+        Book book = new CheckedOutBook("", "", 0, 0);
+        when(searcher.getBook(list, "Good"))
+                .thenReturn(book);
 
+        CheckOutAction checkOutAction = new CheckOutAction(checkOutView,library, searcher);
         checkOutAction.perform();
-        verify(library).checkOutBook(null);
+
+        verify(library).checkOutBook(book);
     }
 
 }

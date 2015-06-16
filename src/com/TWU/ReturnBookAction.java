@@ -16,7 +16,7 @@ public class ReturnBookAction implements Option {
     public void perform() {
         String bookName = returnBookView.takeUserInputForReturningBook();
 
-        Book book =  searcher.getBook(library.allBooks, bookName);
+        Book book =  searcher.getBook(library.getBooks(), bookName);
         library.returnBook(book);
         book.getAppropriateMessageOnReturnBookAction();
     }

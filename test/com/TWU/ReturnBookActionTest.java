@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.ArrayList;
+
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -20,16 +22,20 @@ public class ReturnBookActionTest {
     Searcher searcher;
 
     @Mock
-    CheckedOutBook book;
+    Book book1;
 
     @Test
     public void shouldBeAbleToReturnBook() {
-        when(returnBookView.takeUserInputForReturningBook())
-                .thenReturn("good");
-        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView, searcher);
+        when(returnBookView.takeUserInputForReturningBook()).thenReturn("Good");
+        ArrayList<Book> list = new ArrayList<>();
+        Book book = new AvailableBook("", "", 0, 0);
+        when(searcher.getBook(list, "Good"))
+                .thenReturn(book);
 
+        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView, searcher);
         returnBookAction.perform();
-        verify(library).returnBook(null);
+
+        verify(library).returnBook(book);
     }
 
 }

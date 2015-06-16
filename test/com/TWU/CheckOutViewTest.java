@@ -26,7 +26,7 @@ public class CheckOutViewTest {
     BooksView booksView;
 
     @Test
-    public void checkIfTheUserGivesAnIntegerInput() {
+    public void checkIfTheUserGivesAStringInput() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("Good".getBytes());
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
