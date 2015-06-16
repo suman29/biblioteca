@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.ArrayList;
+
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -16,10 +18,11 @@ public class ListMoviesActionTest {
 
     @Test
     public void shouldDisplayTheMovies() {
-        ListMoviesAction listMoviesAction = new ListMoviesAction(library);
+        ArrayList<Movie> movies = new ArrayList<>();
+        ListMoviesAction listMoviesAction = new ListMoviesAction(library, movies);
         listMoviesAction.perform();
 
-        verify(library).getMovies();
+        verify(library).getAvailableMovies(movies);
     }
 
 }

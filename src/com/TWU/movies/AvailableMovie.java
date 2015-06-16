@@ -1,5 +1,7 @@
 package com.twu.movies;
 
+import com.twu.Messages;
+
 import java.util.ArrayList;
 
 public class AvailableMovie extends Movie {
@@ -22,6 +24,11 @@ public class AvailableMovie extends Movie {
     @Override
     public void addItselfToAvailableListOfMovieIfApplicable(ArrayList<Movie> availableMovies) {
         availableMovies.add(this);
+    }
+
+    @Override
+    public void getAppropriateMessageOnCheckOutAction() {
+        System.out.println(Messages.CHECKOUT_SUCCESSFUL);
     }
 
     public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {

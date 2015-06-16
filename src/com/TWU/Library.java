@@ -36,8 +36,12 @@ public class Library {
         return availableBooks;
     }
 
-    public ArrayList<Movie> getMovies() {
-        return allMovies;
+    public ArrayList<Movie> getAvailableMovies(ArrayList<Movie> availableMovies) {
+        availableMovies.clear();
+
+        for(Movie movie : allMovies)
+            movie.addItselfToAvailableListOfMovieIfApplicable(availableMovies);
+        return availableMovies;
     }
 
     public Book bookSearcher(String name) {

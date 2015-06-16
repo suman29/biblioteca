@@ -1,12 +1,23 @@
 package com.twu.movies;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
 public class AvailableMovieTest {
+
+    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+    @Before
+    public void setUp() throws Exception {
+        System.setOut(new PrintStream(outputStream));
+    }
+
     @Test
     public void shouldMakeItselfCheckedOutIfTheMovieIsCheckedOut() {
         AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);

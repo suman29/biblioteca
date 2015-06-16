@@ -48,4 +48,6 @@ public abstract class Movie {
 
     public abstract void addItselfToAvailableListOfMovieIfApplicable(ArrayList<Movie> availableMovies);
 
+    public abstract void getAppropriateMessageOnCheckOutAction();
+
 }

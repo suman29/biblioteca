@@ -12,4 +12,5 @@ public interface Messages {
     String RETURN_SUCCESSFUL = "Thank you for returning the book.";
     String RETURN_UNSUCCESSFUL = "That is not a valid book to return.";
     String LIST_MOVIES = "List of Movies";
+    String CHECKOUT_MOVIE ="Check out Movie" ;
 }

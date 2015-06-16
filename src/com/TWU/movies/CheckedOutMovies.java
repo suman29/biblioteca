@@ -24,6 +24,11 @@ public class CheckedOutMovies extends Movie {
 
     }
 
+    @Override
+    public void getAppropriateMessageOnCheckOutAction() {
+
+    }
+
     public static CheckedOutMovies create(AvailableMovie availableMovie) {
         return new CheckedOutMovies(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating);
     }

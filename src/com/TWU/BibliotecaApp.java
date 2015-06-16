@@ -2,9 +2,7 @@ package com.twu;
 
 // Do all The set up needed for the App and starts the App.
 
-import com.twu.movies.CheckedOutMovies;
-import com.twu.movies.ListMoviesAction;
-import com.twu.movies.Movie;
+import com.twu.movies.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -47,8 +45,8 @@ public class BibliotecaApp {
 
     private static ArrayList<Movie> initialiseMovies() {
         ArrayList<Movie> allMovies =new ArrayList<>();
-        allMovies.add(new CheckedOutMovies("Batman Begins",2005, "Christopher Nolan", 9));
-        allMovies.add(new CheckedOutMovies("The Dark Knight",2008, "Christopher Nolan",9));
+        allMovies.add(new AvailableMovie("Batman Begins",2005, "Christopher Nolan", 9));
+        allMovies.add(new AvailableMovie("The Dark Knight",2008, "Christopher Nolan",9));
         return allMovies;
     }
 
@@ -73,11 +71,13 @@ public class BibliotecaApp {
     private static void initialisingMenuList(BufferedReader bufferedReader, BooksView availableBooksView,
                                              BooksView checkedOutBooksView, HashMap<Integer, Option> mappedOptions, Library library) {
         ArrayList<Book> availableBooks = new ArrayList<>();
+        ArrayList<Movie> movies = new ArrayList<>();
         mappedOptions.put(1, new ListBooksAction(availableBooks, library));
         mappedOptions.put(2, new CheckOutAction((new CheckOutView(bufferedReader, availableBooksView)), library));
         mappedOptions.put(3, new ReturnBookAction(library, new ReturnBookView(bufferedReader, checkedOutBooksView)));
-        mappedOptions.put(4, new ListMoviesAction(library));
-        mappedOptions.put(5, new QuitAction());
+        mappedOptions.put(4, new ListMoviesAction(library, movies));
+        mappedOptions.put(5, new CheckOutMovieAction((library),new CheckOutMovieView(bufferedReader)));
+        mappedOptions.put(6, new QuitAction());
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
@@ -85,6 +85,7 @@ public class BibliotecaApp {
         menuList.put(2, Messages.CHECKOUT_BOOK);
         menuList.put(3, Messages.RETURN_BOOK);
         menuList.put(4, Messages.LIST_MOVIES);
-        menuList.put(5, Messages.QUIT);
+        menuList.put(5, Messages.CHECKOUT_MOVIE);
+        menuList.put(6, Messages.QUIT);
     }
 }
