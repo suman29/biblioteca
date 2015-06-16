@@ -19,7 +19,7 @@ public class BibliotecaApp {
         NullBook nullBook = new NullBook("","",0,0);
         allBooks.add(nullBook);
         availableListOfBooks.addAll(checkedOutListOfBooks);
-        allBooks = availableListOfBooks;
+        allBooks.addAll(availableListOfBooks);
         Books availableBooks = new Books(availableListOfBooks);
         Books checkedOutBooks = new Books(checkedOutListOfBooks);
         BooksView availableBooksView = new BooksView(availableBooks);

@@ -15,13 +15,8 @@ public class CheckOutAction implements Option {
     @Override
     public void perform() {
         String bookName = checkOutView.takeUserInputForCheckOutBook();
-        try {
-            AvailableBook book = (AvailableBook) searcher.getBook(library.allBooks, bookName);
-            library.checkOutBook(book);
-            checkOutView.displayBookCheckedOutSuccessfully();
-        } catch (Exception e) {
-            checkOutView.displayBookNotCheckedOutSuccessfully();
-        }
-
+        Book book = searcher.getBook(library.allBooks, bookName);
+        library.checkOutBook(book);
+        book.getAppropriateMessageOnCheckOutAction();
     }
 }

@@ -3,19 +3,18 @@ package com.twu;
 import java.util.ArrayList;
 
 public class Library {
-
     protected ArrayList<Book> allBooks;
 
     public Library(ArrayList<Book> allBooks) {
         this.allBooks = allBooks;
     }
 
-    public void checkOutBook(AvailableBook book) {
+    public void checkOutBook(Book book) {
         book.checkOut(allBooks);
     }
 
-    public void returnBook(CheckedOutBook book) {
-        book.makeAvailableInLibrary(allBooks);
+    public void returnBook(Book book) {
+        book.returnBook(allBooks);
     }
 
     public ArrayList<Book> getAvailableBooks(ArrayList<Book> availableBooks) {

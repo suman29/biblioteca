@@ -30,4 +30,9 @@ public class AvailableBook extends Book {
         allBooks.remove(this);
         allBooks.add(CheckedOutBook.create(this));
     }
+
+    @Override
+    public void returnBook(ArrayList<Book> list) {
+
+    }
 }

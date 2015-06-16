@@ -8,6 +8,6 @@ public class Searcher {
             if ((book.name).equals(name))
                 return book;
         }
-        return null;
+        return bookList.get(0);
     }
 }

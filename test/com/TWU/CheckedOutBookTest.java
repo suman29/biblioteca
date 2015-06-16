@@ -46,7 +46,7 @@ public class CheckedOutBookTest {
         ArrayList<Book> list = new ArrayList<>();
         CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
         list.add(checkoutBook);
-        checkoutBook.makeAvailableInLibrary(list);
+        checkoutBook.returnBook(list);
 
         AvailableBook availableBook= (AvailableBook) list.get(list.indexOf(checkoutBook));
 

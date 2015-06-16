@@ -46,4 +46,8 @@ public abstract class Book {
     public abstract void getAppropriateMessageOnCheckOutAction();
 
     public abstract void getAppropriateMessageOnReturnBookAction();
+
+    public abstract void checkOut(ArrayList<Book> list);
+
+    public abstract void returnBook(ArrayList<Book> list);
 }

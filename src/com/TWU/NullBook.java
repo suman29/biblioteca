@@ -21,4 +21,14 @@ public class NullBook extends Book {
     public void getAppropriateMessageOnReturnBookAction() {
         System.out.println(Messages.RETURN_NOTSUCCESSFUL);
     }
+
+    @Override
+    public void checkOut(ArrayList<Book> list) {
+
+    }
+
+    @Override
+    public void returnBook(ArrayList<Book> list) {
+
+    }
 }
