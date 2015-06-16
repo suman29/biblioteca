@@ -13,15 +13,15 @@ public class CheckOutView {
         this.booksView = booksView;
     }
 
-    public int takeUserInputForCheckOutBook() {
+    public String takeUserInputForCheckOutBook() {
         try {
-            int input = Integer.parseInt(bufferedReader.readLine());
-            if (input > 0)
+            String input = bufferedReader.readLine();
+            if (input != null)
                 return input;
             else
-                return -1;
+                return null;
         } catch (IOException e) {
-            return -1;
+            return null;
         }
     }
 

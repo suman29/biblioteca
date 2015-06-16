@@ -16,14 +16,20 @@ public class ReturnBookActionTest {
     @Mock
     ReturnBookView returnBookView;
 
+    @Mock
+    Searcher searcher;
+
+    @Mock
+    CheckedOutBook book;
+
     @Test
     public void shouldBeAbleToReturnBook() {
         when(returnBookView.takeUserInputForReturningBook())
-                .thenReturn(1);
-        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
+                .thenReturn("good");
+        ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView, searcher);
 
         returnBookAction.perform();
-        verify(library).returnBook(1);
+        verify(library).returnBook(null);
     }
 
 }

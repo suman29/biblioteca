@@ -27,14 +27,14 @@ public class CheckOutViewTest {
 
     @Test
     public void checkIfTheUserGivesAnIntegerInput() {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("Good".getBytes());
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         CheckOutView checkOutView = new CheckOutView(bufferedReader, booksView);
 
-        int actualInput = checkOutView.takeUserInputForCheckOutBook();
-        int expectedInput = 1;
+        String actualInput = checkOutView.takeUserInputForCheckOutBook();
+        String expectedInput = "Good";
 
         assertEquals(expectedInput, actualInput);
     }

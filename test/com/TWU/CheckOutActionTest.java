@@ -17,14 +17,18 @@ public class CheckOutActionTest {
     @Mock
     CheckOutView checkOutView;
 
+    @Mock
+    Searcher searcher;
+
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutView.takeUserInputForCheckOutBook())
-                .thenReturn(1);
-        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library);
+                .thenReturn("Book1");
+        AvailableBook book = new AvailableBook("Book1", "abx", 1234, 2);
+        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library, searcher);
 
         checkOutAction.perform();
-        verify(library).checkOutBook(1);
+        verify(library).checkOutBook(null);
     }
 
 }

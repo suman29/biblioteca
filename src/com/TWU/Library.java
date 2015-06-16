@@ -5,29 +5,23 @@ import java.util.ArrayList;
 public class Library {
 
     private ArrayList<Book> booksCheckedOut;
-    private ArrayList<Book> booksAvailable;
+    protected ArrayList<Book> booksAvailable;
 
     public Library(ArrayList<Book> booksCheckedOut, ArrayList<Book> booksAvailable) {
         this.booksCheckedOut = booksCheckedOut;
         this.booksAvailable = booksAvailable;
     }
 
-    public boolean checkOutBook(int bookIndex) {
-        try {
-            Book checkedOut = booksAvailable.remove(bookIndex - 1);
-            return booksCheckedOut.add(checkedOut);
-        } catch (IndexOutOfBoundsException ex) {
-            return false;
-        }
+    public void checkOutBook(AvailableBook book) {
+
+             CheckedOutBook.create(book);
+             book.addItselfToAvailableListOfBooksIfAppplicable(booksAvailable);
     }
 
-    public boolean returnBook(int bookIndex) {
-        try {
-            Book returnedBook = booksCheckedOut.remove(bookIndex - 1);
-            return booksAvailable.add(returnedBook);
-        } catch (IndexOutOfBoundsException ex) {
-            return false;
-        }
+    public void returnBook(CheckedOutBook book) {
+
+        AvailableBook.create(book);
+        book.addItselfToAvailableListOfBooksIfAppplicable(booksAvailable);
     }
 
 }

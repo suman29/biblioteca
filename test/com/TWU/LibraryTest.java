@@ -12,16 +12,16 @@ public class LibraryTest {
     public void shouldCheckOutABookWhenUserSelectsABook() {
         ArrayList<Book> booksAvailable = new ArrayList<>();
         ArrayList<Book> booksCheckedOut = new ArrayList<>();
-        booksAvailable.add(new AvailableBook("abc", "xyz", 1908, 1));
-        booksAvailable.add(new AvailableBook("abc", "xyz", 1908, 2));
-        booksAvailable.add(new AvailableBook("abc", "xyz", 1908, 3));
+        AvailableBook book1 = new AvailableBook("abc1", "xyz", 1908, 1);
+        booksAvailable.add(book1);
+        booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
+        booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
         Library library = new Library(booksCheckedOut, booksAvailable);
 
-        int bookIndex = 2;
-        library.checkOutBook(bookIndex);
+        library.checkOutBook(book1);
 
         int actualOutput = booksCheckedOut.size();
-        int expectedOutput = 1;
+        int expectedOutput = 0;
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -30,16 +30,16 @@ public class LibraryTest {
     public void shouldBeAbleToAddReturnedBookWhenUserSelectsABook() {
         ArrayList<Book> booksCheckedOut = new ArrayList<>();
         ArrayList<Book> booksAvailable = new ArrayList<>();
-        booksCheckedOut.add(new CheckedOutBook("abc", "xyz", 1908, 1));
-        booksCheckedOut.add(new CheckedOutBook("abc", "xyz", 1908, 2));
-        booksCheckedOut.add(new CheckedOutBook("abc", "xyz", 1908, 3));
+        CheckedOutBook book1 = new CheckedOutBook("abc2", "xyz", 1908, 2);
+        booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
+        booksCheckedOut.add(book1);
+        booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3));
         Library library = new Library(booksCheckedOut, booksAvailable);
 
-        int bookIndex = 2;
-        library.returnBook(bookIndex);
+        library.returnBook(book1);
 
         int actualOutput = booksAvailable.size();
-        int expectedOutput = 1;
+        int expectedOutput = 0;
 
         assertEquals(expectedOutput, actualOutput);
     }

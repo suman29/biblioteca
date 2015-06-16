@@ -27,14 +27,14 @@ public class ReturnBookViewTest {
 
     @Test
     public void checkIfTheUserGivesAnIntegerInput() {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("good".getBytes());
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         ReturnBookView returnBookView = new ReturnBookView(bufferedReader, booksView);
 
-        int actualInput = returnBookView.takeUserInputForReturningBook();
-        int expectedInput = 1;
+        String actualInput = returnBookView.takeUserInputForReturningBook();
+        String expectedInput = "good";
 
         assertEquals(expectedInput, actualInput);
     }
