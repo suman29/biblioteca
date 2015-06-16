@@ -19,7 +19,7 @@ public class NullBook extends Book {
 
     @Override
     public void getAppropriateMessageOnReturnBookAction() {
-        System.out.println(Messages.RETURN_NOTSUCCESSFUL);
+        System.out.println(Messages.RETURN_UNSUCCESSFUL);
     }
 
     @Override

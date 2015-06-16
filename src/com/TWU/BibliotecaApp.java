@@ -2,6 +2,7 @@ package com.twu;
 
 // Do all The set up needed for the App and starts the App.
 
+import com.twu.movies.ListMoviesAction;
 import com.twu.movies.Movie;
 
 import java.io.BufferedReader;
@@ -29,7 +30,7 @@ public class BibliotecaApp {
 
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
-        ArrayList<Movie> allMovies =new ArrayList<>();
+        ArrayList<Movie> allMovies = initialiseMovies();
 
         Library library = new Library(allBooks,allMovies, new Searcher());
         creatingMenu(menuList);
@@ -41,6 +42,13 @@ public class BibliotecaApp {
         EntryPoint entryPoint = new EntryPoint(menuView, menu, consoleOutput);
         entryPoint.start();
 
+    }
+
+    private static ArrayList<Movie> initialiseMovies() {
+        ArrayList<Movie> allMovies =new ArrayList<>();
+        allMovies.add(new Movie("Batman Begins",2005, "Christopher Nolan", 9));
+        allMovies.add(new Movie("The Dark Knight",2008, "Christopher Nolan",9));
+        return allMovies;
     }
 
     private static ArrayList<Book> availableListOfBooks() {
@@ -67,13 +75,15 @@ public class BibliotecaApp {
         mappedOptions.put(1, new ListBooksAction(availableBooks, library));
         mappedOptions.put(2, new CheckOutAction((new CheckOutView(bufferedReader, availableBooksView)), library));
         mappedOptions.put(3, new ReturnBookAction(library, new ReturnBookView(bufferedReader, checkedOutBooksView)));
-        mappedOptions.put(4, new QuitAction());
+        mappedOptions.put(4, new ListMoviesAction(library));
+        mappedOptions.put(5, new QuitAction());
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
         menuList.put(1, Messages.LIST_BOOKS);
         menuList.put(2, Messages.CHECKOUT_BOOK);
         menuList.put(3, Messages.RETURN_BOOK);
-        menuList.put(4, Messages.QUIT);
+        menuList.put(4, Messages.LIST_MOVIES);
+        menuList.put(5, Messages.QUIT);
     }
 }

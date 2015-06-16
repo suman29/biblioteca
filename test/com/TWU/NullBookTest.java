@@ -46,7 +46,7 @@ public class NullBookTest {
         nullBook.getAppropriateMessageOnReturnBookAction();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_NOTSUCCESSFUL + System.lineSeparator();
+        String expectedOutput = Messages.RETURN_UNSUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

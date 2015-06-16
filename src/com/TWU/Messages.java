@@ -10,5 +10,6 @@ public interface Messages {
     String CHECKOUT_SUCCESSFUL = "Thank you! Enjoy the book";
     String CHECKOUT_UNSUCCESSFUL = "That book is not available.";
     String RETURN_SUCCESSFUL = "Thank you for returning the book.";
-    String RETURN_NOTSUCCESSFUL = "That is not a valid book to return.";
+    String RETURN_UNSUCCESSFUL = "That is not a valid book to return.";
+    String LIST_MOVIES = "List of Movies";
 }
