@@ -1,6 +1,7 @@
 package com.twu.movies;
 
 import com.twu.Messages;
+
 import java.util.ArrayList;
 
 // This is the available movie, which can checkout itself and this class converts a checkout movie to a available movie.
@@ -32,7 +33,7 @@ public class AvailableMovie extends Movie {
 
     @Override
     public void getAppropriateMessageOnReturnMovieAction() {
-     System.out.print(Messages.MOVIE_ALREADY_AVAILABLE);
+        System.out.print(Messages.MOVIE_ALREADY_AVAILABLE);
     }
 
     public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {
