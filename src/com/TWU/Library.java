@@ -27,6 +27,10 @@ public class Library {
         book.returnBook(allBooks);
     }
 
+    public void returnMovie(Movie movie) {
+        movie.returnMovie(allMovies);
+    }
+
     public ArrayList<Book> getAvailableBooks(ArrayList<Book> availableBooks) {
         availableBooks.clear();
 

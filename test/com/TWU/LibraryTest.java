@@ -1,6 +1,7 @@
 package com.twu;
 
 import com.twu.movies.AvailableMovie;
+import com.twu.movies.CheckedOutMovies;
 import com.twu.movies.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -122,5 +123,23 @@ public class LibraryTest {
         Movie actualMovie = library.movieSearcher(name);
 
         assertEquals(expectedMovie, actualMovie);
+    }
+
+    @Test
+    public void shouldBeAbleToAddReturnedMoviesWhenUserReturnsAMovie() {
+        ArrayList<Movie> moviesCheckedout = new ArrayList<>();
+        ArrayList<Movie> moviesAvailable = new ArrayList<>();
+        CheckedOutMovies movie1 = new CheckedOutMovies("Movie2", 2001, "abc", 1);
+        moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1));
+        moviesCheckedout.add(movie1);
+        moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1));
+        Library library = new Library(books, moviesAvailable, new Searcher());
+
+        library.returnMovie(movie1);
+
+        int actualOutput = moviesAvailable.size();
+        int expectedOutput = 1;
+
+        assertEquals(expectedOutput, actualOutput);
     }
 }
