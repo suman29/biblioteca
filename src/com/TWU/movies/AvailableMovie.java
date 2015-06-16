@@ -28,7 +28,7 @@ public class AvailableMovie extends Movie {
 
     @Override
     public void getAppropriateMessageOnCheckOutAction() {
-        System.out.println(Messages.CHECKOUT_SUCCESSFUL);
+        System.out.println(Messages.CHECKOUT_MOVIE_SUCCESSFUL);
     }
 
     public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {
