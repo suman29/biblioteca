@@ -8,7 +8,9 @@ public class AvailableMovie extends Movie {
     }
 
     @Override
-    public void checkOut(ArrayList<Movie> list) {
+    public void checkOut(ArrayList<Movie> allMovies) {
+        allMovies.remove(this);
+        allMovies.add(CheckedOutMovies.create(this));
 
     }
 
