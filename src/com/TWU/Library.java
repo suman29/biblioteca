@@ -15,9 +15,7 @@ public class Library {
     }
 
     public void returnBook(CheckedOutBook book) {
-        allBooks.remove(book);
-        AvailableBook availableBook = AvailableBook.create(book);
-        allBooks.add(availableBook);
+        book.makeAvailableInLibrary(allBooks);
     }
 
     public ArrayList<Book> getAvailableBooks(ArrayList<Book> availableBooks) {

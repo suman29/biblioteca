@@ -15,4 +15,9 @@ public class CheckedOutBook extends Book {
     public static CheckedOutBook create(AvailableBook availableBook) {
         return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id);
     }
+
+    public void makeAvailableInLibrary(ArrayList<Book> allBooks) {
+        allBooks.remove(this);
+        allBooks.add(AvailableBook.create(this));
+    }
 }

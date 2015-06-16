@@ -14,7 +14,6 @@ public class ReturnBookAction implements Option {
 
     @Override
     public void perform() {
-        returnBookView.displayListOfBooks();
         String bookName = returnBookView.takeUserInputForReturningBook();
 
         try {

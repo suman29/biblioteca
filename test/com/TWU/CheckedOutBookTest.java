@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CheckedOutBookTest {
 
@@ -27,5 +28,17 @@ public class CheckedOutBookTest {
         CheckedOutBook actualOutput = checkoutBook.create(availableBook);
 
         assertEquals(actualOutput, checkoutBook);
+    }
+
+    @Test
+    public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned () {
+        ArrayList<Book> list = new ArrayList<>();
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
+        list.add(checkoutBook);
+        checkoutBook.makeAvailableInLibrary(list);
+
+        AvailableBook availableBook= (AvailableBook) list.get(list.indexOf(checkoutBook));
+
+        assertTrue(availableBook instanceof AvailableBook);
     }
 }
