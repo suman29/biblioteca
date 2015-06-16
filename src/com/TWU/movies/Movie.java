@@ -46,4 +46,6 @@ public abstract class Movie {
 
     public abstract void returnMovie(ArrayList<Movie> list);
 
+    public abstract void addItselfToAvailableListOfMovieIfApplicable(ArrayList<Movie> availableMovies);
+
 }

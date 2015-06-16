@@ -19,6 +19,11 @@ public class CheckedOutMovies extends Movie {
 
     }
 
+    @Override
+    public void addItselfToAvailableListOfMovieIfApplicable(ArrayList<Movie> availableMovies) {
+
+    }
+
     public static CheckedOutMovies create(AvailableMovie availableMovie) {
         return new CheckedOutMovies(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating);
     }

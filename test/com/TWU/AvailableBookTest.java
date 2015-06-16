@@ -25,7 +25,7 @@ public class AvailableBookTest {
         ArrayList<Book> list = new ArrayList<>();
         AvailableBook availableBook = new AvailableBook("monster", "Ashray", 2015, 9);
 
-        availableBook.addItselfToAvailableListOfBooksIfApplicable(list);
+        availableBook.addItselfToAvailableListOfBookIfApplicable(list);
 
         assertTrue(list.contains(availableBook));
     }

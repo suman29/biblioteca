@@ -27,7 +27,7 @@ public class Library {
         availableBooks.clear();
 
         for (Book book : allBooks)
-            book.addItselfToAvailableListOfBooksIfApplicable(availableBooks);
+            book.addItselfToAvailableListOfBookIfApplicable(availableBooks);
 
         return availableBooks;
     }

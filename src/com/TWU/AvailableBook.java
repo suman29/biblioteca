@@ -8,7 +8,7 @@ public class AvailableBook extends Book {
     }
 
     @Override
-    public void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks) {
+    public void addItselfToAvailableListOfBookIfApplicable(ArrayList<Book> availableBooks) {
         availableBooks.add(this);
     }
 

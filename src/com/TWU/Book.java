@@ -41,7 +41,7 @@ public abstract class Book {
         return result;
     }
 
-    public abstract void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks);
+    public abstract void addItselfToAvailableListOfBookIfApplicable(ArrayList<Book> availableBooks);
 
     public abstract void getAppropriateMessageOnCheckOutAction();
 

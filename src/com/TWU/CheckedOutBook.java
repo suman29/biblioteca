@@ -9,7 +9,7 @@ public class CheckedOutBook extends Book {
     }
 
     @Override
-    public void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks) {
+    public void addItselfToAvailableListOfBookIfApplicable(ArrayList<Book> availableBooks) {
     }
 
     @Override

@@ -24,7 +24,7 @@ public class NullBookTest {
         ArrayList<Book> list = new ArrayList<>();
         NullBook nullBook = new NullBook("", "", 0, 0);
 
-        nullBook.addItselfToAvailableListOfBooksIfApplicable(list);
+        nullBook.addItselfToAvailableListOfBookIfApplicable(list);
 
         assertFalse(list.contains(nullBook));
     }
