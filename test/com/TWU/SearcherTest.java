@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.movies.AvailableMovie;
+import com.twu.movies.Movie;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -21,6 +23,21 @@ public class SearcherTest {
         Book actualBook = searcher.searchBook(bookList, name);
 
         assertEquals(expectedBook, actualBook);
+    }
+
+    @Test
+    public void shouldBeAbleToGiveTheDesiredMovie() {
+        Movie movie = new AvailableMovie("Movie1", 2001, "abc", 1);
+        ArrayList<Movie> movieList = new ArrayList<>();
+        movieList.add(new AvailableMovie("Movie2", 2001, "abc", 1));
+        movieList.add(movie);
+        Searcher searcher = new Searcher();
+
+        String name = "Movie1";
+        AvailableMovie expectedMovie = (AvailableMovie) movie;
+        Movie actualMovie = searcher.searchMovie(movieList, name);
+
+        assertEquals(expectedMovie,actualMovie);
     }
 
 }

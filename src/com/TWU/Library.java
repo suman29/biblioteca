@@ -40,8 +40,12 @@ public class Library {
         return allMovies;
     }
 
-    public Book searcher(String name) {
-       return searcher.searchBook(allBooks,name);
+    public Book bookSearcher(String name) {
+        return searcher.searchBook(allBooks, name);
+    }
+
+    public Movie movieSearcher(String name) {
+        return searcher.searchMovie(allMovies, name);
     }
 }
 

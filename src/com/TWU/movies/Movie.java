@@ -3,7 +3,7 @@ package com.twu.movies;
 import java.util.ArrayList;
 
 public abstract class Movie {
-    protected String name;
+    public String name;
     protected int year;
     protected String director;
     protected int rating;

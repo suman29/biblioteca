@@ -24,7 +24,7 @@ public class CheckOutActionTest {
         when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
         ArrayList<Book> list = new ArrayList<>();
         Book book = new CheckedOutBook("", "", 0, 0);
-        when(library.searcher("Good"))
+        when(library.bookSearcher("Good"))
                 .thenReturn(book);
 
         CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library);

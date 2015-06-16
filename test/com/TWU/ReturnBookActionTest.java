@@ -26,7 +26,7 @@ public class ReturnBookActionTest {
         when(returnBookView.takeUserInputForReturningBook()).thenReturn("Good");
         ArrayList<Book> list = new ArrayList<>();
         Book book = new AvailableBook("", "", 0, 0);
-        when(library.searcher("Good"))
+        when(library.bookSearcher("Good"))
                 .thenReturn(book);
 
         ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);

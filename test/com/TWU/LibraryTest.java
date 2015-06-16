@@ -104,7 +104,7 @@ public class LibraryTest {
 
         String name = "God";
         AvailableBook expectedBook = availableBook;
-        Book actualBook = library.searcher( name);
+        Book actualBook = library.bookSearcher(name);
 
         assertEquals(expectedBook, actualBook);
     }
