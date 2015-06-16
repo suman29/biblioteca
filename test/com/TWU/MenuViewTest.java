@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +18,8 @@ public class MenuViewTest {
 
     @Mock
     BooksView booksViewStub;
-
+    @Mock
+    Library library;
 
     @Before
     public void setUp() throws Exception {
@@ -25,7 +27,8 @@ public class MenuViewTest {
         mappedOptions = new HashMap<>();
         menuList.put(1, "List Of Books");
         menuList.put(2, "Quit");
-        mappedOptions.put(1, new ListBooksAction(booksViewStub));
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        mappedOptions.put(1, new ListBooksAction(availableBooks, library));
         mappedOptions.put(2, new QuitAction());
         System.setOut(new PrintStream(outputStream));
     }

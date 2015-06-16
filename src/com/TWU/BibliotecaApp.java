@@ -57,7 +57,8 @@ public class BibliotecaApp {
 
     private static void initialisingMenuList(BufferedReader bufferedReader, BooksView availableBooksView,
                                              BooksView checkedOutBooksView, HashMap<Integer, Option> mappedOptions, Library library) {
-        mappedOptions.put(1, new ListBooksAction(availableBooksView));
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        mappedOptions.put(1, new ListBooksAction(availableBooks, library));
         mappedOptions.put(2, new CheckOutAction((new CheckOutView(bufferedReader, availableBooksView)), library, new Searcher()));
         mappedOptions.put(3, new ReturnBookAction(library, new ReturnBookView(bufferedReader, checkedOutBooksView), new Searcher()));
         mappedOptions.put(4, new QuitAction());

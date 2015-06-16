@@ -20,5 +20,14 @@ public class Library {
         allBooks.add(availableBook);
     }
 
+    public ArrayList<Book> getAvailableBooks(ArrayList<Book> availableBooks) {
+        availableBooks.clear();
+
+        for(Book book : allBooks)
+        book.addItselfToAvailableListOfBooksIfApplicable(availableBooks);
+
+        return availableBooks;
+    }
+
 }
 

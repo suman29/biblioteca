@@ -1,13 +1,17 @@
 package com.twu;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 
+
+@RunWith(MockitoJUnitRunner.class)
 public class LibraryTest {
 
     @Mock
@@ -19,16 +23,15 @@ public class LibraryTest {
     @Test
     public void shouldCheckOutABookWhenUserSelectsABook() {
         ArrayList<Book> booksAvailable = new ArrayList<>();
-        ArrayList<Book> booksCheckedOut = new ArrayList<>();
         AvailableBook book1 = new AvailableBook("abc1", "xyz", 1908, 1);
         booksAvailable.add(book1);
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
         Library library = new Library(booksAvailable);
 
-        library.checkOutBook(book1);
+        library.checkOutBook(availableBook);
 
-        verify(checkedOutBook).create(book1);
+        verify(availableBook).checkOut(booksAvailable);
     }
 
     @Test
@@ -47,6 +50,27 @@ public class LibraryTest {
         int expectedOutput = 1;
 
         assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void shouldBeABleToDisplayOnlyTheAvailableBooks() {
+        ArrayList<Book> allBooks = new ArrayList<>();
+        allBooks.add(new AvailableBook("abc2", "xyz", 1908, 2));
+        allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
+        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2));
+        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
+        Library library = new Library(allBooks);
+        ArrayList<Book> booksAvailable = new ArrayList<>();
+        booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
+        booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
+
+        ArrayList<Book> abc = new ArrayList<>();
+
+        ArrayList<Book> expectedOutput =booksAvailable;
+        ArrayList<Book> actualOutput = library.getAvailableBooks(abc);
+
+        assertEquals(expectedOutput,actualOutput);
+
     }
 
 }

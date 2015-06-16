@@ -7,6 +7,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
@@ -16,6 +17,9 @@ public class MenuTest {
 
     @Mock
     BooksView booksViewStub;
+    @Mock
+    Library library;
+
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;
 
@@ -25,7 +29,8 @@ public class MenuTest {
         mappedOptions = new HashMap<>();
         menuList.put(1, "List Of Books");
         menuList.put(2, "Quit");
-        mappedOptions.put(1, new ListBooksAction(booksViewStub));
+        ArrayList<Book> availableBooks = new ArrayList<>();
+        mappedOptions.put(1, new ListBooksAction(availableBooks, library));
         mappedOptions.put(2, new QuitAction());
 
     }
@@ -45,6 +50,7 @@ public class MenuTest {
         Menu menuList = new Menu(this.menuList, mappedOptions);
 
         menuList.performAction(1);
-        Mockito.verify(booksViewStub).displayListOfBooks();
+        ArrayList<Book> books = new ArrayList<>();
+        Mockito.verify(library).getAvailableBooks(books);
     }
 }

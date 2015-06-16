@@ -1,14 +1,20 @@
 package com.twu;
 
-public class ListBooksAction implements Option {
-    BooksView booksView;
+import java.util.ArrayList;
 
-    public ListBooksAction(BooksView booksView) {
-        this.booksView = booksView;
+public class ListBooksAction implements Option {
+    private ArrayList<Book> availableBooks;
+    private Library library;
+
+    public ListBooksAction( ArrayList<Book> availableBooks, Library library) {
+        this.availableBooks = availableBooks;
+        this.library = library;
     }
 
     @Override
     public void perform() {
-        booksView.displayListOfBooks();
+        library.getAvailableBooks(availableBooks);
+        for (Book book : availableBooks)
+            System.out.println(book.toString());
     }
 }

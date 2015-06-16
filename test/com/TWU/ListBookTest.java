@@ -1,18 +1,27 @@
 package com.twu;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.ArrayList;
 
 import static org.mockito.Mockito.mock;
-
+@RunWith(MockitoJUnitRunner.class)
 public class ListBookTest {
+
+    @Mock
+    Library library;
 
     @Test
     public void shouldBeAbleToDisplayList() {
         BooksView booksViewStub = mock(BooksView.class);
-        ListBooksAction listBook = new ListBooksAction(booksViewStub);
+        ArrayList<Book> book = new ArrayList<>();
+        ListBooksAction listBook = new ListBooksAction(book, library);
         listBook.perform();
 
-        Mockito.verify(booksViewStub).displayListOfBooks();
+        Mockito.verify(library).getAvailableBooks(book);
     }
 }
