@@ -29,7 +29,11 @@ public class BibliotecaApp {
 
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
-        ArrayList<Movie> allMovies = initialiseMovies();
+        ArrayList<Movie> allMovies = new ArrayList<>();
+        NullMovie nullMovie = new NullMovie("",0,"",0);
+        allMovies.add(nullMovie);
+        allMovies.addAll(initialiseMovies());
+
 
         Library library = new Library(allBooks,allMovies, new Searcher());
         creatingMenu(menuList);
