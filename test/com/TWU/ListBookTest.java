@@ -23,6 +23,6 @@ public class ListBookTest {
         ListBooksAction listBook = new ListBooksAction(book, library);
         listBook.perform();
 
-       verify(library).getAvailableBooks(book);
+        verify(library).getAvailableBooks(book);
     }
 }

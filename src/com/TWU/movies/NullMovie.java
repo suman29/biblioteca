@@ -26,6 +26,11 @@ public class NullMovie extends Movie {
 
     @Override
     public void getAppropriateMessageOnCheckOutAction() {
-      System.out.println(Messages.CHECKOUT_MOVIE_UNSUCCESSFUL);
+        System.out.println(Messages.CHECKOUT_MOVIE_UNSUCCESSFUL);
+    }
+
+    @Override
+    public void getAppropriateMessageOnReturnMovieAction() {
+        System.out.println(Messages.RETURN_MOVIE_UNSUCCESSFUL);
     }
 }

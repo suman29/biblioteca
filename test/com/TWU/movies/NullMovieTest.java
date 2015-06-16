@@ -20,11 +20,23 @@ public class NullMovieTest {
 
     @Test
     public void shouldDisplayAppropriateMessageOnCheckingOut() {
-        NullMovie nullMovie = new NullMovie("",0,"",0);
+        NullMovie nullMovie = new NullMovie("", 0, "", 0);
         nullMovie.getAppropriateMessageOnCheckOutAction();
 
         String actualOutput = outputStream.toString();
         String expectedOutput = Messages.CHECKOUT_MOVIE_UNSUCCESSFUL + System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+
+    @Test
+    public void shouldDisplayAppropriateMessageOnReturning() {
+        NullMovie nullMovie = new NullMovie("", 0, "", 0);
+        nullMovie.getAppropriateMessageOnReturnMovieAction();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = Messages.RETURN_MOVIE_UNSUCCESSFUL + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

@@ -10,7 +10,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldMakeItselfAvailableAfterTheMovieIsReturned() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1",2014,"abc",5);
+        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
         ArrayList<Movie> list = new ArrayList<>();
         list.add(checkoutMovie);
 

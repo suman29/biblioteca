@@ -50,4 +50,5 @@ public abstract class Movie {
 
     public abstract void getAppropriateMessageOnCheckOutAction();
 
+    public abstract void getAppropriateMessageOnReturnMovieAction();
 }

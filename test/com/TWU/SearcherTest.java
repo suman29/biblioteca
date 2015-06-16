@@ -37,7 +37,7 @@ public class SearcherTest {
         AvailableMovie expectedMovie = (AvailableMovie) movie;
         Movie actualMovie = searcher.searchMovie(movieList, name);
 
-        assertEquals(expectedMovie,actualMovie);
+        assertEquals(expectedMovie, actualMovie);
     }
 
 }

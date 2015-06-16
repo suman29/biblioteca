@@ -30,12 +30,12 @@ public class BibliotecaApp {
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
         ArrayList<Movie> allMovies = new ArrayList<>();
-        NullMovie nullMovie = new NullMovie("",0,"",0);
+        NullMovie nullMovie = new NullMovie("", 0, "", 0);
         allMovies.add(nullMovie);
         allMovies.addAll(initialiseMovies());
 
 
-        Library library = new Library(allBooks,allMovies, new Searcher());
+        Library library = new Library(allBooks, allMovies, new Searcher());
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);
@@ -48,9 +48,11 @@ public class BibliotecaApp {
     }
 
     private static ArrayList<Movie> initialiseMovies() {
-        ArrayList<Movie> allMovies =new ArrayList<>();
-        allMovies.add(new AvailableMovie("Batman Begins",2005, "Christopher Nolan", 9));
-        allMovies.add(new AvailableMovie("The Dark Knight",2008, "Christopher Nolan",9));
+        ArrayList<Movie> allMovies = new ArrayList<>();
+        allMovies.add(new AvailableMovie("Batman Begins", 2005, "Christopher Nolan", 9));
+        allMovies.add(new AvailableMovie("The Dark Knight", 2008, "Christopher Nolan", 9));
+        allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9));
+        allMovies.add(new CheckedOutMovies("movie2", 2008, "Christopher Nolan", 9));
         return allMovies;
     }
 
@@ -80,7 +82,7 @@ public class BibliotecaApp {
         mappedOptions.put(2, new CheckOutAction((new CheckOutView(bufferedReader, availableBooksView)), library));
         mappedOptions.put(3, new ReturnBookAction(library, new ReturnBookView(bufferedReader, checkedOutBooksView)));
         mappedOptions.put(4, new ListMoviesAction(library, movies));
-        mappedOptions.put(5, new CheckOutMovieAction((library),new CheckOutMovieView(bufferedReader)));
+        mappedOptions.put(5, new CheckOutMovieAction((library), new CheckOutMovieView(bufferedReader)));
         mappedOptions.put(6, new QuitAction());
     }
 

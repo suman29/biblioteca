@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class LibraryTest {
 
-     ArrayList<Movie> allMovies = new ArrayList<>();
+    ArrayList<Movie> allMovies = new ArrayList<>();
     ArrayList<Book> books = new ArrayList<>();
     @Mock
     AvailableBook availableBook;
@@ -80,7 +80,7 @@ public class LibraryTest {
         allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
         allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2));
         allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1));
-        Library library = new Library(allBooks, allMovies, new Searcher ());
+        Library library = new Library(allBooks, allMovies, new Searcher());
         ArrayList<Book> booksAvailable = new ArrayList<>();
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
@@ -121,6 +121,6 @@ public class LibraryTest {
         AvailableMovie expectedMovie = (AvailableMovie) movie;
         Movie actualMovie = library.movieSearcher(name);
 
-        assertEquals(expectedMovie,actualMovie);
+        assertEquals(expectedMovie, actualMovie);
     }
 }

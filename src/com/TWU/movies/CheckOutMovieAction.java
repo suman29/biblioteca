@@ -14,8 +14,8 @@ public class CheckOutMovieAction implements Option {
 
     @Override
     public void perform() {
-        String movieName= checkOutMovieView.takeUserInputForCheckOutMovie();
-        Movie movie= library.movieSearcher(movieName);
+        String movieName = checkOutMovieView.takeUserInputForCheckOutMovie();
+        Movie movie = library.movieSearcher(movieName);
         library.checkOutMovie(movie);
         movie.getAppropriateMessageOnCheckOutAction();
 

@@ -39,7 +39,7 @@ public class Library {
     public ArrayList<Movie> getAvailableMovies(ArrayList<Movie> availableMovies) {
         availableMovies.clear();
 
-        for(Movie movie : allMovies)
+        for (Movie movie : allMovies)
             movie.addItselfToAvailableListOfMovieIfApplicable(availableMovies);
         return availableMovies;
     }

@@ -9,8 +9,8 @@ public class Searcher {
     ArrayList<Movie> allMovies;
 
     public Searcher() {
-        this.allBooks= null;
-        this.allMovies=null;
+        this.allBooks = null;
+        this.allMovies = null;
     }
 
     public Book searchBook(ArrayList<Book> allBooks, String bookName) {

@@ -27,7 +27,7 @@ public class CheckOutMovieActionTest {
         when(library.movieSearcher("movie1"))
                 .thenReturn(movie);
 
-        CheckOutMovieAction checkOutMovie = new CheckOutMovieAction(library,checkOutMovieView);
+        CheckOutMovieAction checkOutMovie = new CheckOutMovieAction(library, checkOutMovieView);
         checkOutMovie.perform();
 
         verify(library).checkOutMovie(movie);
