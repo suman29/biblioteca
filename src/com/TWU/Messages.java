@@ -18,4 +18,6 @@ public interface Messages {
     String RETURN_MOVIE_UNSUCCESSFUL = "That is not a valid movie to return";
     String RETURN_MOVIE_SUCCESSFUL = "Thank you for returning the movie";
     String RETURN_MOVIE = "Return Movie";
+    String MOVIE_ALREADY_CHECKED = "This movie is already checked out";
+    String MOVIE_ALREADY_AVAILABLE = "This movie is already available";
 }

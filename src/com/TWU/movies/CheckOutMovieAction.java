@@ -18,6 +18,5 @@ public class CheckOutMovieAction implements Option {
         Movie movie = library.movieSearcher(movieName);
         library.checkOutMovie(movie);
         movie.getAppropriateMessageOnCheckOutAction();
-
     }
 }

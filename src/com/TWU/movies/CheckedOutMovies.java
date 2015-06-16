@@ -28,7 +28,7 @@ public class CheckedOutMovies extends Movie {
 
     @Override
     public void getAppropriateMessageOnCheckOutAction() {
-
+        System.out.println(Messages.MOVIE_ALREADY_CHECKED);
     }
 
     @Override
