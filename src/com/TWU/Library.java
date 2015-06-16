@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class Library {
     private ArrayList<Book> allBooks;
     private ArrayList<Movie> allMovies;
+    private Searcher searcher;
 
-    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies) {
+    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies, Searcher searcher) {
         this.allBooks = allBooks;
         this.allMovies = allMovies;
+        this.searcher = searcher;
     }
 
     public void checkOutBook(Book book) {
@@ -35,11 +37,7 @@ public class Library {
     }
 
     public Book searcher(String name) {
-        for (Book book : allBooks) {
-            if ((book.name).equalsIgnoreCase(name))
-                return book;
-        }
-        return allBooks.get(0);
+       return searcher.searchBook(allBooks,name);
     }
 }
 

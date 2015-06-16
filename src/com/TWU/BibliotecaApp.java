@@ -31,7 +31,7 @@ public class BibliotecaApp {
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
         ArrayList<Movie> allMovies =new ArrayList<>();
 
-        Library library = new Library(allBooks,allMovies);
+        Library library = new Library(allBooks,allMovies, new Searcher());
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);
