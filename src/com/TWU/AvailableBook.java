@@ -8,11 +8,16 @@ public class AvailableBook extends Book {
     }
 
     @Override
-    public void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks) {
+    public void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks) {
         availableBooks.add(this);
     }
 
     public static AvailableBook create(CheckedOutBook checkedOutBook) {
         return new AvailableBook(checkedOutBook.name, checkedOutBook.author, checkedOutBook.year, checkedOutBook.id);
+    }
+
+    public void checkOut(ArrayList<Book> allBooks) {
+        allBooks.remove(this);
+        allBooks.add(CheckedOutBook.create(this));
     }
 }

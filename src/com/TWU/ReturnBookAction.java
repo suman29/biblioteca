@@ -16,10 +16,15 @@ public class ReturnBookAction implements Option {
     public void perform() {
         returnBookView.displayListOfBooks();
         String bookName = returnBookView.takeUserInputForReturningBook();
-        CheckedOutBook book = (CheckedOutBook) searcher.getBook(library.booksAvailable, bookName);
-        library.returnBook(book);
-//            returnBookView.displayBookReturnedSuccessfully();
-//        else
-//            returnBookView.displayMessageWhenBookNotReturnedSuccessfully();
+
+        try {
+            CheckedOutBook book = (CheckedOutBook) searcher.getBook(library.allBooks, bookName);
+            library.returnBook(book);
+            returnBookView.displayBookReturnedSuccessfully();
+        }
+
+        catch (Exception e){
+            returnBookView.displayMessageWhenBookNotReturnedSuccessfully();
+        }
     }
 }

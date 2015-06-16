@@ -14,7 +14,7 @@ public class CheckedOutBookTest {
         ArrayList<Book> list = new ArrayList<>();
         CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9);
 
-        checkedOutBook.addItselfToAvailableListOfBooksIfAppplicable(list);
+        checkedOutBook.addItselfToAvailableListOfBooksIfApplicable(list);
 
         assertFalse(list.contains(checkedOutBook));
     }

@@ -14,6 +14,9 @@ public class BibliotecaApp {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Book> availableListOfBooks = availableListOfBooks();
         ArrayList<Book> checkedOutListOfBooks = checkedOutListOfBooks();
+        ArrayList<Book> allBooks = new ArrayList<>();
+        availableListOfBooks.addAll(checkedOutListOfBooks);
+        allBooks=availableListOfBooks;
         Books availableBooks = new Books(availableListOfBooks);
         Books checkedOutBooks = new Books(checkedOutListOfBooks);
         BooksView availableBooksView = new BooksView(availableBooks);
@@ -22,7 +25,7 @@ public class BibliotecaApp {
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
 
-        Library library = new Library(availableListOfBooks);
+        Library library = new Library(allBooks);
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);

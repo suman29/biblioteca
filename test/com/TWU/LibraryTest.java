@@ -1,12 +1,20 @@
 package com.twu;
 
 import org.junit.Test;
+import org.mockito.Mock;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
 
 public class LibraryTest {
+
+    @Mock
+    AvailableBook availableBook;
+
+    @Mock
+    CheckedOutBook checkedOutBook;
 
     @Test
     public void shouldCheckOutABookWhenUserSelectsABook() {
@@ -20,10 +28,7 @@ public class LibraryTest {
 
         library.checkOutBook(book1);
 
-        int actualOutput = booksCheckedOut.size();
-        int expectedOutput = 0;
-
-        assertEquals(expectedOutput, actualOutput);
+        verify(checkedOutBook).create(book1);
     }
 
     @Test
@@ -39,7 +44,7 @@ public class LibraryTest {
         library.returnBook(book1);
 
         int actualOutput = booksAvailable.size();
-        int expectedOutput = 0;
+        int expectedOutput = 1;
 
         assertEquals(expectedOutput, actualOutput);
     }

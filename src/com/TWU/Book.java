@@ -41,5 +41,5 @@ public abstract class Book {
         return result;
     }
 
-    public abstract void addItselfToAvailableListOfBooksIfAppplicable(ArrayList<Book> availableBooks);
+    public abstract void addItselfToAvailableListOfBooksIfApplicable(ArrayList<Book> availableBooks);
 }

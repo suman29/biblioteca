@@ -13,7 +13,7 @@ public class AvailableBookTest {
         ArrayList<Book> list = new ArrayList<>();
         AvailableBook availableBook = new AvailableBook("monster", "Ashray", 2015, 9);
 
-        availableBook.addItselfToAvailableListOfBooksIfAppplicable(list);
+        availableBook.addItselfToAvailableListOfBooksIfApplicable(list);
 
         assertTrue(list.contains(availableBook));
     }
@@ -26,6 +26,18 @@ public class AvailableBookTest {
         AvailableBook actualOutput = availableBook.create(checkoutBook);
 
         assertEquals(actualOutput, checkoutBook);
+    }
+
+    @Test
+    public void shouldBeAbleToCheckoutItself() {
+        ArrayList<Book> list = new ArrayList<>();
+        AvailableBook availableBook = new AvailableBook("god", "helpme" ,2013, 1);
+        list.add(availableBook);
+        availableBook.checkOut(list);
+
+        CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
+
+        assertTrue(checkedOutBook instanceof  CheckedOutBook);
     }
 
 }

@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class Library {
 
-    protected ArrayList<Book> booksAvailable;
+    protected ArrayList<Book> allBooks;
 
-    public Library(ArrayList<Book> booksAvailable) {
-        this.booksAvailable = booksAvailable;
+    public Library(ArrayList<Book> allBooks) {
+        this.allBooks = allBooks;
     }
 
     public void checkOutBook(AvailableBook book) {
-        CheckedOutBook.create(book);
+        book.checkOut(allBooks);
     }
 
     public void returnBook(CheckedOutBook book) {
-        AvailableBook.create(book);
+        allBooks.remove(book);
+        AvailableBook availableBook = AvailableBook.create(book);
+        allBooks.add(availableBook);
     }
 
 }
