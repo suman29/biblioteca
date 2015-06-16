@@ -2,6 +2,7 @@ package com.twu;
 
 // Do all The set up needed for the App and starts the App.
 
+import com.twu.movies.CheckedOutMovies;
 import com.twu.movies.ListMoviesAction;
 import com.twu.movies.Movie;
 
@@ -46,8 +47,8 @@ public class BibliotecaApp {
 
     private static ArrayList<Movie> initialiseMovies() {
         ArrayList<Movie> allMovies =new ArrayList<>();
-        allMovies.add(new Movie("Batman Begins",2005, "Christopher Nolan", 9));
-        allMovies.add(new Movie("The Dark Knight",2008, "Christopher Nolan",9));
+        allMovies.add(new CheckedOutMovies("Batman Begins",2005, "Christopher Nolan", 9));
+        allMovies.add(new CheckedOutMovies("The Dark Knight",2008, "Christopher Nolan",9));
         return allMovies;
     }
 
