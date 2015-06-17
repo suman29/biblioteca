@@ -3,6 +3,7 @@ package com.twu;
 //Entry point of the App, it has MenuView, CustomerMenu and ConsoleOutput.
 
 import com.twu.menu.CustomerMenu;
+import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MenuView;
 import com.twu.users.Customer;
 import com.twu.users.User;
@@ -13,12 +14,14 @@ public class EntryPoint {
     private CustomerMenu customerMenu;
     private ConsoleOutput consoleOutput;
     private LoginController loginController;
+    private LibrarianMenu librarianMenu;
 
-    public EntryPoint(MenuView menuView, CustomerMenu customerMenu, ConsoleOutput consoleOutput, LoginController loginController) {
+    public EntryPoint(MenuView menuView, CustomerMenu customerMenu, ConsoleOutput consoleOutput, LoginController loginController, LibrarianMenu librarianMenu) {
         this.menuView = menuView;
         this.customerMenu = customerMenu;
         this.consoleOutput = consoleOutput;
         this.loginController = loginController;
+        this.librarianMenu = librarianMenu;
     }
 
     private void menuIteration() {
@@ -27,7 +30,7 @@ public class EntryPoint {
         if(user instanceof Customer)
         do {
 
-            menuView.displayListOfMenu(customerMenu,user);
+            menuView.displayListOfMenu(customerMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 
             if (customerMenu.isValidInput(continueLoop))
@@ -38,11 +41,11 @@ public class EntryPoint {
 
         else
             do {
-                menuView.displayListOfMenu(customerMenu,user);
+                menuView.displayListOfMenu(librarianMenu, user);
                 continueLoop = menuView.takeUserInputForMainMenu();
 
-                if (customerMenu.isValidInput(continueLoop))
-                    customerMenu.performAction(continueLoop);
+                if (librarianMenu.isValidInput(continueLoop))
+                    librarianMenu.performAction(continueLoop);
                 else
                     menuView.errorMessage();
             }while (continueLoop > 0);

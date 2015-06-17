@@ -4,10 +4,14 @@ package com.twu;
 
 import com.twu.actions.*;
 import com.twu.books.*;
+import com.twu.librarianActions.CheckedOutBooksAction;
+import com.twu.librarianActions.CheckedOutMovieAction;
 import com.twu.menu.CustomerMenu;
+import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MenuView;
 import com.twu.movies.*;
 import com.twu.users.Customer;
+import com.twu.users.Librarian;
 import com.twu.users.NullUser;
 import com.twu.users.User;
 
@@ -31,36 +35,59 @@ public class BibliotecaApp {
         allBooks.add(nullBook);
         availableListOfBooks.addAll(checkedOutListOfBooks);
         allBooks.addAll(availableListOfBooks);
+
         Books availableBooks = new Books(availableListOfBooks);
         Books checkedOutBooks = new Books(checkedOutListOfBooks);
         BooksView availableBooksView = new BooksView(availableBooks);
         BooksView checkedOutBooksView = new BooksView(checkedOutBooks);
 
-        HashMap<Integer, String> menuList = new HashMap<>();
-        HashMap<Integer, Option> mappedOptions = new HashMap<>();
+
         ArrayList<Movie> allMovies = new ArrayList<>();
         NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("",""));
         allMovies.add(nullMovie);
         allMovies.addAll(initialiseMovies());
 
+        HashMap<Integer, String> menuList = new HashMap<>();
+        HashMap<Integer, Option> mappedOptions = new HashMap<>();
 
         Library library = new Library(allBooks, allMovies, new Searcher());
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
+
+        NullUser nullUser = new NullUser("","");
+        Librarian librarian = new Librarian("","");
         User user = new Customer("","");
         CustomerMenu customerMenu = new CustomerMenu(menuList, mappedOptions,user);
+
         MenuView menuView = new MenuView(bufferedReader);
         ConsoleOutput consoleOutput = new ConsoleOutput();
-        NullUser nullUser = new NullUser("","");
         ArrayList<User> list = new ArrayList<>();
 
         Set<User> allUsers = new HashSet<>();
         allUsers.add(new Customer("123-4567","1234"));
+        allUsers.add(new Librarian("abc-1234","abcd"));
         LoginController loginController = new LoginController(new LoginView(bufferedReader),new Authenticator(allUsers,nullUser,list),nullUser);
 
-        EntryPoint entryPoint = new EntryPoint(menuView, customerMenu, consoleOutput, loginController);
+        HashMap<Integer, Option> mappedOptionLibrarian = new HashMap<>();
+        HashMap<Integer, String> menuListLibrarian = new HashMap<>();
+        populatingForLibrarian(mappedOptionLibrarian, library, menuListLibrarian);
+        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian, librarian);
+
+
+        EntryPoint entryPoint = new EntryPoint(menuView, customerMenu, consoleOutput, loginController, librarianMenu);
         entryPoint.start();
 
+    }
+
+    private static void populatingForLibrarian(HashMap<Integer, Option> mappedOptions, Library library, HashMap<Integer, String> menuListLibrarian) {
+        menuListLibrarian.put(1, "Checked out books");
+        menuListLibrarian.put(2, "Checked out movies");
+        menuListLibrarian.put(3, "Quit");
+        ArrayList<Book> checkedbooks = new ArrayList<>();
+        ArrayList<Movie> checkedMovies = new ArrayList<>();
+        mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));
+        mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
+        mappedOptions.put(3, new QuitAction());
     }
 
     private static ArrayList<Movie> initialiseMovies() {

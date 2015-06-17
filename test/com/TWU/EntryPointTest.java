@@ -1,6 +1,7 @@
 package com.twu;
 
 import com.twu.menu.CustomerMenu;
+import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MenuView;
 import com.twu.users.User;
 import org.junit.Test;
@@ -21,6 +22,9 @@ public class EntryPointTest {
     @Mock
     User user;
 
+    @Mock
+    LibrarianMenu librarianMenu;
+
     @Test
     public void shouldNotContinueLoopIfTheUserSelectsQuit() {
         ByteArrayInputStream inputStream = new ByteArrayInputStream("4".getBytes());
@@ -29,7 +33,7 @@ public class EntryPointTest {
         CustomerMenu customerMenu = mock(CustomerMenu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
         when(loginController.login()).thenReturn(user);
-        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController);
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
         entryPoint.start();
 
         verify(menuViewStub).displayListOfMenu(customerMenu,user);
@@ -43,7 +47,7 @@ public class EntryPointTest {
         CustomerMenu customerMenu = mock(CustomerMenu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
         when(loginController.login()).thenReturn(user);
-        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController);
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
         entryPoint.start();
 
         verify(menuViewStub).displayListOfMenu(customerMenu,user);

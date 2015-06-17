@@ -16,6 +16,11 @@ public class MenuView {
         System.out.print(menuList.toString());
     }
 
+
+    public void displayListOfMenu(LibrarianMenu menuList, User user) {
+        System.out.print(menuList.toString());
+    }
+
     public int takeUserInputForMainMenu() {
         try {
             int input = Integer.parseInt(br.readLine());
