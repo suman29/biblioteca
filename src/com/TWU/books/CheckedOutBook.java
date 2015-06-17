@@ -38,6 +38,11 @@ public class CheckedOutBook extends Book {
         allBooks.add(AvailableBook.create(this));
     }
 
+    @Override
+    public void addItselfToCheckedOutListOfBooksIfApplicable(ArrayList<Book> checkedoutBooks) {
+        checkedoutBooks.add(this);
+    }
+
     public String toString(){
         return (id + ".  " + String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year)+" Customer:"+customer.toString());
     }

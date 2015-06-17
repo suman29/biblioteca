@@ -58,4 +58,6 @@ public abstract class Book {
         if(this.name.equalsIgnoreCase(bookName))
             matchedBooks.add(this);
     }
+
+    public abstract void addItselfToCheckedOutListOfBooksIfApplicable(ArrayList<Book> checkedoutBooks);
 }

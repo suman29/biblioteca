@@ -1,26 +1,34 @@
 package com.twu.librarianActions;
 
-import com.twu.books.AvailableBook;
+import com.twu.Library;
 import com.twu.books.Book;
-import com.twu.books.CheckedOutBook;
 import com.twu.users.Customer;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 
+import static org.mockito.Mockito.verify;
+
+
+@RunWith(MockitoJUnitRunner.class)
 public class CheckedOutBooksActionTest {
+
+    @Mock
+    Library library;
+
+    @Mock
+    Customer customer;
 
     @Test
     public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails(){
-        ArrayList<Book> books = new ArrayList<>();
-        Book book1 = new CheckedOutBook("abc1","xyz1",1,1,new Customer("lmn1","pqr1"));
-        Book book2 = new CheckedOutBook("abc2","xyz1",1,1,new Customer("lmn2","pqr1"));
-        Book book3 = new AvailableBook("abc2","xyz1",1,1);
-        books.add(book1);
-        books.add(book2);
-        books.add(book3);
-        CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(books);
+        ArrayList<Book> list= new ArrayList<>();
+        CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(list, library);
+        checkedOutBooksAction.perform(customer);
 
+        verify(library).getCheckedOutBooks(list);
     }
 
 }

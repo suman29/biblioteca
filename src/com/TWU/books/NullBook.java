@@ -34,4 +34,9 @@ public class NullBook extends Book {
     public void returnBook(ArrayList<Book> list) {
 
     }
+
+    @Override
+    public void addItselfToCheckedOutListOfBooksIfApplicable(ArrayList<Book> checkedoutBooks) {
+
+    }
 }

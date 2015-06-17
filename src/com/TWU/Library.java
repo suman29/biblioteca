@@ -50,6 +50,16 @@ public class Library {
         return availableMovies;
     }
 
+    public ArrayList<Book> getCheckedOutBooks(ArrayList<Book> checkedoutBooks) {
+        checkedoutBooks.clear();
+
+        for (Book book : allBooks)
+            book.addItselfToCheckedOutListOfBooksIfApplicable(checkedoutBooks);
+
+        return checkedoutBooks;
+    }
+
+
     public Book bookSearcher(String name) {
         return searcher.searchBook(allBooks, name);
     }

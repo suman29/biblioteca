@@ -58,7 +58,7 @@ public class LibraryTest {
         moviesAvailable.add(new AvailableMovie("movie3", 2014, "abc", 5));
         Library library = new Library(books, moviesAvailable, new Searcher());
 
-        library.checkOutMovie(availableMovie, new Customer("","") );
+        library.checkOutMovie(availableMovie, new Customer("", ""));
 
         verify(availableMovie).checkOut(moviesAvailable, new Customer("",""));
     }
@@ -97,6 +97,27 @@ public class LibraryTest {
 
         ArrayList<Book> expectedOutput = booksAvailable;
         ArrayList<Book> actualOutput = library.getAvailableBooks(abc);
+
+        assertEquals(expectedOutput, actualOutput);
+
+    }
+
+    @Test
+    public void shouldBeABleToDisplayOnlyCheckedOutBooks() {
+        ArrayList<Book> allBooks = new ArrayList<>();
+        allBooks.add(new AvailableBook("abc2", "xyz", 1908, 2));
+        allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
+        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("","")));
+        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("","")));
+        Library library = new Library(allBooks, allMovies, new Searcher());
+        ArrayList<Book> booksChecked = new ArrayList<>();
+        booksChecked.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("", "")));
+        booksChecked.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("", "")));
+
+        ArrayList<Book> abc = new ArrayList<>();
+
+        ArrayList<Book> expectedOutput = booksChecked;
+        ArrayList<Book> actualOutput = library.getCheckedOutBooks(abc);
 
         assertEquals(expectedOutput, actualOutput);
 
