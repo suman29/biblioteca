@@ -2,16 +2,19 @@ package com.twu;
 
 import com.twu.users.User;
 
-import java.util.ArrayList;
+import java.util.Set;
 
 public class Authenticator {
-    ArrayList<User> allUsers;
+    Set<User> allUsers;
 
-    public Authenticator(ArrayList<User> allUsers) {
+    public Authenticator(Set<User> allUsers) {
         this.allUsers = allUsers;
     }
 
     public User validateUser(User userToValidate) {
-        return null;
+        if(allUsers.contains(userToValidate))
+                return userToValidate;
+        else
+            return null;
     }
 }
