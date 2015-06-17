@@ -1,6 +1,7 @@
 package com.twu.movies;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
@@ -12,9 +13,9 @@ public class AvailableMovie extends Movie {
     }
 
     @Override
-    public void checkOut(ArrayList<Movie> allMovies) {
+    public void checkOut(ArrayList<Movie> allMovies, Customer customer) {
         allMovies.remove(this);
-        allMovies.add(CheckedOutMovies.create(this));
+        allMovies.add(CheckedOutMovies.create(this, customer));
     }
 
     @Override

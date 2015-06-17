@@ -1,5 +1,7 @@
 package com.twu.movies;
 
+import com.twu.users.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +45,7 @@ public abstract class Movie {
         return result;
     }
 
-    public abstract void checkOut(ArrayList<Movie> list);
+    public abstract void checkOut(ArrayList<Movie> list, Customer customer);
 
     public abstract void returnMovie(ArrayList<Movie> list);
 

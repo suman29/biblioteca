@@ -57,7 +57,7 @@ public class LibraryTest {
 
         library.checkOutMovie(availableMovie);
 
-        verify(availableMovie).checkOut(moviesAvailable);
+        verify(availableMovie).checkOut(moviesAvailable, new Customer("",""));
     }
 
     @Test
@@ -133,10 +133,10 @@ public class LibraryTest {
     public void shouldBeAbleToAddReturnedMoviesWhenUserReturnsAMovie() {
         ArrayList<Movie> moviesCheckedout = new ArrayList<>();
         ArrayList<Movie> moviesAvailable = new ArrayList<>();
-        CheckedOutMovies movie1 = new CheckedOutMovies("Movie2", 2001, "abc", 1);
-        moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1));
+        CheckedOutMovies movie1 = new CheckedOutMovies("Movie2", 2001, "abc", 1, new Customer("",""));
+        moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, new Customer("","")));
         moviesCheckedout.add(movie1);
-        moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1));
+        moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, new Customer("","")));
         Library library = new Library(books, moviesAvailable, new Searcher(), new Customer("",""));
 
         library.returnMovie(movie1);

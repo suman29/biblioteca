@@ -1,5 +1,6 @@
 package com.twu.movies;
 
+import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class AvailableMovieTest {
         AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);
         ArrayList<Movie> list = new ArrayList<>();
         list.add(availableMovie);
-        availableMovie.checkOut(list);
+        availableMovie.checkOut(list, new Customer("",""));
 
         CheckedOutMovies checkedOutMovies = (CheckedOutMovies) list.get(list.indexOf(availableMovie));
 

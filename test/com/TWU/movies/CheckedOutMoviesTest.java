@@ -1,6 +1,7 @@
 package com.twu.movies;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 public class CheckedOutMoviesTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
+    Customer customer = new Customer("","");
     @Before
     public void setUp() throws Exception {
         System.setOut(new PrintStream(outputStream));
@@ -23,7 +24,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldMakeItselfAvailableAfterTheMovieIsReturned() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
+        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
         ArrayList<Movie> list = new ArrayList<>();
         list.add(checkoutMovie);
 
@@ -36,7 +37,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldDisplayMessageWhenMovieIsReturnedSuccessfully() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
+        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnReturnMovieAction();
         String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL ;
@@ -46,7 +47,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldDisplayMessageWhenMovieIsAlreadyCheckedOut() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
+        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnCheckOutAction();
         String expectedOutput = Messages.MOVIE_ALREADY_CHECKED ;

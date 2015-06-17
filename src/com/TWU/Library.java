@@ -24,7 +24,7 @@ public class Library {
     }
 
     public void checkOutMovie(Movie movie) {
-        movie.checkOut(allMovies);
+        movie.checkOut(allMovies, customer);
     }
 
     public void returnBook(Book book) {

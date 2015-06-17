@@ -56,8 +56,8 @@ public class BibliotecaApp {
         ArrayList<Movie> allMovies = new ArrayList<>();
         allMovies.add(new AvailableMovie("Batman Begins", 2005, "Christopher Nolan", 9));
         allMovies.add(new AvailableMovie("The Dark Knight", 2008, "Christopher Nolan", 9));
-        allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9));
-        allMovies.add(new CheckedOutMovies("movie2", 2008, "Christopher Nolan", 9));
+        allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9, new Customer("","")));
+        allMovies.add(new CheckedOutMovies("movie2", 2008, "Christopher Nolan", 9, new Customer("","")));
         return allMovies;
     }
 

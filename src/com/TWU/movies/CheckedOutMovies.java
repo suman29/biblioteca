@@ -1,16 +1,20 @@
 package com.twu.movies;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
 public class CheckedOutMovies extends Movie {
-    public CheckedOutMovies(String name, int year, String director, int rating) {
+    private Customer customer;
+
+    public CheckedOutMovies(String name, int year, String director, int rating, Customer customer) {
         super(name, year, director, rating);
+        this.customer = customer;
     }
 
     @Override
-    public void checkOut(ArrayList<Movie> allMovies) {
+    public void checkOut(ArrayList<Movie> allMovies, Customer customer) {
 
     }
 
@@ -38,8 +42,8 @@ public class CheckedOutMovies extends Movie {
 
     }
 
-    public static CheckedOutMovies create(AvailableMovie availableMovie) {
-        return new CheckedOutMovies(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating);
+    public static CheckedOutMovies create(AvailableMovie availableMovie, Customer customer) {
+        return new CheckedOutMovies(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating, customer);
     }
 
 }
