@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.menu.Menu;
+import com.twu.menu.MenuView;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;

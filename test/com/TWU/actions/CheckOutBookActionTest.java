@@ -1,6 +1,6 @@
 package com.twu.actions;
 
-import com.twu.CheckOutView;
+import com.twu.books.CheckOutView;
 import com.twu.Library;
 import com.twu.books.Book;
 import com.twu.books.CheckedOutBook;

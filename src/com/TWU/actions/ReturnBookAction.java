@@ -2,7 +2,7 @@ package com.twu.actions;
 
 import com.twu.Library;
 import com.twu.Option;
-import com.twu.ReturnBookView;
+import com.twu.books.ReturnBookView;
 import com.twu.books.Book;
 
 public class ReturnBookAction implements Option {

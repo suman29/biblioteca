@@ -1,4 +1,4 @@
-package com.twu;
+package com.twu.books;
 
 public class BooksView {
     private Books books;

@@ -1,4 +1,4 @@
-package com.twu;
+package com.twu.books;
 
 import com.twu.books.Book;
 

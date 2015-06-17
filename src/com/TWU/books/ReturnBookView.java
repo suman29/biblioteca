@@ -1,21 +1,22 @@
-package com.twu;
+package com.twu.books;
+
+import com.twu.Messages;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class CheckOutView {
-
+public class ReturnBookView {
     private BufferedReader bufferedReader;
     private BooksView booksView;
 
-    public CheckOutView(BufferedReader bufferedReader, BooksView booksView) {
+    public ReturnBookView(BufferedReader bufferedReader, BooksView booksView) {
         this.bufferedReader = bufferedReader;
         this.booksView = booksView;
     }
 
-    public String takeUserInputForCheckOutBook() {
+    public String takeUserInputForReturningBook() {
         try {
-            String input = bufferedReader.readLine();
+            String input = (bufferedReader.readLine());
             if (input != null)
                 return input;
             else
@@ -29,12 +30,12 @@ public class CheckOutView {
         booksView.displayListOfBooks();
     }
 
-    public void displayBookCheckedOutSuccessfully() {
-        System.out.println(Messages.CHECKOUT_SUCCESSFUL);
+    public void displayBookReturnedSuccessfully() {
+        System.out.println(Messages.RETURN_SUCCESSFUL);
     }
 
-    public void displayBookNotCheckedOutSuccessfully() {
-        System.out.println(Messages.CHECKOUT_UNSUCCESSFUL);
+    public void displayMessageWhenBookNotReturnedSuccessfully() {
+        System.out.println(Messages.RETURN_UNSUCCESSFUL);
     }
 
     public void displayMessage(String message) {

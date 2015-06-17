@@ -3,10 +3,9 @@ package com.twu;
 // Do all The set up needed for the App and starts the App.
 
 import com.twu.actions.*;
-import com.twu.books.AvailableBook;
-import com.twu.books.Book;
-import com.twu.books.CheckedOutBook;
-import com.twu.books.NullBook;
+import com.twu.books.*;
+import com.twu.menu.Menu;
+import com.twu.menu.MenuView;
 import com.twu.movies.*;
 
 import java.io.BufferedReader;

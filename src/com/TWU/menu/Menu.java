@@ -1,4 +1,6 @@
-package com.twu;
+package com.twu.menu;
+
+import com.twu.Option;
 
 import java.util.HashMap;
 import java.util.Map;
