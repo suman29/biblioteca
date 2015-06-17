@@ -14,7 +14,7 @@ public class BookFileReaderTest {
 
     @Test
     public void checkThatBookListIsEmptyWhenFileIsNotAvailable() {
-        String filePath = System.getProperty("user.dir") + File.separator + "BookList1.txt";
+        String filePath = System.getProperty("User.dir") + File.separator + "BookList1.txt";
         BookFileReader bookFileReader = new BookFileReader(filePath);
         ArrayList<String> listOfBooks = bookFileReader.getListOfAvailableBooks();
 
@@ -23,7 +23,7 @@ public class BookFileReaderTest {
 
     @Test
     public void checkIfBooksAreBeingReadFromFile() {
-        String filePath = System.getProperty("user.dir") + File.separator + "BookList.txt";
+        String filePath = System.getProperty("User.dir") + File.separator + "BookList.txt";
         BookFileReader bookFileReader = new BookFileReader(filePath);
         ArrayList<String> listOfBooks = bookFileReader.getListOfAvailableBooks();
 
