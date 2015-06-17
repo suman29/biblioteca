@@ -21,4 +21,8 @@ public class CheckOutMovieView {
             return null;
         }
     }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }

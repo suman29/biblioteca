@@ -35,4 +35,8 @@ public class ReturnBookView {
     public void displayMessageWhenBookNotReturnedSuccessfully() {
         System.out.println(Messages.RETURN_UNSUCCESSFUL);
     }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }

@@ -17,6 +17,6 @@ public class CheckOutMovieAction implements Option {
         String movieName = checkOutMovieView.takeUserInputForCheckOutMovie();
         Movie movie = library.movieSearcher(movieName);
         library.checkOutMovie(movie);
-        movie.getAppropriateMessageOnCheckOutAction();
+        checkOutMovieView.displayMessage(movie.getAppropriateMessageOnCheckOutAction());
     }
 }

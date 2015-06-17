@@ -60,6 +60,19 @@ public class ReturnBookViewTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+
+    @Test
+    public void shouldPrintMessageAsGiven() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        ReturnBookView returnBookView = new ReturnBookView(bufferedReader, booksView);
+        returnBookView.displayMessage("hi");
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "hi" + System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @Test
     public void shouldPrintMessageAfterBookBeingReturnedIsNotSuccessful() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

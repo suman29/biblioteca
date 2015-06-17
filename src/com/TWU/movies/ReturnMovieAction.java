@@ -17,6 +17,6 @@ public class ReturnMovieAction implements Option {
         String movieTitle = returnMovieView.takeUserInputForReturningMovie();
         Movie movie = library.movieSearcher(movieTitle);
         library.returnMovie(movie);
-        movie.getAppropriateMessageOnReturnMovieAction();
+        returnMovieView.displayMessage(movie.getAppropriateMessageOnReturnMovieAction());
     }
 }

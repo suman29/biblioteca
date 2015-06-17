@@ -37,10 +37,9 @@ public class CheckedOutMoviesTest {
     @Test
     public void shouldDisplayMessageWhenMovieIsReturnedSuccessfully() {
         CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
-        checkoutMovie.getAppropriateMessageOnReturnMovieAction();
 
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL + System.lineSeparator();
+        String actualOutput = checkoutMovie.getAppropriateMessageOnReturnMovieAction();
+        String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL ;
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -48,10 +47,9 @@ public class CheckedOutMoviesTest {
     @Test
     public void shouldDisplayMessageWhenMovieIsAlreadyCheckedOut() {
         CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5);
-        checkoutMovie.getAppropriateMessageOnCheckOutAction();
 
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.MOVIE_ALREADY_CHECKED + System.lineSeparator();
+        String actualOutput = checkoutMovie.getAppropriateMessageOnCheckOutAction();
+        String expectedOutput = Messages.MOVIE_ALREADY_CHECKED ;
 
         assertEquals(expectedOutput, actualOutput);
     }

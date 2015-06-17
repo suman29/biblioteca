@@ -61,6 +61,18 @@ public class CheckOutViewTest {
     }
 
     @Test
+    public void shouldPrintMessageAsGiven() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        CheckOutView checkOutView = new CheckOutView(bufferedReader, booksView);
+        checkOutView.displayMessage("hi");
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "hi" + System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
     public void shouldPrintMessageAfterBookBeingNotCheckedOut() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         CheckOutView checkOutView = new CheckOutView(bufferedReader, booksView);

@@ -10,7 +10,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class NullBookTest {
@@ -31,27 +30,6 @@ public class NullBookTest {
         assertFalse(list.contains(nullBook));
     }
 
-    @Test
-    public void shouldDisplayAppropriateMessageOnCheckingOut() {
-        NullBook nullBook = new NullBook("", "", 0, 0);
-        nullBook.getAppropriateMessageOnCheckOutAction();
-
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.CHECKOUT_UNSUCCESSFUL + System.lineSeparator();
-
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
-    public void shouldDisplayAppropriateMessageOnReturning() {
-        NullBook nullBook = new NullBook("", "", 0, 0);
-        nullBook.getAppropriateMessageOnReturnBookAction();
-
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_UNSUCCESSFUL + System.lineSeparator();
-
-        assertEquals(expectedOutput, actualOutput);
-    }
 
     @After
     public void tearDown() throws Exception {

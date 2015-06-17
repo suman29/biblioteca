@@ -16,14 +16,12 @@ public class NullBook extends Book {
 
     @Override
     public String getAppropriateMessageOnCheckOutAction() {
-        System.out.println(Messages.CHECKOUT_UNSUCCESSFUL);
-        return null;
+        return Messages.CHECKOUT_UNSUCCESSFUL;
     }
 
     @Override
     public String getAppropriateMessageOnReturnBookAction() {
-        System.out.println(Messages.RETURN_UNSUCCESSFUL);
-        return null;
+        return Messages.RETURN_UNSUCCESSFUL;
     }
 
     @Override

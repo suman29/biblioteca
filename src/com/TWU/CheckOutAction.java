@@ -17,6 +17,6 @@ public class CheckOutAction implements Option {
         String bookName = checkOutView.takeUserInputForCheckOutBook();
         Book book = library.bookSearcher(bookName);
         library.checkOutBook(book);
-        book.getAppropriateMessageOnCheckOutAction();
+        checkOutView.displayMessage(book.getAppropriateMessageOnCheckOutAction());
     }
 }

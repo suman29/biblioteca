@@ -21,4 +21,8 @@ public class ReturnMovieView {
             return null;
         }
     }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }
