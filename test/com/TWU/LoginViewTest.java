@@ -43,6 +43,19 @@ public class LoginViewTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldGiveAPromptOfEnterPassword() {
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        LoginView loginView = new LoginView(bufferedReader);
+        loginView.displayPromptEnterPassword();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = Messages.ENTER_PASSWORD+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
