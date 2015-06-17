@@ -1,4 +1,6 @@
-package com.twu;
+package com.twu.books;
+
+import com.twu.Messages;
 
 import java.util.ArrayList;
 
@@ -13,13 +15,13 @@ public class AvailableBook extends Book {
     }
 
     @Override
-    public void getAppropriateMessageOnCheckOutAction() {
-        System.out.println(Messages.CHECKOUT_SUCCESSFUL);
+    public String getAppropriateMessageOnCheckOutAction() {
+        return Messages.CHECKOUT_SUCCESSFUL;
     }
 
     @Override
-    public void getAppropriateMessageOnReturnBookAction() {
-        System.out.println(Messages.BOOK_ALREADY_AVAILABLE);
+    public String getAppropriateMessageOnReturnBookAction() {
+        return Messages.BOOK_ALREADY_AVAILABLE;
     }
 
     public static AvailableBook create(CheckedOutBook checkedOutBook) {

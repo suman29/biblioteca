@@ -27,13 +27,13 @@ public class AvailableMovie extends Movie {
     }
 
     @Override
-    public void getAppropriateMessageOnCheckOutAction() {
-        System.out.println(Messages.CHECKOUT_MOVIE_SUCCESSFUL);
+    public String getAppropriateMessageOnCheckOutAction() {
+        return Messages.CHECKOUT_MOVIE_SUCCESSFUL;
     }
 
     @Override
-    public void getAppropriateMessageOnReturnMovieAction() {
-        System.out.print(Messages.MOVIE_ALREADY_AVAILABLE);
+    public String getAppropriateMessageOnReturnMovieAction() {
+        return Messages.MOVIE_ALREADY_AVAILABLE;
     }
 
     public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {

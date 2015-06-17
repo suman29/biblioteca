@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.books.AvailableBook;
+import com.twu.books.Book;
 import com.twu.movies.AvailableMovie;
 import com.twu.movies.Movie;
 import org.junit.Test;
@@ -19,8 +21,8 @@ public class SearcherTest {
         Searcher searcher = new Searcher();
 
         String name = "Good";
-        AvailableBook expectedBook = availableBook;
         Book actualBook = searcher.searchBook(bookList, name);
+        AvailableBook expectedBook = availableBook;
 
         assertEquals(expectedBook, actualBook);
     }

@@ -1,4 +1,6 @@
-package com.twu;
+package com.twu.books;
+
+import com.twu.Messages;
 
 import java.util.ArrayList;
 
@@ -13,13 +15,15 @@ public class NullBook extends Book {
     }
 
     @Override
-    public void getAppropriateMessageOnCheckOutAction() {
+    public String getAppropriateMessageOnCheckOutAction() {
         System.out.println(Messages.CHECKOUT_UNSUCCESSFUL);
+        return null;
     }
 
     @Override
-    public void getAppropriateMessageOnReturnBookAction() {
+    public String getAppropriateMessageOnReturnBookAction() {
         System.out.println(Messages.RETURN_UNSUCCESSFUL);
+        return null;
     }
 
     @Override

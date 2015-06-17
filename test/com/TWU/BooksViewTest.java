@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.books.AvailableBook;
+import com.twu.books.Book;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

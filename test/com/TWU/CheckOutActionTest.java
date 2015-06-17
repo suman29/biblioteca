@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.books.Book;
+import com.twu.books.CheckedOutBook;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

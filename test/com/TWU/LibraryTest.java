@@ -1,5 +1,8 @@
 package com.twu;
 
+import com.twu.books.AvailableBook;
+import com.twu.books.Book;
+import com.twu.books.CheckedOutBook;
 import com.twu.movies.AvailableMovie;
 import com.twu.movies.CheckedOutMovies;
 import com.twu.movies.Movie;

@@ -1,8 +1,10 @@
 package com.twu;
 
+import com.twu.books.Book;
 import com.twu.movies.Movie;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Searcher {
     ArrayList<Book> allBooks;
@@ -14,11 +16,11 @@ public class Searcher {
     }
 
     public Book searchBook(ArrayList<Book> allBooks, String bookName) {
+        List<Book> matchedBooks = new ArrayList<>();
         for (Book book : allBooks) {
-            if ((book.name).equalsIgnoreCase(bookName))
-                return book;
+            book.addItselfToListIfTitleMatches(matchedBooks, bookName);
         }
-        return allBooks.get(0);
+        return matchedBooks.get(0);
     }
 
     public Movie searchMovie(ArrayList<Movie> allMovies, String name) {

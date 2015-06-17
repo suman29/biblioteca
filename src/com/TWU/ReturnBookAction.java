@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.books.Book;
+
 public class ReturnBookAction implements Option {
 
     private Library library;

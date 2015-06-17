@@ -27,13 +27,15 @@ public class CheckedOutMovies extends Movie {
     }
 
     @Override
-    public void getAppropriateMessageOnCheckOutAction() {
+    public String getAppropriateMessageOnCheckOutAction() {
         System.out.println(Messages.MOVIE_ALREADY_CHECKED);
+        return null;
     }
 
     @Override
-    public void getAppropriateMessageOnReturnMovieAction() {
+    public String getAppropriateMessageOnReturnMovieAction() {
        System.out.println(Messages.RETURN_MOVIE_SUCCESSFUL);
+        return null;
     }
 
     public static CheckedOutMovies create(AvailableMovie availableMovie) {

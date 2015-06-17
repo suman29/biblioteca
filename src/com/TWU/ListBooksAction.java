@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.books.Book;
+
 import java.util.ArrayList;
 
 public class ListBooksAction implements Option {

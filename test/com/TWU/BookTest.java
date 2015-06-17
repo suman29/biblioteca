@@ -1,5 +1,8 @@
 package com.twu;
 
+import com.twu.books.AvailableBook;
+import com.twu.books.Book;
+import com.twu.books.CheckedOutBook;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,5 +1,8 @@
 package com.twu;
 
+import com.twu.books.AvailableBook;
+import com.twu.books.Book;
+import com.twu.books.CheckedOutBook;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -49,28 +52,6 @@ public class CheckedOutBookTest {
         AvailableBook availableBook = (AvailableBook) list.get(list.indexOf(checkoutBook));
 
         assertTrue(availableBook instanceof AvailableBook);
-    }
-
-    @Test
-    public void shouldDisplayAppropriateMessageOnCheckingOut() {
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
-        checkoutBook.getAppropriateMessageOnCheckOutAction();
-
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.BOOK_ALREADY_CHECKED+System.lineSeparator();
-
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
-    public void shouldDisplayAppropriateMessageOnReturning() {
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
-        checkoutBook.getAppropriateMessageOnReturnBookAction();
-
-        String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.RETURN_SUCCESSFUL + System.lineSeparator();
-
-        assertEquals(expectedOutput, actualOutput);
     }
 
     @After
