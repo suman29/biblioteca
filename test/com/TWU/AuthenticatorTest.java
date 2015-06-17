@@ -5,6 +5,7 @@ import com.twu.users.NullUser;
 import com.twu.users.User;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,10 +21,12 @@ public class AuthenticatorTest {
         allUser.add(user1);
         allUser.add(user2);
         NullUser nullUser = new NullUser("","");
-        Authenticator authenticator = new Authenticator(allUser, nullUser);
+        ArrayList<User> list = new ArrayList<>();
+        Authenticator authenticator = new Authenticator(allUser, nullUser,list);
 
-        User actualUser = authenticator.validateUser(user1);
 
-        assertEquals(user1, actualUser);
+        User actualUser = authenticator.validateUser("123","xyz");
+
+        assertEquals(user2, actualUser);
     }
 }

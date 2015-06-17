@@ -2,7 +2,10 @@ package com.twu.users;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class UserTest {
 
@@ -56,5 +59,15 @@ public class UserTest {
         boolean actual = firstUser.equals(secondUser) && (firstUser.hashCode() == secondUser.hashCode());
 
         assertEquals(true, actual);
+    }
+
+    @Test
+    public void shouldAddToListIfValidUser() {
+        User firstUser = new Customer("abc", "xyz");
+        ArrayList<User> list = new ArrayList<>();
+
+        firstUser.addToListIfCredentialsMatch(list, "abc","xyz");
+
+        assertTrue(list.contains(firstUser));
     }
 }

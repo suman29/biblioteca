@@ -1,5 +1,7 @@
 package com.twu.users;
 
+import java.util.ArrayList;
+
 public abstract class User {
     private String libraryNumber;
     private String password;
@@ -35,4 +37,9 @@ public abstract class User {
     }
 
     public abstract String getAppropriateMessageOnLogin();
+
+    public void addToListIfCredentialsMatch(ArrayList<User> list, String libraryNumber, String password) {
+        if(this.libraryNumber.equalsIgnoreCase(libraryNumber) && this.password.equalsIgnoreCase(password))
+            list.add(this);
+    }
 }
