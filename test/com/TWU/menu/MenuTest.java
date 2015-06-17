@@ -6,7 +6,7 @@ import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
 import com.twu.books.BooksView;
-import com.twu.users.User;
+import com.twu.users.Customer;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class MenuTest {
     @Mock
     Library library;
     @Mock
-    User user;
+    Customer user;
 
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;

@@ -9,7 +9,7 @@ public class MovieTest {
     Customer customer = new Customer("","");
     @Test
     public void shouldRepresentMovieInProperFormat() {
-        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie movie = new AvailableMovie("Movie1", 2001, "abc", 1);
 
         String actualOutput = movie.toString();
         String expectedOutput = "Movie1                                            abc                           2001 rating: 1";

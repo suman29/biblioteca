@@ -4,6 +4,7 @@ import com.twu.Library;
 import com.twu.books.ReturnBookView;
 import com.twu.books.AvailableBook;
 import com.twu.books.Book;
+import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -34,7 +35,7 @@ public class ReturnBookActionTest {
                 .thenReturn(book);
 
         ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
-        returnBookAction.perform();
+        returnBookAction.perform(new Customer("",""));
 
         verify(library).returnBook(book);
     }

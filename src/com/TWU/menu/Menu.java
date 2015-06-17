@@ -1,6 +1,7 @@
 package com.twu.menu;
 
 import com.twu.Option;
+import com.twu.users.Customer;
 import com.twu.users.User;
 
 import java.util.HashMap;
@@ -9,15 +10,16 @@ import java.util.Map;
 public class Menu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;
+    User user;
 
     public Menu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions, User user) {
         this.mappedOptions = mappedOptions;
         this.menuList = menuList;
-
+        this.user = user;
     }
 
     public void performAction(int option) {
-        mappedOptions.get(option).perform();
+        mappedOptions.get(option).perform((Customer) user);
     }
 
     @Override

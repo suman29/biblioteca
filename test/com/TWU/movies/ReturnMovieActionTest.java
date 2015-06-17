@@ -2,6 +2,7 @@ package com.twu.movies;
 
 import com.twu.Library;
 import com.twu.actions.ReturnMovieAction;
+import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -28,7 +29,7 @@ public class ReturnMovieActionTest {
                 .thenReturn(movie);
 
         ReturnMovieAction returnMovieAction = new ReturnMovieAction(library, returnMovieView);
-        returnMovieAction.perform();
+        returnMovieAction.perform(new Customer("",""));
 
         verify(library).returnMovie(movie);
     }

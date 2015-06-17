@@ -44,19 +44,20 @@ public class BibliotecaApp {
         allMovies.addAll(initialiseMovies());
 
 
-        Library library = new Library(allBooks, allMovies, new Searcher(), new Customer("", ""));
+        Library library = new Library(allBooks, allMovies, new Searcher());
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         User user = new Customer("","");
         Menu menu = new Menu(menuList, mappedOptions,user);
         MenuView menuView = new MenuView(bufferedReader);
         ConsoleOutput consoleOutput = new ConsoleOutput();
-
         NullUser nullUser = new NullUser("","");
         ArrayList<User> list = new ArrayList<>();
+
         Set<User> allUsers = new HashSet<>();
         allUsers.add(new Customer("123-4567","1234"));
         LoginController loginController = new LoginController(new LoginView(bufferedReader),new Authenticator(allUsers,nullUser,list),nullUser);
+
         EntryPoint entryPoint = new EntryPoint(menuView, menu, consoleOutput, loginController);
         entryPoint.start();
 

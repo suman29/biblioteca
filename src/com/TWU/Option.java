@@ -1,5 +1,7 @@
 package com.twu;
 
+import com.twu.users.Customer;
+
 public interface Option {
-    void perform();
+    void perform(Customer customer);
 }

@@ -10,20 +10,18 @@ public class Library {
     private ArrayList<Book> allBooks;
     private ArrayList<Movie> allMovies;
     private Searcher searcher;
-    private Customer customer;
 
-    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies, Searcher searcher, Customer customer) {
+    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies, Searcher searcher) {
         this.allBooks = allBooks;
         this.allMovies = allMovies;
         this.searcher = searcher;
-        this.customer = customer;
     }
 
-    public void checkOutBook(Book book) {
+    public void checkOutBook(Book book, Customer customer) {
         book.checkOut(allBooks, customer);
     }
 
-    public void checkOutMovie(Movie movie) {
+    public void checkOutMovie(Movie movie, Customer customer) {
         movie.checkOut(allMovies, customer);
     }
 

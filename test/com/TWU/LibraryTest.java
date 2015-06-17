@@ -32,6 +32,9 @@ public class LibraryTest {
     @Mock
     AvailableMovie availableMovie;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldCheckOutABookWhenUserSelectsABook() {
         ArrayList<Book> booksAvailable = new ArrayList<>();
@@ -39,11 +42,11 @@ public class LibraryTest {
         booksAvailable.add(book1);
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
-        Library library = new Library(booksAvailable, allMovies, new Searcher(), new Customer("",""));
+        Library library = new Library(booksAvailable, allMovies, new Searcher());
 
-        library.checkOutBook(availableBook);
+        library.checkOutBook(availableBook, customer);
 
-        verify(availableBook).checkOut(booksAvailable, new Customer("",""));
+        verify(availableBook).checkOut(booksAvailable, customer);
     }
 
     @Test
@@ -53,9 +56,9 @@ public class LibraryTest {
         moviesAvailable.add(availableMovie1);
         moviesAvailable.add(new AvailableMovie("movie2", 2014, "abc", 5));
         moviesAvailable.add(new AvailableMovie("movie3", 2014, "abc", 5));
-        Library library = new Library(books, moviesAvailable, new Searcher(), new Customer("",""));
+        Library library = new Library(books, moviesAvailable, new Searcher());
 
-        library.checkOutMovie(availableMovie);
+        library.checkOutMovie(availableMovie, new Customer("","") );
 
         verify(availableMovie).checkOut(moviesAvailable, new Customer("",""));
     }
@@ -68,7 +71,7 @@ public class LibraryTest {
         booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("","")));
         booksCheckedOut.add(book1);
         booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3, new Customer("","")));
-        Library library = new Library(booksAvailable, allMovies, new Searcher(), new Customer("",""));
+        Library library = new Library(booksAvailable, allMovies, new Searcher());
 
         library.returnBook(book1);
 
@@ -85,7 +88,7 @@ public class LibraryTest {
         allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
         allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("","")));
         allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("","")));
-        Library library = new Library(allBooks, allMovies, new Searcher(), new Customer("",""));
+        Library library = new Library(allBooks, allMovies, new Searcher());
         ArrayList<Book> booksAvailable = new ArrayList<>();
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
         booksAvailable.add(new AvailableBook("abc3", "xyz", 1908, 3));
@@ -105,7 +108,7 @@ public class LibraryTest {
         ArrayList<Book> bookList = new ArrayList<>();
         bookList.add(new AvailableBook("good", "helpMe", 2015, 2));
         bookList.add(availableBook);
-        Library library = new Library(bookList, allMovies, new Searcher(), new Customer("",""));
+        Library library = new Library(bookList, allMovies, new Searcher());
 
         String name = "God";
         AvailableBook expectedBook = availableBook;
@@ -120,7 +123,7 @@ public class LibraryTest {
         ArrayList<Movie> movieList = new ArrayList<>();
         movieList.add(new AvailableMovie("Movie2", 2001, "abc", 1));
         movieList.add(movie);
-        Library library = new Library(books, movieList, new Searcher(), new Customer("",""));
+        Library library = new Library(books, movieList, new Searcher());
 
         String name = "Movie1";
         AvailableMovie expectedMovie = (AvailableMovie) movie;
@@ -137,7 +140,7 @@ public class LibraryTest {
         moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, new Customer("","")));
         moviesCheckedout.add(movie1);
         moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, new Customer("","")));
-        Library library = new Library(books, moviesAvailable, new Searcher(), new Customer("",""));
+        Library library = new Library(books, moviesAvailable, new Searcher());
 
         library.returnMovie(movie1);
 

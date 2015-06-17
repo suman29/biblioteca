@@ -22,6 +22,9 @@ public class CheckOutBookActionTest {
     @Mock
     CheckOutView checkOutView;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
@@ -30,9 +33,9 @@ public class CheckOutBookActionTest {
                 .thenReturn(book);
 
         CheckOutBookAction checkOutBookAction = new CheckOutBookAction(checkOutView, library);
-        checkOutBookAction.perform();
+        checkOutBookAction.perform(customer);
 
-        verify(library).checkOutBook(book);
+        verify(library).checkOutBook(book, customer);
     }
 
 }

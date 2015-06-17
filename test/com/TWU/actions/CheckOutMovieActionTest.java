@@ -1,10 +1,10 @@
 package com.twu.actions;
 
 import com.twu.Library;
-import com.twu.actions.CheckOutMovieAction;
 import com.twu.movies.AvailableMovie;
 import com.twu.movies.CheckOutMovieView;
 import com.twu.movies.Movie;
+import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -23,6 +23,9 @@ public class CheckOutMovieActionTest {
     @Mock
     CheckOutMovieView checkOutMovieView;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutMovieView.takeUserInputForCheckOutMovie()).thenReturn("movie1");
@@ -32,9 +35,9 @@ public class CheckOutMovieActionTest {
                 .thenReturn(movie);
 
         CheckOutMovieAction checkOutMovie = new CheckOutMovieAction(library, checkOutMovieView);
-        checkOutMovie.perform();
+        checkOutMovie.perform(customer);
 
-        verify(library).checkOutMovie(movie);
+        verify(library).checkOutMovie(movie, customer);
     }
 
 }
