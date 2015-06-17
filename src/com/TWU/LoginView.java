@@ -19,4 +19,8 @@ public class LoginView {
         }
     }
 
+
+    public void displayPromptEnterLibraryNumber() {
+        System.out.println(Messages.ENTER_LIBRARY_NUMBER);
+    }
 }

@@ -1,14 +1,20 @@
 package com.twu;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
 public class LoginViewTest {
+    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+    @Before
+    public void setUp() throws Exception {
+        System.setOut(new PrintStream(outputStream));
+    }
 
     @Test
     public void shouldTakeUserInputAsALibraryNumber() {
@@ -24,4 +30,21 @@ public class LoginViewTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldGiveAPromptOfEnterLibraryNumber () {
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        LoginView loginView = new LoginView(bufferedReader);
+        loginView.displayPromptEnterLibraryNumber();
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput = Messages.ENTER_LIBRARY_NUMBER+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
+    }
 }
