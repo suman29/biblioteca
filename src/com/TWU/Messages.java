@@ -22,4 +22,6 @@ public interface Messages {
     String MOVIE_ALREADY_AVAILABLE = "This movie is already available";
     String BOOK_ALREADY_AVAILABLE = "This book is already available in library";
     String BOOK_ALREADY_CHECKED = "This book is already checked out";
+    String LOGIN_SUCCESSFUL = "Logged in successfully";
+    String LOGIN_UNSUCCESSFUL = "Login unsuccessful, not a valid user";
 }

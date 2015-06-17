@@ -33,4 +33,6 @@ public abstract class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
+
+    public abstract String getAppropriateMessageOnLogin();
 }

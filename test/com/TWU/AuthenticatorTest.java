@@ -1,6 +1,7 @@
 package com.twu;
 
 import com.twu.users.Customer;
+import com.twu.users.NullUser;
 import com.twu.users.User;
 import org.junit.Test;
 
@@ -18,7 +19,8 @@ public class AuthenticatorTest {
         Set<User> allUser = new HashSet<>();
         allUser.add(user1);
         allUser.add(user2);
-        Authenticator authenticator = new Authenticator(allUser);
+        NullUser nullUser = new NullUser("","");
+        Authenticator authenticator = new Authenticator(allUser, nullUser);
 
         User actualUser = authenticator.validateUser(user1);
 
