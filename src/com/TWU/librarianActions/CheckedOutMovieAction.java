@@ -18,6 +18,9 @@ public class CheckedOutMovieAction implements Option {
 
     @Override
     public void perform(Customer customer) {
+        library.getCheckedOutMovies(movies);
+        for (Movie movie : movies)
+            System.out.println(movie.toString());
 
     }
 }
