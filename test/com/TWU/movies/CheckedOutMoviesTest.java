@@ -55,6 +55,16 @@ public class CheckedOutMoviesTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldRepresentMovieInProperFormat() {
+        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc",""));
+
+        String actualOutput = movie.toString();
+        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:abc"+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
