@@ -27,4 +27,8 @@ public class LoginView {
     public void displayPromptEnterPassword() {
         System.out.println(Messages.ENTER_PASSWORD);
     }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }

@@ -12,7 +12,9 @@ public class LoginController {
     }
 
     public void login() {
+        loginView.displayPromptEnterLibraryNumber();
         String libraryNumber = loginView.getUserInput();
+        loginView.displayPromptEnterPassword();
         String password = loginView.getUserInput();
         User user = authenticator.validateUser(libraryNumber,password);
     }

@@ -56,6 +56,19 @@ public class LoginViewTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldPrintGivenMessage() {
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        LoginView loginView = new LoginView(bufferedReader);
+        loginView.displayMessage("hi");
+
+        String actualOutput = outputStream.toString();
+        String expectedOutput ="hi"+System.lineSeparator();
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
