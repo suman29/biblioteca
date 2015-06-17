@@ -32,7 +32,7 @@ public class BookTest {
     @Test
     public void shouldFollowSymmetricProperty() {
         AvailableBook firstBook = new AvailableBook("book1", "ashray", 1990, 1);
-        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("",""));
+        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("", ""));
 
         boolean actual = (firstBook.equals(secondBook) == secondBook.equals(firstBook));
 
@@ -42,7 +42,7 @@ public class BookTest {
     @Test
     public void shouldFollowTransitiveProperty() {
         AvailableBook firstBook = new AvailableBook("book1", "ashray", 1990, 1);
-        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("",""));
+        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("", ""));
         AvailableBook thirdBook = new AvailableBook("book1", "ashray", 1990, 1);
 
         boolean actual = firstBook.equals(secondBook) &&
@@ -55,7 +55,7 @@ public class BookTest {
     @Test
     public void shouldHaveSameHashCodeIfBooksAreEqual() {
         AvailableBook firstBook = new AvailableBook("book1", "ashray", 1990, 1);
-        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("",""));
+        CheckedOutBook secondBook = new CheckedOutBook("book1", "ashray", 1990, 1, new Customer("", ""));
 
         boolean actual = firstBook.equals(secondBook) && (firstBook.hashCode() == secondBook.hashCode());
 

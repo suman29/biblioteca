@@ -1,7 +1,5 @@
 package com.twu.books;
 
-import com.twu.books.Book;
-
 import java.util.ArrayList;
 
 public class Books {

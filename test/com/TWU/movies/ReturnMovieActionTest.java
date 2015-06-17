@@ -29,7 +29,7 @@ public class ReturnMovieActionTest {
                 .thenReturn(movie);
 
         ReturnMovieAction returnMovieAction = new ReturnMovieAction(library, returnMovieView);
-        returnMovieAction.perform(new Customer("",""));
+        returnMovieAction.perform(new Customer("", ""));
 
         verify(library).returnMovie(movie);
     }

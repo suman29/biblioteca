@@ -66,7 +66,7 @@ public class UserTest {
         User firstUser = new Customer("abc", "xyz");
         ArrayList<User> list = new ArrayList<>();
 
-        firstUser.addToListIfCredentialsMatch(list, "abc","xyz");
+        firstUser.addToListIfCredentialsMatch(list, "abc", "xyz");
 
         assertTrue(list.contains(firstUser));
     }

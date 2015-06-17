@@ -56,7 +56,7 @@ public class CustomerMenuTest {
 
     @Test
     public void checkIfCorrectActionIsPerformed() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions,user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
 
         menuList.performAction(1);
         ArrayList<Book> books = new ArrayList<>();

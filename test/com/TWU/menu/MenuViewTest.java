@@ -44,7 +44,7 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions,user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
 

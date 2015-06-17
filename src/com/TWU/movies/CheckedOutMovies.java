@@ -38,7 +38,7 @@ public class CheckedOutMovies extends Movie {
 
     @Override
     public String getAppropriateMessageOnReturnMovieAction() {
-       return (Messages.RETURN_MOVIE_SUCCESSFUL);
+        return (Messages.RETURN_MOVIE_SUCCESSFUL);
 
     }
 
@@ -47,8 +47,8 @@ public class CheckedOutMovies extends Movie {
         checkedOutMovies.add(this);
     }
 
-    public String toString(){
-     return (String.format("%-50s", name) + String.format("%-30s", director) + String.format("%-5s", year) + "rating: " + rating+" customer:"+customer.toString());
+    public String toString() {
+        return (String.format("%-50s", name) + String.format("%-30s", director) + String.format("%-5s", year) + "rating: " + rating + " customer:" + customer.toString());
     }
 
     public static CheckedOutMovies create(AvailableMovie availableMovie, Customer customer) {

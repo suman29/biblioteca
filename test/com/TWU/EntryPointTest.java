@@ -3,7 +3,7 @@ package com.twu;
 import com.twu.menu.CustomerMenu;
 import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MenuView;
-import com.twu.users.User;
+import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -20,7 +20,7 @@ public class EntryPointTest {
     LoginController loginController;
 
     @Mock
-    User user;
+    Customer user;
 
     @Mock
     LibrarianMenu librarianMenu;
@@ -36,7 +36,7 @@ public class EntryPointTest {
         EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
         entryPoint.start();
 
-        verify(menuViewStub).displayListOfMenu(customerMenu,user);
+        verify(menuViewStub).displayListOfMenu(customerMenu, user);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class EntryPointTest {
         EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
         entryPoint.start();
 
-        verify(menuViewStub).displayListOfMenu(customerMenu,user);
+        verify(menuViewStub).displayListOfMenu(customerMenu, user);
     }
 
 

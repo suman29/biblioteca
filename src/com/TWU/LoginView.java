@@ -6,7 +6,7 @@ public class LoginView {
     BufferedReader bufferedReader;
 
     public LoginView(BufferedReader bufferedReader) {
-        this.bufferedReader=bufferedReader;
+        this.bufferedReader = bufferedReader;
     }
 
     public String getUserInput() {

@@ -22,7 +22,7 @@ public class ListMoviesActionTest {
     public void shouldDisplayTheMovies() {
         ArrayList<Movie> movies = new ArrayList<>();
         ListMoviesAction listMoviesAction = new ListMoviesAction(library, movies);
-        listMoviesAction.perform(new Customer("",""));
+        listMoviesAction.perform(new Customer("", ""));
 
         verify(library).getAvailableMovies(movies);
     }

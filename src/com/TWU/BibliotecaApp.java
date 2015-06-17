@@ -43,30 +43,30 @@ public class BibliotecaApp {
 
 
         ArrayList<Movie> allMovies = new ArrayList<>();
-        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("",""));
+        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", ""));
         allMovies.add(nullMovie);
         allMovies.addAll(initialiseMovies());
 
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
 
-        Library library = new Library(allBooks, allMovies, new Searcher());
+        Library library = new Library(allBooks, allMovies, new Searcher(nullMovie, nullBook));
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
 
-        NullUser nullUser = new NullUser("","");
-        Librarian librarian = new Librarian("","");
-        User user = new Customer("","");
-        CustomerMenu customerMenu = new CustomerMenu(menuList, mappedOptions,user);
+        NullUser nullUser = new NullUser("", "");
+        Librarian librarian = new Librarian("", "");
+        User user = new Customer("", "");
+        CustomerMenu customerMenu = new CustomerMenu(menuList, mappedOptions, user);
 
         MenuView menuView = new MenuView(bufferedReader);
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ArrayList<User> list = new ArrayList<>();
 
         Set<User> allUsers = new HashSet<>();
-        allUsers.add(new Customer("123-4567","1234"));
-        allUsers.add(new Librarian("abc-1234","abcd"));
-        LoginController loginController = new LoginController(new LoginView(bufferedReader),new Authenticator(allUsers,nullUser,list),nullUser);
+        allUsers.add(new Customer("123-4567", "1234"));
+        allUsers.add(new Librarian("abc-1234", "abcd"));
+        LoginController loginController = new LoginController(new LoginView(bufferedReader), new Authenticator(allUsers, nullUser, list), nullUser);
 
         HashMap<Integer, Option> mappedOptionLibrarian = new HashMap<>();
         HashMap<Integer, String> menuListLibrarian = new HashMap<>();
@@ -94,8 +94,8 @@ public class BibliotecaApp {
         ArrayList<Movie> allMovies = new ArrayList<>();
         allMovies.add(new AvailableMovie("Batman Begins", 2005, "Christopher Nolan", 9));
         allMovies.add(new AvailableMovie("The Dark Knight", 2008, "Christopher Nolan", 9));
-        allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9, new Customer("","")));
-        allMovies.add(new CheckedOutMovies("movie2", 2008, "Christopher Nolan", 9, new Customer("","")));
+        allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9, new Customer("Ashray", "")));
+        allMovies.add(new CheckedOutMovies("movie2", 2008, "Christopher Nolan", 9, new Customer("Suman", "")));
         return allMovies;
     }
 
@@ -111,9 +111,9 @@ public class BibliotecaApp {
     private static ArrayList<Book> checkedOutListOfBooks() {
         ArrayList<Book> checkedOutBookList;
         checkedOutBookList = new ArrayList<>();
-        checkedOutBookList.add(new CheckedOutBook("Book1", "suman", 1990, 3, new Customer("","")));
-        checkedOutBookList.add(new CheckedOutBook("Book2", "Ashray", 1993, 4, new Customer("","")));
-        checkedOutBookList.add(new CheckedOutBook("Book3", "Sourav", 2000, 5, new Customer("","")));
+        checkedOutBookList.add(new CheckedOutBook("Book1", "suman", 1990, 3, new Customer("Ashray", "")));
+        checkedOutBookList.add(new CheckedOutBook("Book2", "Ashray", 1993, 4, new Customer("Suman", "")));
+        checkedOutBookList.add(new CheckedOutBook("Book3", "Sourav", 2000, 5, new Customer("Sourav", "")));
         return checkedOutBookList;
     }
 

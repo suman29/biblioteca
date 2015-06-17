@@ -16,7 +16,8 @@ import static org.junit.Assert.assertTrue;
 public class CheckedOutMoviesTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    Customer customer = new Customer("","");
+    Customer customer = new Customer("", "");
+
     @Before
     public void setUp() throws Exception {
         System.setOut(new PrintStream(outputStream));
@@ -40,7 +41,7 @@ public class CheckedOutMoviesTest {
         CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnReturnMovieAction();
-        String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL ;
+        String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL;
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -50,17 +51,17 @@ public class CheckedOutMoviesTest {
         CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnCheckOutAction();
-        String expectedOutput = Messages.MOVIE_ALREADY_CHECKED ;
+        String expectedOutput = Messages.MOVIE_ALREADY_CHECKED;
 
         assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
     public void shouldRepresentMovieInProperFormat() {
-        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc",""));
+        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc", ""));
 
         String actualOutput = movie.toString();
-        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:abc"+System.lineSeparator();
+        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:abc" + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

@@ -1,9 +1,5 @@
 package com.twu.books;
 
-import com.twu.books.AvailableBook;
-import com.twu.books.Book;
-import com.twu.books.Books;
-import com.twu.books.BooksView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

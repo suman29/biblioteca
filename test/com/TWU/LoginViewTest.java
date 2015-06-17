@@ -31,14 +31,14 @@ public class LoginViewTest {
     }
 
     @Test
-    public void shouldGiveAPromptOfEnterLibraryNumber () {
+    public void shouldGiveAPromptOfEnterLibraryNumber() {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         LoginView loginView = new LoginView(bufferedReader);
         loginView.displayPromptEnterLibraryNumber();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.ENTER_LIBRARY_NUMBER+System.lineSeparator();
+        String expectedOutput = Messages.ENTER_LIBRARY_NUMBER + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -51,7 +51,7 @@ public class LoginViewTest {
         loginView.displayPromptEnterPassword();
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = Messages.ENTER_PASSWORD+System.lineSeparator();
+        String expectedOutput = Messages.ENTER_PASSWORD + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }
@@ -64,7 +64,7 @@ public class LoginViewTest {
         loginView.displayMessage("hi");
 
         String actualOutput = outputStream.toString();
-        String expectedOutput ="hi"+System.lineSeparator();
+        String expectedOutput = "hi" + System.lineSeparator();
 
         assertEquals(expectedOutput, actualOutput);
     }

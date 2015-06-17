@@ -56,7 +56,7 @@ public abstract class Movie {
     public abstract String getAppropriateMessageOnReturnMovieAction();
 
     public void addItselfToListIfTitleMatches(List<Movie> matchedMovie, String name) {
-        if(this.name.equalsIgnoreCase(name))
+        if (this.name.equalsIgnoreCase(name))
             matchedMovie.add(this);
     }
 

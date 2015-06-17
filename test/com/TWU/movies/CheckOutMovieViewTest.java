@@ -38,7 +38,7 @@ public class CheckOutMovieViewTest {
         checkOutMovieView.displayMessage("hi");
 
         String actualInput = outputStream.toString();
-        String expectedInput = "hi"+System.lineSeparator();
+        String expectedInput = "hi" + System.lineSeparator();
 
         assertEquals(expectedInput, actualInput);
     }

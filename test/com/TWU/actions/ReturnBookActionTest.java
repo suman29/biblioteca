@@ -1,9 +1,9 @@
 package com.twu.actions;
 
 import com.twu.Library;
-import com.twu.books.ReturnBookView;
 import com.twu.books.AvailableBook;
 import com.twu.books.Book;
+import com.twu.books.ReturnBookView;
 import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +35,7 @@ public class ReturnBookActionTest {
                 .thenReturn(book);
 
         ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
-        returnBookAction.perform(new Customer("",""));
+        returnBookAction.perform(new Customer("", ""));
 
         verify(library).returnBook(book);
     }

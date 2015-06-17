@@ -25,7 +25,7 @@ public class AvailableMovieTest {
         AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);
         ArrayList<Movie> list = new ArrayList<>();
         list.add(availableMovie);
-        availableMovie.checkOut(list, new Customer("",""));
+        availableMovie.checkOut(list, new Customer("", ""));
 
         CheckedOutMovies checkedOutMovies = (CheckedOutMovies) list.get(list.indexOf(availableMovie));
 

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class NullMovie extends Movie {
     private Customer customer;
+
     public NullMovie(String name, int year, String director, int rating, Customer customer) {
         super(name, year, director, rating);
         this.customer = customer;
@@ -29,7 +30,7 @@ public class NullMovie extends Movie {
 
     @Override
     public String getAppropriateMessageOnCheckOutAction() {
-       return (Messages.CHECKOUT_MOVIE_UNSUCCESSFUL);
+        return (Messages.CHECKOUT_MOVIE_UNSUCCESSFUL);
 
     }
 

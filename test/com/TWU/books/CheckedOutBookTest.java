@@ -23,7 +23,7 @@ public class CheckedOutBookTest {
     @Test
     public void shouldNotBeAbleToAddItselfToAvailableListOfBooks() {
         ArrayList<Book> list = new ArrayList<>();
-        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9, new Customer("",""));
+        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9, new Customer("", ""));
 
         checkedOutBook.addItselfToAvailableListOfBookIfApplicable(list);
 
@@ -33,9 +33,9 @@ public class CheckedOutBookTest {
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", ""));
 
-        CheckedOutBook actualOutput = checkoutBook.create(availableBook, new Customer("",""));
+        CheckedOutBook actualOutput = checkoutBook.create(availableBook, new Customer("", ""));
 
         assertEquals(actualOutput, checkoutBook);
     }
@@ -43,7 +43,7 @@ public class CheckedOutBookTest {
     @Test
     public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned() {
         ArrayList<Book> list = new ArrayList<>();
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", ""));
         list.add(checkoutBook);
         checkoutBook.returnBook(list);
 
@@ -58,11 +58,11 @@ public class CheckedOutBookTest {
         String author = "John";
         int year = 1920;
         int id = 1;
-        Customer customer = new Customer("abc","123");
+        Customer customer = new Customer("abc", "123");
         Book book = new CheckedOutBook(name, author, year, id, customer);
 
         String actualFormat = book.toString();
-        String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  Customer:abc"+System.lineSeparator();
+        String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  Customer:abc" + System.lineSeparator();
 
         assertEquals(actualFormat, expectedFormat);
     }

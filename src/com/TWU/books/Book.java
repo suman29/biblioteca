@@ -55,7 +55,7 @@ public abstract class Book {
     public abstract void returnBook(ArrayList<Book> list);
 
     public void addItselfToListIfTitleMatches(List<Book> matchedBooks, String bookName) {
-        if(this.name.equalsIgnoreCase(bookName))
+        if (this.name.equalsIgnoreCase(bookName))
             matchedBooks.add(this);
     }
 

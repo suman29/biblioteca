@@ -39,7 +39,7 @@ public abstract class User {
     public abstract String getAppropriateMessageOnLogin();
 
     public void addToListIfCredentialsMatch(ArrayList<User> list, String libraryNumber, String password) {
-        if(this.libraryNumber.equalsIgnoreCase(libraryNumber) && this.password.equalsIgnoreCase(password))
+        if (this.libraryNumber.equalsIgnoreCase(libraryNumber) && this.password.equalsIgnoreCase(password))
             list.add(this);
     }
 }

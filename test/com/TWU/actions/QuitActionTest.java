@@ -14,6 +14,6 @@ public class QuitActionTest {
         exit.expectSystemExitWithStatus(1);
         QuitAction quit = new QuitAction();
 
-        quit.perform(new Customer("",""));
+        quit.perform(new Customer("", ""));
     }
 }

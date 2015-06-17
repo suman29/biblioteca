@@ -1,8 +1,8 @@
 package com.twu.actions;
 
-import com.twu.books.BooksView;
 import com.twu.Library;
 import com.twu.books.Book;
+import com.twu.books.BooksView;
 import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +25,7 @@ public class ListBookActionTest {
         BooksView booksViewStub = mock(BooksView.class);
         ArrayList<Book> book = new ArrayList<>();
         ListBooksAction listBook = new ListBooksAction(book, library);
-        listBook.perform(new Customer("",""));
+        listBook.perform(new Customer("", ""));
 
         verify(library).getAvailableBooks(book);
     }

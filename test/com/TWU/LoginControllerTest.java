@@ -48,7 +48,7 @@ public class LoginControllerTest {
 
     @Test
     public void shouldExitWhileLoopIfItIsAValidUser() {
-        NullUser user1 = new NullUser("","");
+        NullUser user1 = new NullUser("", "");
         when(authenticator.validateUser(null, null))
                 .thenReturn(new Customer("Number", "Password"));
         LoginController loginController = new LoginController(loginView, authenticator, user1);

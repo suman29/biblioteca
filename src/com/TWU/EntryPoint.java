@@ -26,18 +26,18 @@ public class EntryPoint {
 
     private void menuIteration() {
         int continueLoop;
-        User user= loginController.login();
-        if(user instanceof Customer)
-        do {
+        User user = loginController.login();
+        if (user instanceof Customer)
+            do {
 
-            menuView.displayListOfMenu(customerMenu, user);
-            continueLoop = menuView.takeUserInputForMainMenu();
+                menuView.displayListOfMenu(customerMenu, user);
+                continueLoop = menuView.takeUserInputForMainMenu();
 
-            if (customerMenu.isValidInput(continueLoop))
-                customerMenu.performAction(continueLoop);
-            else
-                menuView.errorMessage();
-        } while (continueLoop > 0);
+                if (customerMenu.isValidInput(continueLoop))
+                    customerMenu.performAction(continueLoop);
+                else
+                    menuView.errorMessage();
+            } while (continueLoop > 0);
 
         else
             do {
@@ -48,7 +48,7 @@ public class EntryPoint {
                     librarianMenu.performAction(continueLoop);
                 else
                     menuView.errorMessage();
-            }while (continueLoop > 0);
+            } while (continueLoop > 0);
     }
 
     public void start() {

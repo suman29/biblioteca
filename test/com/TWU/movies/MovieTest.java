@@ -6,7 +6,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MovieTest {
-    Customer customer = new Customer("","");
+    Customer customer = new Customer("", "");
+
     @Test
     public void shouldRepresentMovieInProperFormat() {
         Movie movie = new AvailableMovie("Movie1", 2001, "abc", 1);

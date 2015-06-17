@@ -21,7 +21,7 @@ public class CheckedOutBooksActionTest {
     Customer customer;
 
     @Test
-    public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails(){
+    public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails() {
         ArrayList<Book> list = new ArrayList<>();
         CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(list, library);
         checkedOutBooksAction.perform(customer);

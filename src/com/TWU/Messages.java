@@ -24,6 +24,6 @@ public interface Messages {
     String BOOK_ALREADY_CHECKED = "This book is already checked out";
     String LOGIN_SUCCESSFUL = "Logged in successfully";
     String LOGIN_UNSUCCESSFUL = "Login unsuccessful, not a valid user";
-    String ENTER_LIBRARY_NUMBER ="Enter your Library number:";
-    String ENTER_PASSWORD ="Enter your password:";
+    String ENTER_LIBRARY_NUMBER = "Enter your Library number:";
+    String ENTER_PASSWORD = "Enter your password:";
 }

@@ -34,7 +34,7 @@ public class AvailableBookTest {
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", ""));
 
         AvailableBook actualOutput = availableBook.create(checkoutBook);
 
@@ -46,7 +46,7 @@ public class AvailableBookTest {
         ArrayList<Book> list = new ArrayList<>();
         AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
         list.add(availableBook);
-        availableBook.checkOut(list, new Customer("",""));
+        availableBook.checkOut(list, new Customer("", ""));
 
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 
