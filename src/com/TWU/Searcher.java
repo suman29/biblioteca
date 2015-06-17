@@ -20,7 +20,10 @@ public class Searcher {
         for (Book book : allBooks) {
             book.addItselfToListIfTitleMatches(matchedBooks, bookName);
         }
-        return matchedBooks.get(0);
+        if(matchedBooks.size() > 0)
+            return matchedBooks.get(0);
+        else
+            return allBooks.get(0);
     }
 
     public Movie searchMovie(ArrayList<Movie> allMovies, String name) {
@@ -28,6 +31,9 @@ public class Searcher {
         for (Movie movie : allMovies) {
            movie.addItselfToListIfTitleMatches(matchedMovie, name);
         }
-        return matchedMovie.get(0);
+        if(matchedMovie.size() > 0)
+            return matchedMovie.get(0);
+        else
+            return allMovies.get(0);
     }
 }

@@ -18,8 +18,10 @@ public class Authenticator {
     }
 
     public User validateUser(String libraryNumber, String password) {
-       for(User user : allUsers)
-           user.addToListIfCredentialsMatch(list, libraryNumber, password);
-        return list.get(0);
+        for (User user : allUsers)
+            user.addToListIfCredentialsMatch(list, libraryNumber, password);
+        if (list.size() > 0)
+            return list.get(0);
+        else return nullUser;
     }
 }

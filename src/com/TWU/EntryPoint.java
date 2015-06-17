@@ -22,9 +22,9 @@ public class EntryPoint {
 
     private void menuIteration() {
         int continueLoop;
-
+         User user= loginController.login();
         do {
-            User user= loginController.login();
+
             menuView.displayListOfMenu(menu,user);
             continueLoop = menuView.takeUserInputForMainMenu();
 
