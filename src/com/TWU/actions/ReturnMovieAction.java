@@ -1,7 +1,9 @@
-package com.twu.movies;
+package com.twu.actions;
 
 import com.twu.Library;
 import com.twu.Option;
+import com.twu.movies.Movie;
+import com.twu.movies.ReturnMovieView;
 
 public class ReturnMovieAction implements Option {
     private Library library;

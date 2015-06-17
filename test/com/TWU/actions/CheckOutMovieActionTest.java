@@ -1,6 +1,10 @@
-package com.twu.movies;
+package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.actions.CheckOutMovieAction;
+import com.twu.movies.AvailableMovie;
+import com.twu.movies.CheckOutMovieView;
+import com.twu.movies.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

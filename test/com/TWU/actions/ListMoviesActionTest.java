@@ -1,6 +1,8 @@
-package com.twu.movies;
+package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.actions.ListMoviesAction;
+import com.twu.movies.Movie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

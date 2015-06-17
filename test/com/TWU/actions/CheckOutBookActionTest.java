@@ -1,5 +1,7 @@
-package com.twu;
+package com.twu.actions;
 
+import com.twu.CheckOutView;
+import com.twu.Library;
 import com.twu.books.Book;
 import com.twu.books.CheckedOutBook;
 import org.junit.Test;
@@ -11,7 +13,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CheckOutActionTest {
+public class CheckOutBookActionTest {
 
     @Mock
     Library library;
@@ -26,8 +28,8 @@ public class CheckOutActionTest {
         when(library.bookSearcher("Good"))
                 .thenReturn(book);
 
-        CheckOutAction checkOutAction = new CheckOutAction(checkOutView, library);
-        checkOutAction.perform();
+        CheckOutBookAction checkOutBookAction = new CheckOutBookAction(checkOutView, library);
+        checkOutBookAction.perform();
 
         verify(library).checkOutBook(book);
     }

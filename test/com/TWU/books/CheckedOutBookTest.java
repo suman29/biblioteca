@@ -1,4 +1,4 @@
-package com.twu;
+package com.twu.books;
 
 import com.twu.books.AvailableBook;
 import com.twu.books.Book;
@@ -11,10 +11,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-public class AvailableBookTest {
+public class CheckedOutBookTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -24,13 +23,13 @@ public class AvailableBookTest {
     }
 
     @Test
-    public void shouldBeAbleToAddItselfToListOfAvailableBooks() {
+    public void shouldNotBeAbleToAddItselfToAvailableListOfBooks() {
         ArrayList<Book> list = new ArrayList<>();
-        AvailableBook availableBook = new AvailableBook("monster", "Ashray", 2015, 9);
+        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9);
 
-        availableBook.addItselfToAvailableListOfBookIfApplicable(list);
+        checkedOutBook.addItselfToAvailableListOfBookIfApplicable(list);
 
-        assertTrue(list.contains(availableBook));
+        assertFalse(list.contains(checkedOutBook));
     }
 
     @Test
@@ -38,26 +37,25 @@ public class AvailableBookTest {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
         CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
 
-        AvailableBook actualOutput = availableBook.create(checkoutBook);
+        CheckedOutBook actualOutput = checkoutBook.create(availableBook);
 
         assertEquals(actualOutput, checkoutBook);
     }
 
     @Test
-    public void shouldBeAbleToCheckoutItself() {
+    public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned() {
         ArrayList<Book> list = new ArrayList<>();
-        AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
-        list.add(availableBook);
-        availableBook.checkOut(list);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
+        list.add(checkoutBook);
+        checkoutBook.returnBook(list);
 
-        CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
+        AvailableBook availableBook = (AvailableBook) list.get(list.indexOf(checkoutBook));
 
-        assertTrue(checkedOutBook instanceof CheckedOutBook);
+        assertTrue(availableBook instanceof AvailableBook);
     }
 
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
     }
-
 }

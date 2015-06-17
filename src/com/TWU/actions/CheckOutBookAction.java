@@ -1,13 +1,16 @@
-package com.twu;
+package com.twu.actions;
 
+import com.twu.CheckOutView;
+import com.twu.Library;
+import com.twu.Option;
 import com.twu.books.Book;
 
-public class CheckOutAction implements Option {
+public class CheckOutBookAction implements Option {
 
     private CheckOutView checkOutView;
     private Library library;
 
-    public CheckOutAction(CheckOutView checkOutView, Library library) {
+    public CheckOutBookAction(CheckOutView checkOutView, Library library) {
         this.checkOutView = checkOutView;
         this.library = library;
     }

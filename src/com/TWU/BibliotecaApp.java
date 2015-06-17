@@ -2,6 +2,7 @@ package com.twu;
 
 // Do all The set up needed for the App and starts the App.
 
+import com.twu.actions.*;
 import com.twu.books.AvailableBook;
 import com.twu.books.Book;
 import com.twu.books.CheckedOutBook;
@@ -83,7 +84,7 @@ public class BibliotecaApp {
         ArrayList<Book> availableBooks = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
         mappedOptions.put(1, new ListBooksAction(availableBooks, library));
-        mappedOptions.put(2, new CheckOutAction((new CheckOutView(bufferedReader, availableBooksView)), library));
+        mappedOptions.put(2, new CheckOutBookAction((new CheckOutView(bufferedReader, availableBooksView)), library));
         mappedOptions.put(3, new ReturnBookAction(library, new ReturnBookView(bufferedReader, checkedOutBooksView)));
         mappedOptions.put(4, new ListMoviesAction(library, movies));
         mappedOptions.put(5, new CheckOutMovieAction((library), new CheckOutMovieView(bufferedReader)));

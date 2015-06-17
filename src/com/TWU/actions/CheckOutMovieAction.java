@@ -1,7 +1,9 @@
-package com.twu.movies;
+package com.twu.actions;
 
 import com.twu.Library;
 import com.twu.Option;
+import com.twu.movies.CheckOutMovieView;
+import com.twu.movies.Movie;
 
 public class CheckOutMovieAction implements Option {
     private Library library;

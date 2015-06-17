@@ -1,5 +1,6 @@
-package com.twu;
+package com.twu.actions;
 
+import com.twu.actions.QuitAction;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
