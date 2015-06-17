@@ -170,4 +170,21 @@ public class LibraryTest {
 
         assertEquals(expectedOutput, actualOutput);
     }
+
+    @Test
+    public void shouldBeAbleToGiveCheckedOutMovies() {
+        ArrayList<Movie> moviesCheckedout = new ArrayList<>();
+        ArrayList<Movie> movies = new ArrayList<>();
+         movies.add( new CheckedOutMovies("Movie2", 2001, "abc", 1, new Customer("","")));
+        movies.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, new Customer("","")));
+        movies.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, new Customer("","")));
+        Library library = new Library(books, movies, new Searcher());
+
+        library.getCheckedOutMovies(moviesCheckedout);
+
+        int actualOutput = moviesCheckedout.size();
+        int expectedOutput = 3;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
 }

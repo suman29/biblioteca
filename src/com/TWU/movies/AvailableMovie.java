@@ -37,6 +37,11 @@ public class AvailableMovie extends Movie {
         return Messages.MOVIE_ALREADY_AVAILABLE;
     }
 
+    @Override
+    public void addItselfToCheckedoutListOfMovieIfApplicable(ArrayList<Movie> checkedOutMovies) {
+
+    }
+
     public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {
         return new AvailableMovie(checkedOutMovies.name, checkedOutMovies.year, checkedOutMovies.director, checkedOutMovies.rating);
     }

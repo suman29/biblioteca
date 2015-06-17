@@ -59,4 +59,6 @@ public abstract class Movie {
         if(this.name.equalsIgnoreCase(name))
             matchedMovie.add(this);
     }
+
+    public abstract void addItselfToCheckedoutListOfMovieIfApplicable(ArrayList<Movie> checkedOutMovies);
 }

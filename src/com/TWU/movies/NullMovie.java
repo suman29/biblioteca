@@ -38,4 +38,9 @@ public class NullMovie extends Movie {
         return (Messages.RETURN_MOVIE_UNSUCCESSFUL);
 
     }
+
+    @Override
+    public void addItselfToCheckedoutListOfMovieIfApplicable(ArrayList<Movie> checkedOutMovies) {
+
+    }
 }

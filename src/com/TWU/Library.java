@@ -67,5 +67,13 @@ public class Library {
     public Movie movieSearcher(String name) {
         return searcher.searchMovie(allMovies, name);
     }
+
+    public ArrayList<Movie> getCheckedOutMovies(ArrayList<Movie> checkedOutMovies) {
+        checkedOutMovies.clear();
+
+        for (Movie movie : allMovies)
+            movie.addItselfToCheckedoutListOfMovieIfApplicable(checkedOutMovies);
+        return checkedOutMovies;
+    }
 }
 
