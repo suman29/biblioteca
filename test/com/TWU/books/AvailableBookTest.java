@@ -1,8 +1,6 @@
 package com.twu.books;
 
-import com.twu.books.AvailableBook;
-import com.twu.books.Book;
-import com.twu.books.CheckedOutBook;
+import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +34,7 @@ public class AvailableBookTest {
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
 
         AvailableBook actualOutput = availableBook.create(checkoutBook);
 
@@ -48,7 +46,7 @@ public class AvailableBookTest {
         ArrayList<Book> list = new ArrayList<>();
         AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
         list.add(availableBook);
-        availableBook.checkOut(list);
+        availableBook.checkOut(list, new Customer("",""));
 
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 

@@ -1,6 +1,7 @@
 package com.twu.books;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
@@ -28,9 +29,9 @@ public class AvailableBook extends Book {
         return new AvailableBook(checkedOutBook.name, checkedOutBook.author, checkedOutBook.year, checkedOutBook.id);
     }
 
-    public void checkOut(ArrayList<Book> allBooks) {
+    public void checkOut(ArrayList<Book> allBooks, Customer customer) {
         allBooks.remove(this);
-        allBooks.add(CheckedOutBook.create(this));
+        allBooks.add(CheckedOutBook.create(this, customer));
     }
 
     @Override

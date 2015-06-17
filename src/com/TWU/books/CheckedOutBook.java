@@ -1,13 +1,16 @@
 package com.twu.books;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
 public class CheckedOutBook extends Book {
+    private Customer customer;
 
-    public CheckedOutBook(String name, String author, int year, int id) {
+    public CheckedOutBook(String name, String author, int year, int id, Customer customer) {
         super(name, author, year, id);
+        this.customer = customer;
     }
 
     @Override
@@ -25,7 +28,7 @@ public class CheckedOutBook extends Book {
     }
 
     @Override
-    public void checkOut(ArrayList<Book> list) {
+    public void checkOut(ArrayList<Book> list, Customer customer) {
 
     }
 
@@ -35,8 +38,8 @@ public class CheckedOutBook extends Book {
         allBooks.add(AvailableBook.create(this));
     }
 
-    public static CheckedOutBook create(AvailableBook availableBook) {
-        return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id);
+    public static CheckedOutBook create(AvailableBook availableBook, Customer customer) {
+        return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id, customer);
     }
 
 }

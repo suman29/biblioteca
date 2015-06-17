@@ -1,5 +1,7 @@
 package com.twu.books;
 
+import com.twu.users.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +50,7 @@ public abstract class Book {
 
     public abstract String getAppropriateMessageOnReturnBookAction();
 
-    public abstract void checkOut(ArrayList<Book> list);
+    public abstract void checkOut(ArrayList<Book> list, Customer customer);
 
     public abstract void returnBook(ArrayList<Book> list);
 

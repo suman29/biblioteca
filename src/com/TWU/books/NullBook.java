@@ -1,6 +1,7 @@
 package com.twu.books;
 
 import com.twu.Messages;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ public class NullBook extends Book {
     }
 
     @Override
-    public void checkOut(ArrayList<Book> list) {
+    public void checkOut(ArrayList<Book> list, Customer customer) {
 
     }
 

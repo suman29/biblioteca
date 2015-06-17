@@ -4,6 +4,7 @@ import com.twu.books.CheckOutView;
 import com.twu.Library;
 import com.twu.books.Book;
 import com.twu.books.CheckedOutBook;
+import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -24,7 +25,7 @@ public class CheckOutBookActionTest {
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
-        Book book = new CheckedOutBook("", "", 0, 0);
+        Book book = new CheckedOutBook("", "", 0, 0, new Customer("",""));
         when(library.bookSearcher("Good"))
                 .thenReturn(book);
 

@@ -1,8 +1,6 @@
 package com.twu.books;
 
-import com.twu.books.AvailableBook;
-import com.twu.books.Book;
-import com.twu.books.CheckedOutBook;
+import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +23,7 @@ public class CheckedOutBookTest {
     @Test
     public void shouldNotBeAbleToAddItselfToAvailableListOfBooks() {
         ArrayList<Book> list = new ArrayList<>();
-        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9);
+        CheckedOutBook checkedOutBook = new CheckedOutBook("monster", "Ashray", 2015, 9, new Customer("",""));
 
         checkedOutBook.addItselfToAvailableListOfBookIfApplicable(list);
 
@@ -35,9 +33,9 @@ public class CheckedOutBookTest {
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
 
-        CheckedOutBook actualOutput = checkoutBook.create(availableBook);
+        CheckedOutBook actualOutput = checkoutBook.create(availableBook, new Customer("",""));
 
         assertEquals(actualOutput, checkoutBook);
     }
@@ -45,7 +43,7 @@ public class CheckedOutBookTest {
     @Test
     public void shouldBeAbleToMakeItselfAvailableAfterTheBookIsReturned() {
         ArrayList<Book> list = new ArrayList<>();
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10);
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("",""));
         list.add(checkoutBook);
         checkoutBook.returnBook(list);
 

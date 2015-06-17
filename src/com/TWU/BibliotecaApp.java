@@ -7,6 +7,7 @@ import com.twu.books.*;
 import com.twu.menu.Menu;
 import com.twu.menu.MenuView;
 import com.twu.movies.*;
+import com.twu.users.Customer;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -39,7 +40,7 @@ public class BibliotecaApp {
         allMovies.addAll(initialiseMovies());
 
 
-        Library library = new Library(allBooks, allMovies, new Searcher());
+        Library library = new Library(allBooks, allMovies, new Searcher(), new Customer("", ""));
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         Menu menu = new Menu(menuList, mappedOptions);
@@ -72,9 +73,9 @@ public class BibliotecaApp {
     private static ArrayList<Book> checkedOutListOfBooks() {
         ArrayList<Book> checkedOutBookList;
         checkedOutBookList = new ArrayList<>();
-        checkedOutBookList.add(new CheckedOutBook("Book1", "suman", 1990, 3));
-        checkedOutBookList.add(new CheckedOutBook("Book2", "Ashray", 1993, 4));
-        checkedOutBookList.add(new CheckedOutBook("Book3", "Sourav", 2000, 5));
+        checkedOutBookList.add(new CheckedOutBook("Book1", "suman", 1990, 3, new Customer("","")));
+        checkedOutBookList.add(new CheckedOutBook("Book2", "Ashray", 1993, 4, new Customer("","")));
+        checkedOutBookList.add(new CheckedOutBook("Book3", "Sourav", 2000, 5, new Customer("","")));
         return checkedOutBookList;
     }
 

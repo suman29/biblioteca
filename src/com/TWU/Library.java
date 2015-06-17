@@ -2,6 +2,7 @@ package com.twu;
 
 import com.twu.books.Book;
 import com.twu.movies.Movie;
+import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
@@ -9,15 +10,17 @@ public class Library {
     private ArrayList<Book> allBooks;
     private ArrayList<Movie> allMovies;
     private Searcher searcher;
+    private Customer customer;
 
-    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies, Searcher searcher) {
+    public Library(ArrayList<Book> allBooks, ArrayList<Movie> allMovies, Searcher searcher, Customer customer) {
         this.allBooks = allBooks;
         this.allMovies = allMovies;
         this.searcher = searcher;
+        this.customer = customer;
     }
 
     public void checkOutBook(Book book) {
-        book.checkOut(allBooks);
+        book.checkOut(allBooks, customer);
     }
 
     public void checkOutMovie(Movie movie) {
