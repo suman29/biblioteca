@@ -11,4 +11,9 @@ public class NullUser extends User {
     public String getAppropriateMessageOnLogin() {
         return Messages.LOGIN_UNSUCCESSFUL;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return o != null && getClass() == o.getClass();
+    }
 }
