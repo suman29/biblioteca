@@ -3,7 +3,7 @@ package com.twu.actions;
 import com.twu.Library;
 import com.twu.Option;
 import com.twu.books.Book;
-import com.twu.users.Customer;
+import com.twu.users.User;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ public class ListBooksAction implements Option {
     }
 
     @Override
-    public void perform(Customer customer) {
+    public void perform(User customer) {
         library.getAvailableBooks(availableBooks);
         for (Book book : availableBooks)
             System.out.println(book.toString());

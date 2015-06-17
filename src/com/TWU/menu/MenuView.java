@@ -12,7 +12,7 @@ public class MenuView {
         this.br = br;
     }
 
-    public void displayListOfMenu(Menu menuList, User user) {
+    public void displayListOfMenu(CustomerMenu menuList, User user) {
         System.out.print(menuList.toString());
     }
 

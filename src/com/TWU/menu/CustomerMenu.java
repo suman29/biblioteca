@@ -7,12 +7,12 @@ import com.twu.users.User;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Menu {
+public class CustomerMenu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;
     User user;
 
-    public Menu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions, User user) {
+    public CustomerMenu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions, User user) {
         this.mappedOptions = mappedOptions;
         this.menuList = menuList;
         this.user = user;

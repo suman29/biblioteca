@@ -4,7 +4,7 @@ import com.twu.Library;
 import com.twu.Option;
 import com.twu.movies.Movie;
 import com.twu.movies.ReturnMovieView;
-import com.twu.users.Customer;
+import com.twu.users.User;
 
 public class ReturnMovieAction implements Option {
     private Library library;
@@ -16,7 +16,7 @@ public class ReturnMovieAction implements Option {
     }
 
     @Override
-    public void perform(Customer customer) {
+    public void perform(User customer) {
         String movieTitle = returnMovieView.takeUserInputForReturningMovie();
         Movie movie = library.movieSearcher(movieTitle);
         library.returnMovie(movie);

@@ -4,7 +4,7 @@ package com.twu;
 
 import com.twu.actions.*;
 import com.twu.books.*;
-import com.twu.menu.Menu;
+import com.twu.menu.CustomerMenu;
 import com.twu.menu.MenuView;
 import com.twu.movies.*;
 import com.twu.users.Customer;
@@ -48,7 +48,7 @@ public class BibliotecaApp {
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
         User user = new Customer("","");
-        Menu menu = new Menu(menuList, mappedOptions,user);
+        CustomerMenu customerMenu = new CustomerMenu(menuList, mappedOptions,user);
         MenuView menuView = new MenuView(bufferedReader);
         ConsoleOutput consoleOutput = new ConsoleOutput();
         NullUser nullUser = new NullUser("","");
@@ -58,7 +58,7 @@ public class BibliotecaApp {
         allUsers.add(new Customer("123-4567","1234"));
         LoginController loginController = new LoginController(new LoginView(bufferedReader),new Authenticator(allUsers,nullUser,list),nullUser);
 
-        EntryPoint entryPoint = new EntryPoint(menuView, menu, consoleOutput, loginController);
+        EntryPoint entryPoint = new EntryPoint(menuView, customerMenu, consoleOutput, loginController);
         entryPoint.start();
 
     }

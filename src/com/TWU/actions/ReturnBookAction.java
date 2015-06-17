@@ -4,7 +4,7 @@ import com.twu.Library;
 import com.twu.Option;
 import com.twu.books.ReturnBookView;
 import com.twu.books.Book;
-import com.twu.users.Customer;
+import com.twu.users.User;
 
 public class ReturnBookAction implements Option {
 
@@ -18,7 +18,7 @@ public class ReturnBookAction implements Option {
     }
 
     @Override
-    public void perform(Customer customer) {
+    public void perform(User customer) {
         String bookName = returnBookView.takeUserInputForReturningBook();
         Book book = library.bookSearcher(bookName);
         library.returnBook(book);

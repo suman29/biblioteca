@@ -3,7 +3,7 @@ package com.twu.actions;
 import com.twu.Library;
 import com.twu.Option;
 import com.twu.movies.Movie;
-import com.twu.users.Customer;
+import com.twu.users.User;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class ListMoviesAction implements Option {
     }
 
     @Override
-    public void perform(Customer customer) {
+    public void perform(User customer) {
         ArrayList<Movie> allMovies = library.getAvailableMovies(movies);
         for (Movie movie : allMovies)
             System.out.println(movie.toString());

@@ -15,16 +15,14 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CheckedOutBooksActionTest {
-
     @Mock
     Library library;
-
     @Mock
     Customer customer;
 
     @Test
     public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails(){
-        ArrayList<Book> list= new ArrayList<>();
+        ArrayList<Book> list = new ArrayList<>();
         CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(list, library);
         checkedOutBooksAction.perform(customer);
 

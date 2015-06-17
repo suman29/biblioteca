@@ -20,7 +20,7 @@ import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class MenuTest {
+public class CustomerMenuTest {
 
     @Mock
     BooksView booksViewStub;
@@ -46,7 +46,7 @@ public class MenuTest {
 
     @Test
     public void checkIfMenuIsRepresentedProperly() {
-        Menu menuList = new Menu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
 
         String actualOutput = menuList.toString();
         String expectedOutput = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:\n\n";
@@ -56,7 +56,7 @@ public class MenuTest {
 
     @Test
     public void checkIfCorrectActionIsPerformed() {
-        Menu menuList = new Menu(this.menuList, mappedOptions,user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions,user);
 
         menuList.performAction(1);
         ArrayList<Book> books = new ArrayList<>();
