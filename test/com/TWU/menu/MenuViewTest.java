@@ -6,8 +6,7 @@ import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
 import com.twu.books.BooksView;
-import com.twu.menu.Menu;
-import com.twu.menu.MenuView;
+import com.twu.users.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +27,8 @@ public class MenuViewTest {
     BooksView booksViewStub;
     @Mock
     Library library;
+    @Mock
+    User user;
 
     @Before
     public void setUp() throws Exception {
@@ -43,7 +44,7 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        Menu menuList = new Menu(this.menuList, mappedOptions);
+        Menu menuList = new Menu(this.menuList, mappedOptions,user);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
 
@@ -51,7 +52,7 @@ public class MenuViewTest {
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         MenuView menuView = new MenuView(bufferedReader);
-        menuView.displayListOfMenu(menuList);
+        menuView.displayListOfMenu(menuList, user);
 
         assertEquals(menuString, outputStream.toString());
     }

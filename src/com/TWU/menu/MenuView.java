@@ -1,6 +1,7 @@
 package com.twu.menu;
 
 import com.twu.Messages;
+import com.twu.users.User;
 
 import java.io.BufferedReader;
 
@@ -11,7 +12,7 @@ public class MenuView {
         this.br = br;
     }
 
-    public void displayListOfMenu(Menu menuList) {
+    public void displayListOfMenu(Menu menuList, User user) {
         System.out.print(menuList.toString());
     }
 

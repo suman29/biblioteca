@@ -8,11 +8,15 @@ import com.twu.menu.Menu;
 import com.twu.menu.MenuView;
 import com.twu.movies.*;
 import com.twu.users.Customer;
+import com.twu.users.NullUser;
+import com.twu.users.User;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class BibliotecaApp {
 
@@ -35,7 +39,7 @@ public class BibliotecaApp {
         HashMap<Integer, String> menuList = new HashMap<>();
         HashMap<Integer, Option> mappedOptions = new HashMap<>();
         ArrayList<Movie> allMovies = new ArrayList<>();
-        NullMovie nullMovie = new NullMovie("", 0, "", 0);
+        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("",""));
         allMovies.add(nullMovie);
         allMovies.addAll(initialiseMovies());
 
@@ -43,11 +47,17 @@ public class BibliotecaApp {
         Library library = new Library(allBooks, allMovies, new Searcher(), new Customer("", ""));
         creatingMenu(menuList);
         initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
-        Menu menu = new Menu(menuList, mappedOptions);
+        User user = new Customer("","");
+        Menu menu = new Menu(menuList, mappedOptions,user);
         MenuView menuView = new MenuView(bufferedReader);
         ConsoleOutput consoleOutput = new ConsoleOutput();
 
-        EntryPoint entryPoint = new EntryPoint(menuView, menu, consoleOutput);
+        NullUser nullUser = new NullUser("","");
+        ArrayList<User> list = new ArrayList<>();
+        Set<User> allUsers = new HashSet<>();
+        allUsers.add(new Customer("123-4567","1234"));
+        LoginController loginController = new LoginController(new LoginView(bufferedReader),new Authenticator(allUsers,nullUser,list),nullUser);
+        EntryPoint entryPoint = new EntryPoint(menuView, menu, consoleOutput, loginController);
         entryPoint.start();
 
     }

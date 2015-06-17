@@ -6,8 +6,10 @@ import com.twu.users.Customer;
 import java.util.ArrayList;
 
 public class NullMovie extends Movie {
-    public NullMovie(String name, int year, String director, int rating) {
+    private Customer customer;
+    public NullMovie(String name, int year, String director, int rating, Customer customer) {
         super(name, year, director, rating);
+        this.customer = customer;
     }
 
     @Override
