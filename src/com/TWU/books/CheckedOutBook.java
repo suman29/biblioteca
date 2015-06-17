@@ -38,6 +38,10 @@ public class CheckedOutBook extends Book {
         allBooks.add(AvailableBook.create(this));
     }
 
+    public String toString(){
+        return (id + ".  " + String.format("%-50s", name) + String.format("%-30s", author) + String.format("%-5s", year)+" Customer:"+customer.toString());
+    }
+
     public static CheckedOutBook create(AvailableBook availableBook, Customer customer) {
         return new CheckedOutBook(availableBook.name, availableBook.author, availableBook.year, availableBook.id, customer);
     }

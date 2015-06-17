@@ -52,6 +52,21 @@ public class CheckedOutBookTest {
         assertTrue(availableBook instanceof AvailableBook);
     }
 
+    @Test
+    public void checkIfTheBookDetailsAreBeingRepresentedInOneLine() {
+        String name = "Introduction to Algorithms";
+        String author = "John";
+        int year = 1920;
+        int id = 1;
+        Customer customer = new Customer("abc","123");
+        Book book = new CheckedOutBook(name, author, year, id, customer);
+
+        String actualFormat = book.toString();
+        String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  Customer:abc"+System.lineSeparator();
+
+        assertEquals(actualFormat, expectedFormat);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);
