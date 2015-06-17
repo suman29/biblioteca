@@ -24,10 +24,10 @@ public class Searcher {
     }
 
     public Movie searchMovie(ArrayList<Movie> allMovies, String name) {
+        List<Movie> matchedMovie = new ArrayList<>();
         for (Movie movie : allMovies) {
-            if ((movie.name).equalsIgnoreCase(name))
-                return movie;
+           movie.addItselfToListIfTitleMatches(matchedMovie, name);
         }
-        return allMovies.get(0);
+        return matchedMovie.get(0);
     }
 }

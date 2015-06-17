@@ -1,9 +1,10 @@
 package com.twu.movies;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Movie {
-    public String name;
+    protected String name;
     protected int year;
     protected String director;
     protected int rating;
@@ -51,4 +52,9 @@ public abstract class Movie {
     public abstract String getAppropriateMessageOnCheckOutAction();
 
     public abstract String getAppropriateMessageOnReturnMovieAction();
+
+    public void addItselfToListIfTitleMatches(List<Movie> matchedMovie, String name) {
+        if(this.name.equalsIgnoreCase(name))
+            matchedMovie.add(this);
+    }
 }
