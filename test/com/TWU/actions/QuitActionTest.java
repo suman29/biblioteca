@@ -13,7 +13,7 @@ public class QuitActionTest {
     public void shouldExitsWithStatusCode1() {
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         exit.expectSystemExitWithStatus(1);
         QuitAction quit = new QuitAction();
 

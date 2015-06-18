@@ -10,7 +10,7 @@ public class NullMovieTest {
 
     String name = "ashray";
     String email = "123@yh.com";
-    String number="7205787250";
+    String number = "7205787250";
 
     @Test
     public void shouldDisplayAppropriateMessageOnCheckingOut() {

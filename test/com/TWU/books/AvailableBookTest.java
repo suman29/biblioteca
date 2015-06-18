@@ -17,7 +17,7 @@ public class AvailableBookTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     String name = "ashray";
     String email = "123@yh.com";
-    String number="7205787250";
+    String number = "7205787250";
 
     @Before
     public void setUp() throws Exception {

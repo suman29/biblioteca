@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class MovieTest {
     String name = "ashray";
     String email = "123@yh.com";
-    String number="7205787250";
+    String number = "7205787250";
     Customer customer = new Customer("", "", name, email, number);
 
     @Test

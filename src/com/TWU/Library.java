@@ -79,7 +79,7 @@ public class Library {
     public Book checkedBookSearcher(String bookName) {
         ArrayList<Book> checkedOutBooks = new ArrayList<>();
         getCheckedOutBooks(checkedOutBooks);
-        return searcher.searchBook(checkedOutBooks,bookName);
+        return searcher.searchBook(checkedOutBooks, bookName);
     }
 
     public Movie checkedMovieSearcher(String movieName) {

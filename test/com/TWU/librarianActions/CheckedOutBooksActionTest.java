@@ -38,11 +38,11 @@ public class CheckedOutBooksActionTest {
 
     @Test
     public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails() {
-        CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(library,librarianActionView);
+        CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(library, librarianActionView);
         when(librarianActionView.takeUserInputToGetDetailsOfItem())
                 .thenReturn("good");
         when(library.checkedBookSearcher("good")).thenReturn(book);
-        checkedOutBooksAction.perform(new Librarian("",""));
+        checkedOutBooksAction.perform(new Librarian("", ""));
 
         verify(library).checkedBookSearcher("good");
     }

@@ -16,7 +16,8 @@ public class CheckedOutBookTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     String name = "ashray";
     String email = "123@yh.com";
-    String number="7205787250";
+    String number = "7205787250";
+
     @Before
     public void setUp() throws Exception {
         System.setOut(new PrintStream(outputStream));
@@ -60,7 +61,7 @@ public class CheckedOutBookTest {
         String author = "John";
         int year = 1920;
         int id = 1;
-        Customer customer = new Customer("abc", "123", "ab","mn", "pq");
+        Customer customer = new Customer("abc", "123", "ab", "mn", "pq");
         Book book = new CheckedOutBook(name, author, year, id, customer);
 
         String actualFormat = book.toString();

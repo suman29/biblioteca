@@ -25,7 +25,7 @@ public class AvailableMovieTest {
         AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         ArrayList<Movie> list = new ArrayList<>();
         list.add(availableMovie);
         availableMovie.checkOut(list, new Customer("", "", name, email, number));

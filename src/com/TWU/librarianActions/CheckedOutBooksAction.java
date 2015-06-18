@@ -1,8 +1,8 @@
 package com.twu.librarianActions;
 
 import com.twu.Library;
-import com.twu.menu.Option;
 import com.twu.books.Book;
+import com.twu.menu.Option;
 import com.twu.users.User;
 
 public class CheckedOutBooksAction implements Option {

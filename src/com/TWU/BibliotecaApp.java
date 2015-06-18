@@ -42,7 +42,7 @@ public class BibliotecaApp {
 
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         ArrayList<Movie> allMovies = new ArrayList<>();
         NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", "", name, email, number));
         allMovies.add(nullMovie);
@@ -76,21 +76,23 @@ public class BibliotecaApp {
         LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian, librarian);
 
 
-        HashMap<Integer,String> menuListMain = new HashMap<>();
+        HashMap<Integer, String> menuListMain = new HashMap<>();
         HashMap<Integer, Option> mappedOptionsMain = new HashMap<>();
-        menuListMain.put(1,Messages.LIST_BOOKS);
-        menuListMain.put(2,Messages.LIST_MOVIES);
-        menuListMain.put(3,Messages.LOGIN_CUSTOMER);
-        menuListMain.put(4,Messages.LOGIN_LIBRARIAN);
-        menuListMain.put(5,Messages.QUIT);
-        mappedOptionsMain.put(1, new ListBooksAction(availableListOfBooks,library));
-        mappedOptionsMain.put(2, new ListMoviesAction(library,initialiseMovies()));
-        mappedOptionsMain.put(3, new CustomerLogin(loginController,menuView,customerMenu));
-        mappedOptionsMain.put(4, new LibrarianLogin(loginController,menuView,librarianMenu));
+        menuListMain.put(1, Messages.LIST_BOOKS);
+        menuListMain.put(2, Messages.LIST_MOVIES);
+        menuListMain.put(3, Messages.LOGIN_CUSTOMER);
+        menuListMain.put(4, Messages.LOGIN_LIBRARIAN);
+        menuListMain.put(5, Messages.QUIT);
+        ArrayList<Book> books = new ArrayList<>();
+        ArrayList<Movie> movies = new ArrayList<>();
+        mappedOptionsMain.put(1, new ListBooksAction(books, library));
+        mappedOptionsMain.put(2, new ListMoviesAction(library, movies));
+        mappedOptionsMain.put(3, new CustomerLogin(loginController, menuView, customerMenu));
+        mappedOptionsMain.put(4, new LibrarianLogin(loginController, menuView, librarianMenu));
         mappedOptionsMain.put(5, new QuitAction());
 
 
-        MainMenu mainMenu = new MainMenu(menuListMain,mappedOptionsMain);
+        MainMenu mainMenu = new MainMenu(menuListMain, mappedOptionsMain);
         EntryPoint entryPoint = new EntryPoint(menuView, consoleOutput, mainMenu);
         entryPoint.start();
 
@@ -102,7 +104,7 @@ public class BibliotecaApp {
         menuListLibrarian.put(4, Messages.LOGOUT);
         menuListLibrarian.put(3, Messages.QUIT);
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        mappedOptions.put(1, new CheckedOutBooksAction(library,new LibrarianActionView(br)));
+        mappedOptions.put(1, new CheckedOutBooksAction(library, new LibrarianActionView(br)));
         mappedOptions.put(2, new CheckedOutMovieAction(library, new LibrarianActionView(br)));
         mappedOptions.put(4, new Logout(loginController));
         mappedOptions.put(3, new QuitAction());
@@ -112,7 +114,7 @@ public class BibliotecaApp {
         ArrayList<Movie> allMovies = new ArrayList<>();
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         allMovies.add(new AvailableMovie("Batman Begins", 2005, "Christopher Nolan", 9));
         allMovies.add(new AvailableMovie("The Dark Knight", 2008, "Christopher Nolan", 9));
         allMovies.add(new CheckedOutMovies("movie1", 2008, "Christopher Nolan", 9, new Customer("Ashray", "", name, email, number)));
@@ -134,7 +136,7 @@ public class BibliotecaApp {
         checkedOutBookList = new ArrayList<>();
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         checkedOutBookList.add(new CheckedOutBook("Book1", "suman", 1990, 3, new Customer("Ashray", "", name, email, number)));
         checkedOutBookList.add(new CheckedOutBook("Book2", "Ashray", 1993, 4, new Customer("Suman", "", name, email, number)));
         checkedOutBookList.add(new CheckedOutBook("Book3", "Sourav", 2000, 5, new Customer("Sourav", "", name, email, number)));

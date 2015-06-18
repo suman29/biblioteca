@@ -19,13 +19,13 @@ public class CustomerDetailsActionTest {
     }
 
     @Test
-    public void shouldBeAbleToDisplayCustomersDetails(){
-        User user = new Customer("123-4567", "abcd", "name","email","123456789");
+    public void shouldBeAbleToDisplayCustomersDetails() {
+        User user = new Customer("123-4567", "abcd", "name", "email", "123456789");
         CustomerDetailsAction customerDetailsAction = new CustomerDetailsAction();
         customerDetailsAction.perform(user);
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "name email 123456789"+System.lineSeparator();
+        String expectedOutput = "name email 123456789" + System.lineSeparator();
 
         assertEquals(actualOutput, expectedOutput);
     }

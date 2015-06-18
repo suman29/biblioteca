@@ -32,6 +32,6 @@ public class CustomerMenu {
     }
 
     public boolean isValidInput(int input) {
-        return input >= 1 && input <= 8;
+        return input >= 1 && input <= 9;
     }
 }

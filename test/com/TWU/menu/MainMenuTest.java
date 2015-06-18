@@ -37,8 +37,8 @@ public class MainMenuTest {
         mappedOptions = new HashMap<>();
         menuList.put(1, "Customer login");
         menuList.put(2, "Librarian login");
-        mappedOptions.put(1, new CustomerLogin(loginController, menuView,customerMenu));
-        mappedOptions.put(2, new LibrarianLogin(loginController, menuView,librarianMenu));
+        mappedOptions.put(1, new CustomerLogin(loginController, menuView, customerMenu));
+        mappedOptions.put(2, new LibrarianLogin(loginController, menuView, librarianMenu));
     }
 
     @Test
@@ -53,7 +53,7 @@ public class MainMenuTest {
 
     @Test
     public void shouldPerformActionOnCorrectInput() {
-        MainMenu mainMenu = new MainMenu(menuList,mappedOptions);
+        MainMenu mainMenu = new MainMenu(menuList, mappedOptions);
         when(menuView.takeUserInputForMainMenu()).thenReturn(8);
         mainMenu.performAction(1);
 

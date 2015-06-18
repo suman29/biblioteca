@@ -11,13 +11,13 @@ public class LibrarianActionView {
     }
 
     public String takeUserInputToGetDetailsOfItem() {
-            try {
-                String input = bufferedReader.readLine();
-                    return input;
-            } catch (IOException e) {
-                return "";
-            }
+        try {
+            String input = bufferedReader.readLine();
+            return input;
+        } catch (IOException e) {
+            return "";
         }
+    }
 
     public void displayMessage(String message) {
         System.out.println(message);

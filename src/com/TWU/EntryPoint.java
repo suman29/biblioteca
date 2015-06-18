@@ -20,7 +20,7 @@ public class EntryPoint {
 
     private void menuIteration() {
         int continueLoop;
-        do{
+        do {
             menuView.displayListOfMenu(mainMenu);
             continueLoop = menuView.takeUserInputForMainMenu();
             if (mainMenu.isValidInput(continueLoop))

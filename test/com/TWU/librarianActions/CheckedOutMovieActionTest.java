@@ -26,12 +26,12 @@ public class CheckedOutMovieActionTest {
 
     @Test
     public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails() {
-        CheckedOutMovieAction checkedOutMovieAction = new CheckedOutMovieAction(library,librarianActionView);
-        Movie movie = new CheckedOutMovies("good",3,"ede",2,customer);
+        CheckedOutMovieAction checkedOutMovieAction = new CheckedOutMovieAction(library, librarianActionView);
+        Movie movie = new CheckedOutMovies("good", 3, "ede", 2, customer);
         when(librarianActionView.takeUserInputToGetDetailsOfItem())
                 .thenReturn("good");
         when(library.checkedMovieSearcher("good")).thenReturn(movie);
-        checkedOutMovieAction.perform(new Librarian("",""));
+        checkedOutMovieAction.perform(new Librarian("", ""));
 
         verify(library).checkedMovieSearcher("good");
     }

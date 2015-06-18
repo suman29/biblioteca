@@ -54,7 +54,7 @@ public class LoginControllerTest {
         NullUser user1 = new NullUser("", "");
         String name = "ashray";
         String email = "123@yh.com";
-        String number="7205787250";
+        String number = "7205787250";
         when(authenticator.validateUser(null, null))
                 .thenReturn(new Customer("Number", "Password", name, email, number));
         LoginController loginController = new LoginController(loginView, authenticator, user1);
