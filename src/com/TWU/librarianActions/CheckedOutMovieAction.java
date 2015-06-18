@@ -5,22 +5,19 @@ import com.twu.Option;
 import com.twu.movies.Movie;
 import com.twu.users.User;
 
-import java.util.ArrayList;
-
 public class CheckedOutMovieAction implements Option {
     private Library library;
-    private ArrayList<Movie> movies;
+    private LibrarianActionView librarianActionView;
 
-    public CheckedOutMovieAction(Library library, ArrayList<Movie> movies) {
+    public CheckedOutMovieAction(Library library, LibrarianActionView librarianActionView) {
         this.library = library;
-        this.movies = movies;
+        this.librarianActionView = librarianActionView;
     }
 
     @Override
     public void perform(User customer) {
-        library.getCheckedOutMovies(movies);
-        for (Movie movie : movies)
-            System.out.println(movie.toString());
-
+        String movieName= librarianActionView.takeUserInputToGetDetailsOfItem();
+        Movie movie = library.movieSearcher(movieName);
+        System.out.println(movie.toString());
     }
 }

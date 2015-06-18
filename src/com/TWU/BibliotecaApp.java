@@ -92,7 +92,7 @@ public class BibliotecaApp {
         ArrayList<Movie> checkedMovies = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         mappedOptions.put(1, new CheckedOutBooksAction(library,new LibrarianActionView(br)));
-        mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
+        mappedOptions.put(2, new CheckedOutMovieAction(library, new LibrarianActionView(br)));
         mappedOptions.put(4, new Logout(loginController));
         mappedOptions.put(3, new QuitAction());
     }

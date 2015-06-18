@@ -41,7 +41,7 @@ public class LibrarianMenuTest {
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
         mappedOptions.put(1, new CheckedOutBooksAction(library, librarianActionView));
-        mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
+        mappedOptions.put(2, new CheckedOutMovieAction(library, librarianActionView));
 
     }
 
