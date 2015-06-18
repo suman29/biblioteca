@@ -32,6 +32,6 @@ public class LibrarianMenu {
     }
 
     public boolean isValidInput(int input) {
-        return input >= 1 && input <= 3;
+        return input >= 1 && input <= 4;
     }
 }

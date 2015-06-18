@@ -25,31 +25,45 @@ public class EntryPoint {
     }
 
     private void menuIteration() {
-        int continueLoop;
-        User user = loginController.login();
-        if (user instanceof Customer)
-            do {
 
-                menuView.displayListOfMenu(customerMenu, user);
-                continueLoop = menuView.takeUserInputForMainMenu();
+        while (true) {
+            User user = loginController.login();
 
-                if (customerMenu.isValidInput(continueLoop))
-                    customerMenu.performAction(continueLoop);
-                else
-                    menuView.errorMessage();
-            } while (continueLoop > 0);
+            if (user instanceof Customer)
+                customerControl(user);
 
-        else
-            do {
-                menuView.displayListOfMenu(librarianMenu, user);
-                continueLoop = menuView.takeUserInputForMainMenu();
-
-                if (librarianMenu.isValidInput(continueLoop))
-                    librarianMenu.performAction(continueLoop);
-                else
-                    menuView.errorMessage();
-            } while (continueLoop > 0);
+            else
+                librarianControl(user);
+        }
     }
+
+    private void librarianControl(User user) {
+        int continueLoop;
+        do {
+            menuView.displayListOfMenu(librarianMenu, user);
+            continueLoop = menuView.takeUserInputForMainMenu();
+
+            if (librarianMenu.isValidInput(continueLoop))
+                librarianMenu.performAction(continueLoop);
+            else
+                menuView.errorMessage();
+        } while (continueLoop < 2);
+    }
+
+    private void customerControl(User user) {
+        int continueLoop;
+        do {
+
+            menuView.displayListOfMenu(customerMenu, user);
+            continueLoop = menuView.takeUserInputForMainMenu();
+
+            if (customerMenu.isValidInput(continueLoop))
+                customerMenu.performAction(continueLoop);
+            else
+                menuView.errorMessage();
+        } while (continueLoop > 0);
+    }
+
 
     public void start() {
         consoleOutput.displayWelcomeMessage();

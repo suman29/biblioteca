@@ -18,6 +18,7 @@ public class Authenticator {
     }
 
     public User validateUser(String libraryNumber, String password) {
+        list.clear();
         for (User user : allUsers)
             user.addToListIfCredentialsMatch(list, libraryNumber, password);
         if (list.size() > 0)

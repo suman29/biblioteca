@@ -24,7 +24,7 @@ public class MenuView {
     public int takeUserInputForMainMenu() {
         try {
             int input = Integer.parseInt(br.readLine());
-            if (input > 0)
+            if ((input > 0))
                 return input;
             else
                 return -1;

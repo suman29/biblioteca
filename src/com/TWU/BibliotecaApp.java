@@ -52,7 +52,6 @@ public class BibliotecaApp {
 
         Library library = new Library(allBooks, allMovies, new Searcher(nullMovie, nullBook));
         creatingMenu(menuList);
-        initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library);
 
         NullUser nullUser = new NullUser("", "");
         Librarian librarian = new Librarian("", "");
@@ -67,10 +66,12 @@ public class BibliotecaApp {
         allUsers.add(new Customer("123-4567", "1234"));
         allUsers.add(new Librarian("abc-1234", "abcd"));
         LoginController loginController = new LoginController(new LoginView(bufferedReader), new Authenticator(allUsers, nullUser, list), nullUser);
+        initialisingMenuList(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library, loginController);
 
         HashMap<Integer, Option> mappedOptionLibrarian = new HashMap<>();
         HashMap<Integer, String> menuListLibrarian = new HashMap<>();
-        populatingForLibrarian(mappedOptionLibrarian, library, menuListLibrarian);
+        populatingForLibrarian(mappedOptionLibrarian, library, menuListLibrarian, loginController);
+
         LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian, librarian);
 
 
@@ -79,15 +80,17 @@ public class BibliotecaApp {
 
     }
 
-    private static void populatingForLibrarian(HashMap<Integer, Option> mappedOptions, Library library, HashMap<Integer, String> menuListLibrarian) {
+    private static void populatingForLibrarian(HashMap<Integer, Option> mappedOptions, Library library, HashMap<Integer, String> menuListLibrarian, LoginController loginController) {
         menuListLibrarian.put(1, "Checked out books");
         menuListLibrarian.put(2, "Checked out movies");
-        menuListLibrarian.put(3, "Quit");
+        menuListLibrarian.put(3, "Log out");
+        menuListLibrarian.put(4, "Quit");
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
         mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));
         mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
-        mappedOptions.put(3, new QuitAction());
+        mappedOptions.put(3, new Logout(loginController));
+        mappedOptions.put(4, new QuitAction());
     }
 
     private static ArrayList<Movie> initialiseMovies() {
@@ -118,7 +121,7 @@ public class BibliotecaApp {
     }
 
     private static void initialisingMenuList(BufferedReader bufferedReader, BooksView availableBooksView,
-                                             BooksView checkedOutBooksView, HashMap<Integer, Option> mappedOptions, Library library) {
+                                             BooksView checkedOutBooksView, HashMap<Integer, Option> mappedOptions, Library library, LoginController loginController) {
         ArrayList<Book> availableBooks = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
         mappedOptions.put(1, new ListBooksAction(availableBooks, library));
@@ -127,7 +130,8 @@ public class BibliotecaApp {
         mappedOptions.put(4, new ListMoviesAction(library, movies));
         mappedOptions.put(5, new CheckOutMovieAction((library), new CheckOutMovieView(bufferedReader)));
         mappedOptions.put(6, new ReturnMovieAction(library, new ReturnMovieView(bufferedReader)));
-        mappedOptions.put(7, new QuitAction());
+        mappedOptions.put(7, new Logout(loginController));
+        mappedOptions.put(8, new QuitAction());
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
@@ -137,6 +141,7 @@ public class BibliotecaApp {
         menuList.put(4, Messages.LIST_MOVIES);
         menuList.put(5, Messages.CHECKOUT_MOVIE);
         menuList.put(6, Messages.RETURN_MOVIE);
-        menuList.put(7, Messages.QUIT);
+        menuList.put(7, Messages.LOGOUT);
+        menuList.put(8, Messages.QUIT);
     }
 }

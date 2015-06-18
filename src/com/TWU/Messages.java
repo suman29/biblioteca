@@ -26,4 +26,5 @@ public interface Messages {
     String LOGIN_UNSUCCESSFUL = "Login unsuccessful, not a valid user";
     String ENTER_LIBRARY_NUMBER = "Enter your Library number:";
     String ENTER_PASSWORD = "Enter your password:";
+    String LOGOUT = "Logout";
 }
