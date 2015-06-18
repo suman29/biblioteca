@@ -12,6 +12,11 @@ public class MainMenu {
         this.mappedOptions = mappedOptions;
     }
 
+    public void performAction(int option) {
+        mappedOptions.get(option).perform();
+    }
+
+
     @Override
     public String toString() {
         String mainMenu = "\n";
