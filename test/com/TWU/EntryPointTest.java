@@ -30,7 +30,7 @@ public class EntryPointTest {
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
         CustomerMenu customerMenu = mock(CustomerMenu.class);
         when(loginController.login()).thenReturn(user);
-        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(7);
+        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(8);
         EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
 
         entryPoint.start();
@@ -43,7 +43,7 @@ public class EntryPointTest {
 
         MenuView menuViewStub = mock(MenuView.class);
         when(loginController.login()).thenReturn(user);
-        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(6).thenReturn(7);
+        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(6).thenReturn(8);
         CustomerMenu customerMenu = mock(CustomerMenu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
         when(loginController.login()).thenReturn(user);

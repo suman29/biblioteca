@@ -5,6 +5,7 @@ import com.twu.Option;
 import com.twu.books.Book;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;
+import com.twu.librarianActions.LibrarianActionView;
 import com.twu.movies.Movie;
 import com.twu.users.Librarian;
 import org.junit.Before;
@@ -25,6 +26,8 @@ public class LibrarianMenuTest {
     Library library;
     @Mock
     Librarian user;
+    @Mock
+    LibrarianActionView librarianActionView;
 
     HashMap<Integer, String> menuListLibrarian;
     HashMap<Integer, Option> mappedOptions;
@@ -37,7 +40,7 @@ public class LibrarianMenuTest {
         menuListLibrarian.put(2, "Checked out movies");
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
-        mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));
+        mappedOptions.put(1, new CheckedOutBooksAction(library, librarianActionView));
         mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
 
     }

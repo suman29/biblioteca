@@ -6,6 +6,7 @@ import com.twu.actions.*;
 import com.twu.books.*;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;
+import com.twu.librarianActions.LibrarianActionView;
 import com.twu.menu.CustomerMenu;
 import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MenuView;
@@ -89,7 +90,8 @@ public class BibliotecaApp {
         menuListLibrarian.put(3, Messages.QUIT);
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
-        mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        mappedOptions.put(1, new CheckedOutBooksAction(library,new LibrarianActionView(br)));
         mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
         mappedOptions.put(4, new Logout(loginController));
         mappedOptions.put(3, new QuitAction());
