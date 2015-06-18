@@ -18,4 +18,8 @@ public class LibrarianActionView {
                 return "";
             }
         }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }

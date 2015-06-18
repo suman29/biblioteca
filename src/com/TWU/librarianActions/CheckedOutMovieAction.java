@@ -18,6 +18,6 @@ public class CheckedOutMovieAction implements Option {
     public void perform(User customer) {
         String movieName= librarianActionView.takeUserInputToGetDetailsOfItem();
         Movie movie = library.movieSearcher(movieName);
-        System.out.println(movie.toString());
+        librarianActionView.displayMessage(movie.toString());
     }
 }

@@ -19,6 +19,6 @@ public class CheckedOutBooksAction implements Option {
     public void perform(User customer) {
         String bookName = librarianActionView.takeUserInputToGetDetailsOfItem();
         Book book = library.bookSearcher(bookName);
-        System.out.println(book.toString());
+        librarianActionView.displayMessage(book.toString());
     }
 }
