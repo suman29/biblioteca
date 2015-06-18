@@ -1,5 +1,7 @@
 package com.twu.books;
 
+//Its a view to display the book details.
+
 public class BooksView {
     private Books books;
 

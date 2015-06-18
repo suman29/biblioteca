@@ -2,6 +2,8 @@ package com.twu.users;
 
 import com.twu.Messages;
 
+// It is a user who uses the app, to checkout and return library items after logged in.
+
 public class Customer extends User {
 
     private String name;

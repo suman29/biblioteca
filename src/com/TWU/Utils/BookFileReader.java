@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// It is used to read books from a file.
+
 public class BookFileReader {
 
     private String filePath;

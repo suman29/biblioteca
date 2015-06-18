@@ -7,6 +7,8 @@ import com.twu.users.User;
 
 import java.util.ArrayList;
 
+// It displays all the movies available in library.
+
 public class ListMoviesAction implements Option {
     private Library library;
     private ArrayList<Movie> movies;

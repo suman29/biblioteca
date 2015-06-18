@@ -5,10 +5,12 @@ import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
-public class CheckedOutMovies extends Movie {
+// It is a movie checked out by customer.
+
+public class CheckedOutMovie extends Movie {
     private Customer customer;
 
-    public CheckedOutMovies(String name, int year, String director, int rating, Customer customer) {
+    public CheckedOutMovie(String name, int year, String director, int rating, Customer customer) {
         super(name, year, director, rating);
         this.customer = customer;
     }
@@ -51,8 +53,8 @@ public class CheckedOutMovies extends Movie {
         return (String.format("%-50s", name) + String.format("%-30s", director) + String.format("%-5s", year) + "rating: " + rating + " customer:" + customer.toString());
     }
 
-    public static CheckedOutMovies create(AvailableMovie availableMovie, Customer customer) {
-        return new CheckedOutMovies(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating, customer);
+    public static CheckedOutMovie create(AvailableMovie availableMovie, Customer customer) {
+        return new CheckedOutMovie(availableMovie.name, availableMovie.year, availableMovie.director, availableMovie.rating, customer);
     }
 
 }

@@ -7,6 +7,8 @@ import com.twu.users.User;
 
 import java.util.ArrayList;
 
+// It list all the books which are available in the library.
+
 public class ListBooksAction implements Option {
     private ArrayList<Book> availableBooks;
     private Library library;

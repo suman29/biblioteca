@@ -1,5 +1,7 @@
 package com.twu;
 
+// It is used to display the welcome message, when app starts.
+
 public class ConsoleOutput {
 
     public void displayWelcomeMessage() {

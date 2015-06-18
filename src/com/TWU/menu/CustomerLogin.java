@@ -3,6 +3,8 @@ package com.twu.menu;
 import com.twu.LoginController;
 import com.twu.users.User;
 
+// It allows the customer to login and gives the present user.
+
 public class CustomerLogin implements Option {
     private LoginController loginController;
     private MenuView menuView;

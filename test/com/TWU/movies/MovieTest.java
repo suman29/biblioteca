@@ -23,7 +23,7 @@ public class MovieTest {
 
     @Test
     public void shouldBeEqualToItself() {
-        Movie firstMovie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1, customer);
         boolean actual = firstMovie.equals(firstMovie);
 
         assertEquals(true, actual);
@@ -31,7 +31,7 @@ public class MovieTest {
 
     @Test
     public void shouldFollowSymmetricProperty() {
-        Movie firstMovie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1, customer);
         Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
         boolean actual = (firstMovie.equals(secondMovie) == secondMovie.equals(firstMovie));
 
@@ -40,9 +40,9 @@ public class MovieTest {
 
     @Test
     public void shouldFollowTransitiveProperty() {
-        Movie firstMovie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1, customer);
         Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
-        Movie thirdMovie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie thirdMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1, customer);
 
         boolean actual = firstMovie.equals(secondMovie) &&
                 secondMovie.equals(thirdMovie) &&
@@ -53,7 +53,7 @@ public class MovieTest {
 
     @Test
     public void shouldHaveSameHashCodeIfMoviesAreEqual() {
-        Movie firstMovie = new CheckedOutMovies("Movie1", 2001, "abc", 1, customer);
+        Movie firstMovie = new CheckedOutMovie("Movie1", 2001, "abc", 1, customer);
         Movie secondMovie = new AvailableMovie("Movie1", 2001, "abc", 1);
 
 

@@ -5,6 +5,8 @@ import com.twu.Messages;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+//It is a view responsible for taking input and displaying output for checkout action.
+
 public class CheckOutView {
 
     private BufferedReader bufferedReader;

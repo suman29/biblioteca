@@ -6,6 +6,8 @@ import com.twu.users.User;
 import java.util.ArrayList;
 import java.util.Set;
 
+// It is used to authenticate the users.
+
 public class Authenticator {
     private Set<User> allUsers;
     private NullUser nullUser;

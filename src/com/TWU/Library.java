@@ -6,6 +6,8 @@ import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
+// It has list of all books and all movies. All operations on these are done in this class.
+
 public class Library {
     private ArrayList<Book> allBooks;
     private ArrayList<Movie> allMovies;
@@ -59,6 +61,13 @@ public class Library {
         return checkedoutBooks;
     }
 
+    public ArrayList<Movie> getCheckedOutMovies(ArrayList<Movie> checkedOutMovies) {
+        checkedOutMovies.clear();
+
+        for (Movie movie : allMovies)
+            movie.addItselfToCheckedoutListOfMovieIfApplicable(checkedOutMovies);
+        return checkedOutMovies;
+    }
 
     public Book bookSearcher(String name) {
         return searcher.searchBook(allBooks, name);
@@ -68,13 +77,6 @@ public class Library {
         return searcher.searchMovie(allMovies, name);
     }
 
-    public ArrayList<Movie> getCheckedOutMovies(ArrayList<Movie> checkedOutMovies) {
-        checkedOutMovies.clear();
-
-        for (Movie movie : allMovies)
-            movie.addItselfToCheckedoutListOfMovieIfApplicable(checkedOutMovies);
-        return checkedOutMovies;
-    }
 
     public Book checkedBookSearcher(String bookName) {
         ArrayList<Book> checkedOutBooks = new ArrayList<>();

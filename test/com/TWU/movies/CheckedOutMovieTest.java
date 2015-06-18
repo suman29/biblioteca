@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class CheckedOutMoviesTest {
+public class CheckedOutMovieTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     String name = "ashray";
@@ -28,7 +28,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldMakeItselfAvailableAfterTheMovieIsReturned() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
+        CheckedOutMovie checkoutMovie = new CheckedOutMovie("movie1", 2014, "abc", 5, customer);
         ArrayList<Movie> list = new ArrayList<>();
         list.add(checkoutMovie);
 
@@ -41,7 +41,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldDisplayMessageWhenMovieIsReturnedSuccessfully() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
+        CheckedOutMovie checkoutMovie = new CheckedOutMovie("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnReturnMovieAction();
         String expectedOutput = Messages.RETURN_MOVIE_SUCCESSFUL;
@@ -51,7 +51,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldDisplayMessageWhenMovieIsAlreadyCheckedOut() {
-        CheckedOutMovies checkoutMovie = new CheckedOutMovies("movie1", 2014, "abc", 5, customer);
+        CheckedOutMovie checkoutMovie = new CheckedOutMovie("movie1", 2014, "abc", 5, customer);
 
         String actualOutput = checkoutMovie.getAppropriateMessageOnCheckOutAction();
         String expectedOutput = Messages.MOVIE_ALREADY_CHECKED;
@@ -61,7 +61,7 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldRepresentMovieInProperFormat() {
-        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc", "", "ab", "mn", "pq"));
+        Movie movie = new CheckedOutMovie("Movie1", 2001, "abc", 1, new Customer("abc", "", "ab", "mn", "pq"));
 
         String actualOutput = movie.toString();
         String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:ab mn pq";

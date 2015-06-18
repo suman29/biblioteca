@@ -5,6 +5,8 @@ import com.twu.menu.Option;
 import com.twu.movies.Movie;
 import com.twu.users.User;
 
+// It gives details of a checked out movie, whenever user searches for a particular movie.
+
 public class CheckedOutMovieAction implements Option {
     private Library library;
     private LibrarianActionView librarianActionView;

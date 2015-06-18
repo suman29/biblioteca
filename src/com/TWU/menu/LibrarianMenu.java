@@ -5,6 +5,8 @@ import com.twu.users.Librarian;
 import java.util.HashMap;
 import java.util.Map;
 
+// It has the librarian menu to be displayed when librarian logs in .
+
 public class LibrarianMenu {
     HashMap<Integer, String> menuListLibrarian;
     HashMap<Integer, Option> mappedOptionsLibrarian;

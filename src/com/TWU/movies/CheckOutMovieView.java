@@ -3,6 +3,8 @@ package com.twu.movies;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+// It is a view which takes input and display output while checking out a movie.
+
 public class CheckOutMovieView {
     private BufferedReader bufferedReader;
 

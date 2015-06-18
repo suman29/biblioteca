@@ -1,7 +1,7 @@
 package com.twu.librarianActions;
 
 import com.twu.Library;
-import com.twu.movies.CheckedOutMovies;
+import com.twu.movies.CheckedOutMovie;
 import com.twu.movies.Movie;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
@@ -27,7 +27,7 @@ public class CheckedOutMovieActionTest {
     @Test
     public void shouldGiveTheListOfCheckedOutBooksWithCustomerDetails() {
         CheckedOutMovieAction checkedOutMovieAction = new CheckedOutMovieAction(library, librarianActionView);
-        Movie movie = new CheckedOutMovies("good", 3, "ede", 2, customer);
+        Movie movie = new CheckedOutMovie("good", 3, "ede", 2, customer);
         when(librarianActionView.takeUserInputToGetDetailsOfItem())
                 .thenReturn("good");
         when(library.checkedMovieSearcher("good")).thenReturn(movie);

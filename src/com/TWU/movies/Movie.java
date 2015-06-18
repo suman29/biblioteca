@@ -5,6 +5,8 @@ import com.twu.users.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
+// It is a movie, which has 2 subtypes, available movie and checked out.
+
 public abstract class Movie {
     protected String name;
     protected int year;

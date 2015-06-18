@@ -5,6 +5,8 @@ import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
+// It is created when user gives some invalid input.
+
 public class NullMovie extends Movie {
     private Customer customer;
 

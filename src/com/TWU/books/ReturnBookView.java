@@ -5,6 +5,8 @@ import com.twu.Messages;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+// It is a view created to take input and display output during the return book action.
+
 public class ReturnBookView {
     private BufferedReader bufferedReader;
     private BooksView booksView;

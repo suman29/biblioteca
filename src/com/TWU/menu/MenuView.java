@@ -5,6 +5,8 @@ import com.twu.users.User;
 
 import java.io.BufferedReader;
 
+// It handles input output for all the menus in this app.
+
 public class MenuView {
     private BufferedReader br;
 

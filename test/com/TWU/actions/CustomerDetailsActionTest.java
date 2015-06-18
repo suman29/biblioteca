@@ -2,6 +2,7 @@ package com.twu.actions;
 
 import com.twu.users.Customer;
 import com.twu.users.User;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,4 +31,8 @@ public class CustomerDetailsActionTest {
         assertEquals(actualOutput, expectedOutput);
     }
 
+    @After
+    public void tearDown() throws Exception {
+        System.setOut(null);
+    }
 }

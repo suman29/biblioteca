@@ -15,7 +15,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ListBookActionTest {
+public class ListBooksActionTest {
 
     @Mock
     Library library;

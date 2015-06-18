@@ -2,6 +2,8 @@ package com.twu;
 
 import java.io.BufferedReader;
 
+//It is used to take the input from the user while logging in and display the appropriate message.
+
 public class LoginView {
     BufferedReader bufferedReader;
 

@@ -1,5 +1,7 @@
 package com.twu;
 
+// It contains all the messages, which are used in the app.
+
 public interface Messages {
     String WELCOME_MESSAGE = "Welcome";
     String ERROR_MESSAGE = "Select a valid option!";

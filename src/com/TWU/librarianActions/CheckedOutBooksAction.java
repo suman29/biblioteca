@@ -5,6 +5,8 @@ import com.twu.books.Book;
 import com.twu.menu.Option;
 import com.twu.users.User;
 
+// Its gives details of a checked out book, whenever librarian search for a particular book.
+
 public class CheckedOutBooksAction implements Option {
     private Library library;
     private LibrarianActionView librarianActionView;

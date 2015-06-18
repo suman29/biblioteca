@@ -3,6 +3,8 @@ package com.twu;
 import com.twu.users.NullUser;
 import com.twu.users.User;
 
+// It allows user to login the app.
+
 public class LoginController {
     private LoginView loginView;
     private Authenticator authenticator;

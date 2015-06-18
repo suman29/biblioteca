@@ -6,6 +6,8 @@ import com.twu.users.User;
 import java.util.HashMap;
 import java.util.Map;
 
+// It has the customer menu to be displayed to the customer.
+
 public class CustomerMenu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;

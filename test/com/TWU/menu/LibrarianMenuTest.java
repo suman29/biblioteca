@@ -1,11 +1,9 @@
 package com.twu.menu;
 
 import com.twu.Library;
-import com.twu.books.Book;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;
 import com.twu.librarianActions.LibrarianActionView;
-import com.twu.movies.Movie;
 import com.twu.users.Librarian;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +11,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
@@ -37,8 +34,6 @@ public class LibrarianMenuTest {
         mappedOptions = new HashMap<>();
         menuListLibrarian.put(1, "Checked out books");
         menuListLibrarian.put(2, "Checked out movies");
-        ArrayList<Book> checkedbooks = new ArrayList<>();
-        ArrayList<Movie> checkedMovies = new ArrayList<>();
         mappedOptions.put(1, new CheckedOutBooksAction(library, librarianActionView));
         mappedOptions.put(2, new CheckedOutMovieAction(library, librarianActionView));
 
@@ -54,4 +49,13 @@ public class LibrarianMenuTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void checkIfTheInputIsValid() {
+        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptions, user);
+
+        boolean actualOutput = librarianMenu.isValidInput(5);
+        boolean expectedOutput = false;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
 }

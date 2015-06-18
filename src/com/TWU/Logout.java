@@ -3,6 +3,8 @@ package com.twu;
 import com.twu.menu.Option;
 import com.twu.users.User;
 
+// It allows user to logout.
+
 public class Logout implements Option {
     private LoginController loginController;
 
@@ -12,7 +14,7 @@ public class Logout implements Option {
 
     @Override
     public void perform(User customer) {
-        //loginController.login();
+
     }
 
     @Override

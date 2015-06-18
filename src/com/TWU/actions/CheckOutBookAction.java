@@ -7,6 +7,8 @@ import com.twu.menu.Option;
 import com.twu.users.Customer;
 import com.twu.users.User;
 
+// Allows customers to checkout a book.
+
 public class CheckOutBookAction implements Option {
 
     private CheckOutView checkOutView;

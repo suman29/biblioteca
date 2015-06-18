@@ -6,6 +6,8 @@ import com.twu.movies.Movie;
 import com.twu.movies.ReturnMovieView;
 import com.twu.users.User;
 
+// It allows the customer to return the movie to library.
+
 public class ReturnMovieAction implements Option {
     private Library library;
     private ReturnMovieView returnMovieView;

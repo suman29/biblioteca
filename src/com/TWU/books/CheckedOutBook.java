@@ -5,6 +5,8 @@ import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
+// It is a book, checked out by user.
+
 public class CheckedOutBook extends Book {
     private Customer customer;
 

@@ -1,7 +1,8 @@
-package com.twu.movies;
+package com.twu.actions;
 
 import com.twu.Library;
-import com.twu.actions.ReturnMovieAction;
+import com.twu.movies.Movie;
+import com.twu.movies.ReturnMovieView;
 import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

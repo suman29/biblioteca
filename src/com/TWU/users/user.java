@@ -2,6 +2,8 @@ package com.twu.users;
 
 import java.util.ArrayList;
 
+// It is the app user, cab be of two types, customer or librarian.
+
 public abstract class User {
     private String libraryNumber;
     private String password;

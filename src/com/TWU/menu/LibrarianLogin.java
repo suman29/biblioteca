@@ -1,7 +1,10 @@
 package com.twu.menu;
 
 import com.twu.LoginController;
+import com.twu.users.Customer;
 import com.twu.users.User;
+
+// It allows only librarian to log with the correct credentials.
 
 public class LibrarianLogin implements Option {
     private LoginController loginController;
@@ -22,6 +25,8 @@ public class LibrarianLogin implements Option {
     @Override
     public void perform() {
         User user = loginController.login();
+        if(user instanceof Customer)
+            return;
         int continueLoop;
         do {
             menuView.displayListOfMenu(librarianMenu, user);

@@ -15,7 +15,7 @@ public class AvailableMovie extends Movie {
     @Override
     public void checkOut(ArrayList<Movie> allMovies, Customer customer) {
         allMovies.remove(this);
-        allMovies.add(CheckedOutMovies.create(this, customer));
+        allMovies.add(CheckedOutMovie.create(this, customer));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AvailableMovie extends Movie {
 
     }
 
-    public static AvailableMovie create(CheckedOutMovies checkedOutMovies) {
-        return new AvailableMovie(checkedOutMovies.name, checkedOutMovies.year, checkedOutMovies.director, checkedOutMovies.rating);
+    public static AvailableMovie create(CheckedOutMovie checkedOutMovie) {
+        return new AvailableMovie(checkedOutMovie.name, checkedOutMovie.year, checkedOutMovie.director, checkedOutMovie.rating);
     }
 }

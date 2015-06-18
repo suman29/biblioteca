@@ -5,6 +5,8 @@ import com.twu.users.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
+// It is a book, and has two subtypes : available book and checkout book.
+
 public abstract class Book {
     protected String name, author;
     protected int year;

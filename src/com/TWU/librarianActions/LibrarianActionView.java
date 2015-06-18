@@ -3,6 +3,8 @@ package com.twu.librarianActions;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+// It perform the input output operation for the librarian action.
+
 public class LibrarianActionView {
     private BufferedReader bufferedReader;
 

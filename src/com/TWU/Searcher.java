@@ -8,6 +8,8 @@ import com.twu.movies.NullMovie;
 import java.util.ArrayList;
 import java.util.List;
 
+// It is used whenever we want to search a book or movie in the library.
+
 public class Searcher {
 
     private NullMovie nullMovie;

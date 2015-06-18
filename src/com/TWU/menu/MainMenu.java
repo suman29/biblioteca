@@ -3,6 +3,8 @@ package com.twu.menu;
 import java.util.HashMap;
 import java.util.Map;
 
+// It is the main menu of the app, where all users can log in.
+
 public class MainMenu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;

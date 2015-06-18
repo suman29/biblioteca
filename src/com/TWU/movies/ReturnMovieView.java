@@ -3,6 +3,8 @@ package com.twu.movies;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+// It is a view which is used to take input and display output while returning view.
+
 public class ReturnMovieView {
     private BufferedReader bufferedReader;
 

@@ -30,9 +30,9 @@ public class AvailableMovieTest {
         list.add(availableMovie);
         availableMovie.checkOut(list, new Customer("", "", name, email, number));
 
-        CheckedOutMovies checkedOutMovies = (CheckedOutMovies) list.get(list.indexOf(availableMovie));
+        CheckedOutMovie checkedOutMovie = (CheckedOutMovie) list.get(list.indexOf(availableMovie));
 
-        assertTrue(checkedOutMovies instanceof CheckedOutMovies);
+        assertTrue(checkedOutMovie instanceof CheckedOutMovie);
     }
 
     @Test

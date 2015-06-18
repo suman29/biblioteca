@@ -5,6 +5,8 @@ import com.twu.users.Customer;
 
 import java.util.ArrayList;
 
+// It is the book available in library for checkout.
+
 public class AvailableBook extends Book {
     public AvailableBook(String name, String author, int year, int id) {
         super(name, author, year, id);

@@ -7,6 +7,8 @@ import com.twu.movies.Movie;
 import com.twu.users.Customer;
 import com.twu.users.User;
 
+// Allows customers to check out a movie.
+
 public class CheckOutMovieAction implements Option {
     private Library library;
     private CheckOutMovieView checkOutMovieView;

@@ -2,6 +2,8 @@ package com.twu.books;
 
 import java.util.ArrayList;
 
+// It represents a collection of book.
+
 public class Books {
     private ArrayList<Book> books;
 
