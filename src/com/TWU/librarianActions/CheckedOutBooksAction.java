@@ -18,7 +18,7 @@ public class CheckedOutBooksAction implements Option {
     @Override
     public void perform(User customer) {
         String bookName = librarianActionView.takeUserInputToGetDetailsOfItem();
-        Book book = library.bookSearcher(bookName);
+        Book book = library.checkedBookSearcher(bookName);
         librarianActionView.displayMessage(book.toString());
     }
 }

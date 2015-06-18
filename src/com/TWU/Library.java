@@ -75,5 +75,17 @@ public class Library {
             movie.addItselfToCheckedoutListOfMovieIfApplicable(checkedOutMovies);
         return checkedOutMovies;
     }
+
+    public Book checkedBookSearcher(String bookName) {
+        ArrayList<Book> checkedOutBooks = new ArrayList<>();
+        getCheckedOutBooks(checkedOutBooks);
+        return searcher.searchBook(checkedOutBooks,bookName);
+    }
+
+    public Movie checkedMovieSearcher(String movieName) {
+        ArrayList<Movie> checkedOutMovies = new ArrayList<>();
+        getCheckedOutMovies(checkedOutMovies);
+        return searcher.searchMovie(checkedOutMovies, movieName);
+    }
 }
 

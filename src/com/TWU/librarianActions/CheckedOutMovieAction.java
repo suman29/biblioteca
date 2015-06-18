@@ -17,7 +17,7 @@ public class CheckedOutMovieAction implements Option {
     @Override
     public void perform(User customer) {
         String movieName= librarianActionView.takeUserInputToGetDetailsOfItem();
-        Movie movie = library.movieSearcher(movieName);
+        Movie movie = library.checkedMovieSearcher(movieName);
         librarianActionView.displayMessage(movie.toString());
     }
 }

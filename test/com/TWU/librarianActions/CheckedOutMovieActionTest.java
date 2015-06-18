@@ -30,9 +30,9 @@ public class CheckedOutMovieActionTest {
         Movie movie = new CheckedOutMovies("good",3,"ede",2,customer);
         when(librarianActionView.takeUserInputToGetDetailsOfItem())
                 .thenReturn("good");
-        when(library.movieSearcher("good")).thenReturn(movie);
+        when(library.checkedMovieSearcher("good")).thenReturn(movie);
         checkedOutMovieAction.perform(new Librarian("",""));
 
-        verify(library).movieSearcher("good");
+        verify(library).checkedMovieSearcher("good");
     }
 }

@@ -37,7 +37,7 @@ public class EntryPoint {
 
     }
 
-    private void librarianControl(User user) {
+    public void librarianControl(User user) {
         int continueLoop;
         do {
             menuView.displayListOfMenu(librarianMenu, user);
@@ -50,7 +50,7 @@ public class EntryPoint {
         } while (continueLoop < 3);
     }
 
-    private void customerControl(User user) {
+    public void customerControl(User user) {
         int continueLoop;
         do {
             menuView.displayListOfMenu(customerMenu, user);

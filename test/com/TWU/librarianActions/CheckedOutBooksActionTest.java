@@ -41,10 +41,10 @@ public class CheckedOutBooksActionTest {
         CheckedOutBooksAction checkedOutBooksAction = new CheckedOutBooksAction(library,librarianActionView);
         when(librarianActionView.takeUserInputToGetDetailsOfItem())
                 .thenReturn("good");
-        when(library.bookSearcher("good")).thenReturn(book);
+        when(library.checkedBookSearcher("good")).thenReturn(book);
         checkedOutBooksAction.perform(new Librarian("",""));
 
-        verify(library).bookSearcher("good");
+        verify(library).checkedBookSearcher("good");
     }
 
 }
