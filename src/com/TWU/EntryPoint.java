@@ -2,67 +2,34 @@ package com.twu;
 
 //Entry point of the App, it has MenuView, CustomerMenu and ConsoleOutput.
 
-import com.twu.menu.CustomerMenu;
-import com.twu.menu.LibrarianMenu;
+import com.twu.menu.MainMenu;
 import com.twu.menu.MenuView;
-import com.twu.users.Customer;
-import com.twu.users.User;
 
 public class EntryPoint {
 
     private MenuView menuView;
-    private CustomerMenu customerMenu;
     private ConsoleOutput consoleOutput;
-    private LoginController loginController;
-    private LibrarianMenu librarianMenu;
+    private MainMenu mainMenu;
 
-    public EntryPoint(MenuView menuView, CustomerMenu customerMenu, ConsoleOutput consoleOutput, LoginController loginController, LibrarianMenu librarianMenu) {
+
+    public EntryPoint(MenuView menuView, ConsoleOutput consoleOutput, MainMenu mainMenu) {
         this.menuView = menuView;
-        this.customerMenu = customerMenu;
         this.consoleOutput = consoleOutput;
-        this.loginController = loginController;
-        this.librarianMenu = librarianMenu;
+        this.mainMenu = mainMenu;
     }
 
     private void menuIteration() {
-
-
-            User user = loginController.login();
-
-            if (user instanceof Customer)
-                customerControl(user);
-
-            else
-                librarianControl(user);
-
-    }
-
-    public void librarianControl(User user) {
         int continueLoop;
-        do {
-            menuView.displayListOfMenu(librarianMenu, user);
+        do{
+            menuView.displayListOfMenu(mainMenu);
             continueLoop = menuView.takeUserInputForMainMenu();
-
-            if (librarianMenu.isValidInput(continueLoop))
-                librarianMenu.performAction(continueLoop);
+            if (mainMenu.isValidInput(continueLoop))
+                mainMenu.performAction(continueLoop);
             else
                 menuView.errorMessage();
-        } while (continueLoop < 3);
+        } while (continueLoop < 5);
+
     }
-
-    public void customerControl(User user) {
-        int continueLoop;
-        do {
-            menuView.displayListOfMenu(customerMenu, user);
-            continueLoop = menuView.takeUserInputForMainMenu();
-
-            if (customerMenu.isValidInput(continueLoop))
-                customerMenu.performAction(continueLoop);
-            else
-                menuView.errorMessage();
-        } while (continueLoop < 8);
-    }
-
 
     public void start() {
         consoleOutput.displayWelcomeMessage();

@@ -21,6 +21,10 @@ public class MenuView {
         System.out.print(menuList.toString());
     }
 
+    public void displayListOfMenu(MainMenu mainMenu) {
+        System.out.print(mainMenu.toString());
+    }
+
     public int takeUserInputForMainMenu() {
         try {
             int input = Integer.parseInt(br.readLine());
@@ -36,4 +40,6 @@ public class MenuView {
     public void errorMessage() {
         System.out.println(Messages.ERROR_MESSAGE);
     }
+
+
 }

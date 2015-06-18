@@ -1,7 +1,7 @@
 package com.twu;
 
-import com.twu.menu.CustomerMenu;
 import com.twu.menu.LibrarianMenu;
+import com.twu.menu.MainMenu;
 import com.twu.menu.MenuView;
 import com.twu.users.Customer;
 import org.junit.Test;
@@ -16,42 +16,40 @@ public class EntryPointTest {
 
     @Mock
     LoginController loginController;
-
     @Mock
     Customer user;
-
     @Mock
     LibrarianMenu librarianMenu;
+    @Mock
+    MainMenu mainMenu;
 
     @Test
     public void shouldNotContinueLoopIfTheUserSelectsQuit() {
 
         MenuView menuViewStub = mock(MenuView.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
-        CustomerMenu customerMenu = mock(CustomerMenu.class);
-        when(loginController.login()).thenReturn(user);
-        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(8);
-        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
+        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(5);
+        when(mainMenu.isValidInput(5)).thenReturn(true);
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, consoleOutputStub, mainMenu);
 
         entryPoint.start();
 
-        verify(menuViewStub).displayListOfMenu(customerMenu, user);
+        verify(mainMenu).performAction(5);
     }
 
     @Test
     public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
 
         MenuView menuViewStub = mock(MenuView.class);
-        when(loginController.login()).thenReturn(user);
-        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(6).thenReturn(8);
-        CustomerMenu customerMenu = mock(CustomerMenu.class);
         ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
-        when(loginController.login()).thenReturn(user);
-        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
+        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(4).thenReturn(5);
+        when(mainMenu.isValidInput(5)).thenReturn(true);
+        when(mainMenu.isValidInput(4)).thenReturn(true);
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, consoleOutputStub, mainMenu);
 
         entryPoint.start();
 
-        verify(menuViewStub, times(2)).displayListOfMenu(customerMenu, user);
+        verify(mainMenu).performAction(4);
     }
 
 }

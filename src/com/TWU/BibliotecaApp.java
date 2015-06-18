@@ -7,10 +7,7 @@ import com.twu.books.*;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;
 import com.twu.librarianActions.LibrarianActionView;
-import com.twu.menu.CustomerMenu;
-import com.twu.menu.LibrarianMenu;
-import com.twu.menu.MenuView;
-import com.twu.menu.Option;
+import com.twu.menu.*;
 import com.twu.movies.*;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
@@ -79,7 +76,22 @@ public class BibliotecaApp {
         LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian, librarian);
 
 
-        EntryPoint entryPoint = new EntryPoint(menuView, customerMenu, consoleOutput, loginController, librarianMenu);
+        HashMap<Integer,String> menuListMain = new HashMap<>();
+        HashMap<Integer, MainOption> mappedOptionsMain = new HashMap<>();
+        menuListMain.put(1,Messages.LIST_BOOKS);
+        menuListMain.put(2,Messages.LIST_MOVIES);
+        menuListMain.put(3,Messages.LOGIN_CUSTOMER);
+        menuListMain.put(4,Messages.LOGIN_LIBRARIAN);
+        menuListMain.put(5,Messages.QUIT);
+        mappedOptionsMain.put(1, (MainOption) new ListBooksAction(availableListOfBooks,library));
+        mappedOptionsMain.put(2, (MainOption) new ListMoviesAction(library,initialiseMovies()));
+        mappedOptionsMain.put(3, new CustomerLogin(loginController,menuView,customerMenu));
+        mappedOptionsMain.put(4, new LibrarianLogin(loginController,menuView,librarianMenu));
+        mappedOptionsMain.put(5, (MainOption) new QuitAction());
+
+
+        MainMenu mainMenu = new MainMenu(menuListMain,mappedOptionsMain);
+        EntryPoint entryPoint = new EntryPoint(menuView, consoleOutput, mainMenu);
         entryPoint.start();
 
     }
@@ -89,8 +101,6 @@ public class BibliotecaApp {
         menuListLibrarian.put(2, Messages.LIST_CHECKED_MOVIES);
         menuListLibrarian.put(4, Messages.LOGOUT);
         menuListLibrarian.put(3, Messages.QUIT);
-        ArrayList<Book> checkedbooks = new ArrayList<>();
-        ArrayList<Movie> checkedMovies = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         mappedOptions.put(1, new CheckedOutBooksAction(library,new LibrarianActionView(br)));
         mappedOptions.put(2, new CheckedOutMovieAction(library, new LibrarianActionView(br)));

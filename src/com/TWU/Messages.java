@@ -30,4 +30,6 @@ public interface Messages {
     String MY_DETAILS = "My details";
     String LIST_CHECKED_BOOKS = "List checked out books";
     String LIST_CHECKED_MOVIES = "List checked out movies";
+    String LOGIN_CUSTOMER = "Login as Customer";
+    String LOGIN_LIBRARIAN = "Login as Librarian";
 }

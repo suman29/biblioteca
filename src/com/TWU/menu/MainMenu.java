@@ -27,4 +27,7 @@ public class MainMenu {
         return mainMenu;
     }
 
+    public boolean isValidInput(int input) {
+        return input>=0 && input<=3;
+    }
 }
