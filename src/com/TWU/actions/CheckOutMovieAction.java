@@ -1,7 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
-import com.twu.Option;
+import com.twu.menu.Option;
 import com.twu.movies.CheckOutMovieView;
 import com.twu.movies.Movie;
 import com.twu.users.Customer;

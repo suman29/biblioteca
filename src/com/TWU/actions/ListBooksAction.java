@@ -1,7 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
-import com.twu.Option;
+import com.twu.menu.Option;
 import com.twu.books.Book;
 import com.twu.users.User;
 

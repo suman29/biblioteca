@@ -1,7 +1,6 @@
 package com.twu.menu;
 
 import com.twu.Library;
-import com.twu.Option;
 import com.twu.books.Book;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;

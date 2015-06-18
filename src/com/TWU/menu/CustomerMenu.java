@@ -1,6 +1,5 @@
 package com.twu.menu;
 
-import com.twu.Option;
 import com.twu.users.Customer;
 import com.twu.users.User;
 

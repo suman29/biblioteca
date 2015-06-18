@@ -1,7 +1,6 @@
 package com.twu.menu;
 
 import com.twu.Library;
-import com.twu.Option;
 import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;

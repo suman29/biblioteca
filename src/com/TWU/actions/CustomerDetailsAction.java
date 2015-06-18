@@ -1,6 +1,6 @@
 package com.twu.actions;
 
-import com.twu.Option;
+import com.twu.menu.Option;
 import com.twu.users.User;
 
 public class CustomerDetailsAction implements Option{
