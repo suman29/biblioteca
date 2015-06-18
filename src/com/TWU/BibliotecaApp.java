@@ -83,10 +83,10 @@ public class BibliotecaApp {
     }
 
     private static void populatingForLibrarian(HashMap<Integer, Option> mappedOptions, Library library, HashMap<Integer, String> menuListLibrarian, LoginController loginController) {
-        menuListLibrarian.put(1, "Checked out books");
-        menuListLibrarian.put(2, "Checked out movies");
-        menuListLibrarian.put(4, "Log out");
-        menuListLibrarian.put(3, "Quit");
+        menuListLibrarian.put(1, Messages.LIST_CHECKED_BOOKS);
+        menuListLibrarian.put(2, Messages.LIST_CHECKED_MOVIES);
+        menuListLibrarian.put(4, Messages.LOGOUT);
+        menuListLibrarian.put(3, Messages.QUIT);
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
         mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));

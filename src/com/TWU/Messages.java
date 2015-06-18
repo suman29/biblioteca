@@ -28,4 +28,6 @@ public interface Messages {
     String ENTER_PASSWORD = "Enter your password:";
     String LOGOUT = "Logout";
     String MY_DETAILS = "My details";
+    String LIST_CHECKED_BOOKS = "List checked out books";
+    String LIST_CHECKED_MOVIES = "List checked out movies";
 }
