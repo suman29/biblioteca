@@ -32,24 +32,26 @@ public class EntryPointTest {
         when(loginController.login()).thenReturn(user);
         when(menuViewStub.takeUserInputForMainMenu()).thenReturn(7);
         EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
+
         entryPoint.start();
 
         verify(menuViewStub).displayListOfMenu(customerMenu, user);
     }
 
-//    @Test
-//    public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
-//        ByteArrayInputStream inputStream = new ByteArrayInputStream("4".getBytes());
-//        System.setIn(inputStream);
-//        MenuView menuViewStub = mock(MenuView.class);
-//        CustomerMenu customerMenu = mock(CustomerMenu.class);
-//        ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
-//        when(loginController.login()).thenReturn(user);
-//        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
-//        entryPoint.start();
-//
-//        verify(menuViewStub).displayListOfMenu(customerMenu, user);
-//    }
+    @Test
+    public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
 
+        MenuView menuViewStub = mock(MenuView.class);
+        when(loginController.login()).thenReturn(user);
+        when(menuViewStub.takeUserInputForMainMenu()).thenReturn(6).thenReturn(7);
+        CustomerMenu customerMenu = mock(CustomerMenu.class);
+        ConsoleOutput consoleOutputStub = mock(ConsoleOutput.class);
+        when(loginController.login()).thenReturn(user);
+        EntryPoint entryPoint = new EntryPoint(menuViewStub, customerMenu, consoleOutputStub, loginController, librarianMenu);
+
+        entryPoint.start();
+
+        verify(menuViewStub, times(2)).displayListOfMenu(customerMenu, user);
+    }
 
 }

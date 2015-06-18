@@ -23,9 +23,12 @@ public class AvailableMovieTest {
     @Test
     public void shouldMakeItselfCheckedOutIfTheMovieIsCheckedOut() {
         AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);
+        String name = "ashray";
+        String email = "123@yh.com";
+        String number="7205787250";
         ArrayList<Movie> list = new ArrayList<>();
         list.add(availableMovie);
-        availableMovie.checkOut(list, new Customer("", ""));
+        availableMovie.checkOut(list, new Customer("", "", name, email, number));
 
         CheckedOutMovies checkedOutMovies = (CheckedOutMovies) list.get(list.indexOf(availableMovie));
 

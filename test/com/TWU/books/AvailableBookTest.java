@@ -15,6 +15,9 @@ import static org.junit.Assert.assertTrue;
 public class AvailableBookTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    String name = "ashray";
+    String email = "123@yh.com";
+    String number="7205787250";
 
     @Before
     public void setUp() throws Exception {
@@ -34,7 +37,7 @@ public class AvailableBookTest {
     @Test
     public void shouldBeAbleToConvertAvailableBookToCheckedOutBook() {
         AvailableBook availableBook = new AvailableBook("God", "helpme", 2015, 10);
-        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", ""));
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", "", name, email, number));
 
         AvailableBook actualOutput = availableBook.create(checkoutBook);
 
@@ -46,7 +49,7 @@ public class AvailableBookTest {
         ArrayList<Book> list = new ArrayList<>();
         AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
         list.add(availableBook);
-        availableBook.checkOut(list, new Customer("", ""));
+        availableBook.checkOut(list, new Customer("", "", name, email, number));
 
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 

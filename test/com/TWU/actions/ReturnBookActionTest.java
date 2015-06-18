@@ -26,6 +26,9 @@ public class ReturnBookActionTest {
     @Mock
     Book book1;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldBeAbleToReturnBook() {
         when(returnBookView.takeUserInputForReturningBook()).thenReturn("Good");
@@ -35,7 +38,7 @@ public class ReturnBookActionTest {
                 .thenReturn(book);
 
         ReturnBookAction returnBookAction = new ReturnBookAction(library, returnBookView);
-        returnBookAction.perform(new Customer("", ""));
+        returnBookAction.perform(customer);
 
         verify(library).returnBook(book);
     }

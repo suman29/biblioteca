@@ -20,12 +20,15 @@ public class ListBookActionTest {
     @Mock
     Library library;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldBeAbleToDisplayList() {
         BooksView booksViewStub = mock(BooksView.class);
         ArrayList<Book> book = new ArrayList<>();
         ListBooksAction listBook = new ListBooksAction(book, library);
-        listBook.perform(new Customer("", ""));
+        listBook.perform(customer);
 
         verify(library).getAvailableBooks(book);
     }

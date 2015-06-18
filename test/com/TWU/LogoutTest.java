@@ -1,6 +1,5 @@
 package com.twu;
 
-import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -14,7 +13,7 @@ public class LogoutTest {
     @Test
     public void shouldBeAbleToLogOutAUser() {
         Logout logout = new Logout(loginController);
-        logout.perform(new Customer("", ""));
+//        logout.perform(new Customer("", "", name, email, number));
 
 //        verify(loginController).login();
     }

@@ -6,7 +6,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class MovieTest {
-    Customer customer = new Customer("", "");
+    String name = "ashray";
+    String email = "123@yh.com";
+    String number="7205787250";
+    Customer customer = new Customer("", "", name, email, number);
 
     @Test
     public void shouldRepresentMovieInProperFormat() {

@@ -66,19 +66,19 @@ public class LibraryTest {
         moviesAvailable.add(new AvailableMovie("movie3", 2014, "abc", 5));
         Library library = new Library(books, moviesAvailable, new Searcher(nullMovie, nullBook));
 
-        library.checkOutMovie(availableMovie, new Customer("", ""));
+        library.checkOutMovie(availableMovie, customer);
 
-        verify(availableMovie).checkOut(moviesAvailable, new Customer("", ""));
+        verify(availableMovie).checkOut(moviesAvailable, customer);
     }
 
     @Test
     public void shouldBeAbleToAddReturnedBookWhenUserSelectsABook() {
         ArrayList<Book> booksCheckedOut = new ArrayList<>();
         ArrayList<Book> booksAvailable = new ArrayList<>();
-        CheckedOutBook book1 = new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("", ""));
-        booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("", "")));
+        CheckedOutBook book1 = new CheckedOutBook("abc2", "xyz", 1908, 2, customer);
+        booksCheckedOut.add(new CheckedOutBook("abc1", "xyz", 1908, 1, customer));
         booksCheckedOut.add(book1);
-        booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3, new Customer("", "")));
+        booksCheckedOut.add(new CheckedOutBook("abc3", "xyz", 1908, 3, customer));
         Library library = new Library(booksAvailable, allMovies, new Searcher(nullMovie, nullBook));
 
         library.returnBook(book1);
@@ -94,8 +94,8 @@ public class LibraryTest {
         ArrayList<Book> allBooks = new ArrayList<>();
         allBooks.add(new AvailableBook("abc2", "xyz", 1908, 2));
         allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
-        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("", "")));
-        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("", "")));
+        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, customer));
+        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, customer));
         Library library = new Library(allBooks, allMovies, new Searcher(nullMovie, nullBook));
         ArrayList<Book> booksAvailable = new ArrayList<>();
         booksAvailable.add(new AvailableBook("abc2", "xyz", 1908, 2));
@@ -115,12 +115,12 @@ public class LibraryTest {
         ArrayList<Book> allBooks = new ArrayList<>();
         allBooks.add(new AvailableBook("abc2", "xyz", 1908, 2));
         allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
-        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("", "")));
-        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("", "")));
+        allBooks.add(new CheckedOutBook("abc2", "xyz", 1908, 2, customer));
+        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, customer));
         Library library = new Library(allBooks, allMovies, new Searcher(nullMovie, nullBook));
         ArrayList<Book> booksChecked = new ArrayList<>();
-        booksChecked.add(new CheckedOutBook("abc2", "xyz", 1908, 2, new Customer("", "")));
-        booksChecked.add(new CheckedOutBook("abc1", "xyz", 1908, 1, new Customer("", "")));
+        booksChecked.add(new CheckedOutBook("abc2", "xyz", 1908, 2, customer));
+        booksChecked.add(new CheckedOutBook("abc1", "xyz", 1908, 1, customer));
 
         ArrayList<Book> abc = new ArrayList<>();
 
@@ -165,10 +165,10 @@ public class LibraryTest {
     public void shouldBeAbleToAddReturnedMoviesWhenUserReturnsAMovie() {
         ArrayList<Movie> moviesCheckedout = new ArrayList<>();
         ArrayList<Movie> moviesAvailable = new ArrayList<>();
-        CheckedOutMovies movie1 = new CheckedOutMovies("Movie2", 2001, "abc", 1, new Customer("", ""));
-        moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, new Customer("", "")));
+        CheckedOutMovies movie1 = new CheckedOutMovies("Movie2", 2001, "abc", 1, customer);
+        moviesCheckedout.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, customer));
         moviesCheckedout.add(movie1);
-        moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, new Customer("", "")));
+        moviesCheckedout.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, customer));
         Library library = new Library(books, moviesAvailable, new Searcher(nullMovie, nullBook));
 
         library.returnMovie(movie1);
@@ -183,9 +183,9 @@ public class LibraryTest {
     public void shouldBeAbleToGiveCheckedOutMovies() {
         ArrayList<Movie> moviesCheckedout = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
-        movies.add(new CheckedOutMovies("Movie2", 2001, "abc", 1, new Customer("", "")));
-        movies.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, new Customer("", "")));
-        movies.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, new Customer("", "")));
+        movies.add(new CheckedOutMovies("Movie2", 2001, "abc", 1, customer));
+        movies.add(new CheckedOutMovies("Movie3", 2001, "abc", 1, customer));
+        movies.add(new CheckedOutMovies("Movie4", 2001, "abc", 1, customer));
         Library library = new Library(books, movies, new Searcher(nullMovie, nullBook));
 
         library.getCheckedOutMovies(moviesCheckedout);

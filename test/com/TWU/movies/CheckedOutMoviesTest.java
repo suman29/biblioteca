@@ -16,7 +16,10 @@ import static org.junit.Assert.assertTrue;
 public class CheckedOutMoviesTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    Customer customer = new Customer("", "");
+    String name = "ashray";
+    String email = "123@yh.com";
+    String number="7205787250";
+    Customer customer = new Customer("", "", name, email, number);
 
     @Before
     public void setUp() throws Exception {
@@ -58,10 +61,10 @@ public class CheckedOutMoviesTest {
 
     @Test
     public void shouldRepresentMovieInProperFormat() {
-        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc", ""));
+        Movie movie = new CheckedOutMovies("Movie1", 2001, "abc", 1, new Customer("abc", "", "ab","mn","pq"));
 
         String actualOutput = movie.toString();
-        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:abc" + System.lineSeparator();
+        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:ab mn pq";
 
         assertEquals(expectedOutput, actualOutput);
     }

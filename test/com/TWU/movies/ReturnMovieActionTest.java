@@ -22,6 +22,9 @@ public class ReturnMovieActionTest {
     @Mock
     Movie movie;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldBeAbleToReturnMovie() {
         when(returnMovieView.takeUserInputForReturningMovie()).thenReturn("hello");
@@ -29,7 +32,7 @@ public class ReturnMovieActionTest {
                 .thenReturn(movie);
 
         ReturnMovieAction returnMovieAction = new ReturnMovieAction(library, returnMovieView);
-        returnMovieAction.perform(new Customer("", ""));
+        returnMovieAction.perform(customer);
 
         verify(library).returnMovie(movie);
     }

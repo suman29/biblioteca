@@ -28,7 +28,7 @@ public class CheckOutBookActionTest {
     @Test
     public void shouldCheckOutBooks() {
         when(checkOutView.takeUserInputForCheckOutBook()).thenReturn("Good");
-        Book book = new CheckedOutBook("", "", 0, 0, new Customer("", ""));
+        Book book = new CheckedOutBook("", "", 0, 0, customer);
         when(library.bookSearcher("Good"))
                 .thenReturn(book);
 

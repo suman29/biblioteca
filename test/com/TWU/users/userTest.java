@@ -9,19 +9,23 @@ import static org.junit.Assert.assertTrue;
 
 public class UserTest {
 
+    String name = "ashray";
+    String email = "123@yh.com";
+    String number="7205787250";
+
     @Test
     public void shouldDisplayTheUserNumberProperly() {
-        User user = new Customer("123-4567", "abcd");
+        User user = new Customer("123-4567", "abcd", name, email, number);
 
         String actualOutput = user.toString();
-        String expectedOutput = "123-4567" + System.lineSeparator();
+        String expectedOutput = "ashray 123@yh.com 7205787250";
 
         assertEquals(actualOutput, expectedOutput);
     }
 
     @Test
     public void shouldBeEqualToItself() {
-        User firstUser = new Customer("abc", "xyz");
+        User firstUser = new Customer("abc", "xyz", name, email, number);
 
         boolean actual = firstUser.equals(firstUser);
 
@@ -30,7 +34,7 @@ public class UserTest {
 
     @Test
     public void shouldFollowSymmetricProperty() {
-        User firstUser = new Customer("abc", "xyz");
+        User firstUser = new Customer("abc", "xyz", name, email, number);
         User secondUser = new Librarian("abc", "xyz");
 
         boolean actual = (firstUser.equals(secondUser) == secondUser.equals(firstUser));
@@ -40,7 +44,7 @@ public class UserTest {
 
     @Test
     public void shouldFollowTransitiveProperty() {
-        User firstUser = new Customer("abc", "xyz");
+        User firstUser = new Customer("abc", "xyz", name, email, number);
         User secondUser = new Librarian("abc", "xyz");
         User thirdUser = new Librarian("abc", "xyz");
 
@@ -53,7 +57,7 @@ public class UserTest {
 
     @Test
     public void shouldHaveSameHashCodeIfUsersAreEqual() {
-        User firstUser = new Customer("abc", "xyz");
+        User firstUser = new Customer("abc", "xyz", name, email, number);
         User secondUser = new Librarian("abc", "xyz");
 
         boolean actual = firstUser.equals(secondUser) && (firstUser.hashCode() == secondUser.hashCode());
@@ -63,7 +67,7 @@ public class UserTest {
 
     @Test
     public void shouldAddToListIfValidUser() {
-        User firstUser = new Customer("abc", "xyz");
+        User firstUser = new Customer("abc", "xyz", name, email, number);
         ArrayList<User> list = new ArrayList<>();
 
         firstUser.addToListIfCredentialsMatch(list, "abc", "xyz");

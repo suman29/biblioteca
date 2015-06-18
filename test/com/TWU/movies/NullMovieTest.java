@@ -8,9 +8,13 @@ import static org.junit.Assert.assertEquals;
 
 public class NullMovieTest {
 
+    String name = "ashray";
+    String email = "123@yh.com";
+    String number="7205787250";
+
     @Test
     public void shouldDisplayAppropriateMessageOnCheckingOut() {
-        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", ""));
+        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", "", name, email, number));
 
         String actualOutput = nullMovie.getAppropriateMessageOnCheckOutAction();
         String expectedOutput = Messages.CHECKOUT_MOVIE_UNSUCCESSFUL;
@@ -21,7 +25,7 @@ public class NullMovieTest {
 
     @Test
     public void shouldDisplayAppropriateMessageOnReturning() {
-        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", ""));
+        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", "", name, email, number));
 
         String actualOutput = nullMovie.getAppropriateMessageOnReturnMovieAction();
         String expectedOutput = Messages.RETURN_MOVIE_UNSUCCESSFUL;

@@ -18,11 +18,14 @@ public class ListMoviesActionTest {
     @Mock
     Library library;
 
+    @Mock
+    Customer customer;
+
     @Test
     public void shouldDisplayTheMovies() {
         ArrayList<Movie> movies = new ArrayList<>();
         ListMoviesAction listMoviesAction = new ListMoviesAction(library, movies);
-        listMoviesAction.perform(new Customer("", ""));
+        listMoviesAction.perform(customer);
 
         verify(library).getAvailableMovies(movies);
     }

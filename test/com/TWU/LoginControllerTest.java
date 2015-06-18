@@ -21,13 +21,16 @@ public class LoginControllerTest {
     @Mock
     NullUser nullUser;
 
+    @Mock
+    Customer customer;
+
 
     @Test
     public void shouldBeAbleToPerformValidUserAction() {
         LoginController loginController = new LoginController(loginView, authenticator, nullUser);
 
         when(authenticator.validateUser(null, null))
-                .thenReturn(new Customer("", ""));
+                .thenReturn(customer);
         loginController.login();
 
         verify(loginView, times(2)).getUserInput();
@@ -38,7 +41,7 @@ public class LoginControllerTest {
         NullUser user1 = new NullUser("", "");
         when(authenticator.validateUser(null, null))
                 .thenReturn(new NullUser("", ""))
-                .thenReturn(new Customer("", ""));
+                .thenReturn(customer);
         LoginController loginController = new LoginController(loginView, authenticator, user1);
 
         loginController.login();
@@ -49,8 +52,11 @@ public class LoginControllerTest {
     @Test
     public void shouldExitWhileLoopIfItIsAValidUser() {
         NullUser user1 = new NullUser("", "");
+        String name = "ashray";
+        String email = "123@yh.com";
+        String number="7205787250";
         when(authenticator.validateUser(null, null))
-                .thenReturn(new Customer("Number", "Password"));
+                .thenReturn(new Customer("Number", "Password", name, email, number));
         LoginController loginController = new LoginController(loginView, authenticator, user1);
 
 
