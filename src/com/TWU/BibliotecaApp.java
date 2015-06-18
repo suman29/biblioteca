@@ -83,14 +83,14 @@ public class BibliotecaApp {
     private static void populatingForLibrarian(HashMap<Integer, Option> mappedOptions, Library library, HashMap<Integer, String> menuListLibrarian, LoginController loginController) {
         menuListLibrarian.put(1, "Checked out books");
         menuListLibrarian.put(2, "Checked out movies");
-        menuListLibrarian.put(3, "Log out");
-        menuListLibrarian.put(4, "Quit");
+        menuListLibrarian.put(4, "Log out");
+        menuListLibrarian.put(3, "Quit");
         ArrayList<Book> checkedbooks = new ArrayList<>();
         ArrayList<Movie> checkedMovies = new ArrayList<>();
         mappedOptions.put(1, new CheckedOutBooksAction(checkedbooks, library));
         mappedOptions.put(2, new CheckedOutMovieAction(library, checkedMovies));
-        mappedOptions.put(3, new Logout(loginController));
-        mappedOptions.put(4, new QuitAction());
+        mappedOptions.put(4, new Logout(loginController));
+        mappedOptions.put(3, new QuitAction());
     }
 
     private static ArrayList<Movie> initialiseMovies() {
@@ -130,8 +130,8 @@ public class BibliotecaApp {
         mappedOptions.put(4, new ListMoviesAction(library, movies));
         mappedOptions.put(5, new CheckOutMovieAction((library), new CheckOutMovieView(bufferedReader)));
         mappedOptions.put(6, new ReturnMovieAction(library, new ReturnMovieView(bufferedReader)));
-        mappedOptions.put(7, new Logout(loginController));
-        mappedOptions.put(8, new QuitAction());
+        mappedOptions.put(8, new Logout(loginController));
+        mappedOptions.put(7, new QuitAction());
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
@@ -141,7 +141,7 @@ public class BibliotecaApp {
         menuList.put(4, Messages.LIST_MOVIES);
         menuList.put(5, Messages.CHECKOUT_MOVIE);
         menuList.put(6, Messages.RETURN_MOVIE);
-        menuList.put(7, Messages.LOGOUT);
-        menuList.put(8, Messages.QUIT);
+        menuList.put(7, Messages.QUIT);
+        menuList.put(8, Messages.LOGOUT);
     }
 }

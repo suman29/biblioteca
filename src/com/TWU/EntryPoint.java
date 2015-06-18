@@ -26,7 +26,7 @@ public class EntryPoint {
 
     private void menuIteration() {
 
-        while (true) {
+
             User user = loginController.login();
 
             if (user instanceof Customer)
@@ -34,7 +34,7 @@ public class EntryPoint {
 
             else
                 librarianControl(user);
-        }
+
     }
 
     private void librarianControl(User user) {
@@ -47,13 +47,12 @@ public class EntryPoint {
                 librarianMenu.performAction(continueLoop);
             else
                 menuView.errorMessage();
-        } while (continueLoop < 2);
+        } while (continueLoop < 3);
     }
 
     private void customerControl(User user) {
         int continueLoop;
         do {
-
             menuView.displayListOfMenu(customerMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 
@@ -61,7 +60,7 @@ public class EntryPoint {
                 customerMenu.performAction(continueLoop);
             else
                 menuView.errorMessage();
-        } while (continueLoop > 0);
+        } while (continueLoop < 7);
     }
 
 
