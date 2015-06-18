@@ -22,4 +22,9 @@ public class ReturnMovieAction implements Option {
         library.returnMovie(movie);
         returnMovieView.displayMessage(movie.getAppropriateMessageOnReturnMovieAction());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

@@ -21,4 +21,9 @@ public class CheckedOutBooksAction implements Option {
         Book book = library.checkedBookSearcher(bookName);
         librarianActionView.displayMessage(book.toString());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

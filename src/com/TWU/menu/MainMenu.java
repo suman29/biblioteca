@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class MainMenu {
     HashMap<Integer, String> menuList;
-    HashMap<Integer, MainOption> mappedOptions;
+    HashMap<Integer, Option> mappedOptions;
 
-    public MainMenu(HashMap<Integer, String> menuList, HashMap<Integer, MainOption> mappedOptions) {
+    public MainMenu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions) {
         this.menuList = menuList;
         this.mappedOptions = mappedOptions;
     }

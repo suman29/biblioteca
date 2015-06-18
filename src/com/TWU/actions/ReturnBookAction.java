@@ -24,4 +24,9 @@ public class ReturnBookAction implements Option {
         library.returnBook(book);
         returnBookView.displayMessage(book.getAppropriateMessageOnReturnBookAction());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

@@ -20,4 +20,9 @@ public class CheckedOutMovieAction implements Option {
         Movie movie = library.checkedMovieSearcher(movieName);
         librarianActionView.displayMessage(movie.toString());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

@@ -8,4 +8,9 @@ public class QuitAction implements Option {
     public void perform(User customer) {
         System.exit(1);
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

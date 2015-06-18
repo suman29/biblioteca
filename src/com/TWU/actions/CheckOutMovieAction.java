@@ -23,4 +23,9 @@ public class CheckOutMovieAction implements Option {
         library.checkOutMovie(movie, (Customer) customer);
         checkOutMovieView.displayMessage(movie.getAppropriateMessageOnCheckOutAction());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

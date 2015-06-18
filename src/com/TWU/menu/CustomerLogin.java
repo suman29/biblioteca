@@ -3,7 +3,7 @@ package com.twu.menu;
 import com.twu.LoginController;
 import com.twu.users.User;
 
-public class CustomerLogin implements MainOption {
+public class CustomerLogin implements Option {
     private LoginController loginController;
     private MenuView menuView;
     private CustomerMenu customerMenu;
@@ -12,6 +12,11 @@ public class CustomerLogin implements MainOption {
         this.loginController = loginController;
         this.menuView = menuView;
         this.customerMenu = customerMenu;
+    }
+
+    @Override
+    public void perform(User customer) {
+
     }
 
     @Override

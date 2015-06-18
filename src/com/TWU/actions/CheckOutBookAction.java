@@ -24,4 +24,9 @@ public class CheckOutBookAction implements Option {
         library.checkOutBook(book, (Customer) customer);
         checkOutView.displayMessage(book.getAppropriateMessageOnCheckOutAction());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

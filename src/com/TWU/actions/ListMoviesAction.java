@@ -24,4 +24,9 @@ public class ListMoviesAction implements Option {
             System.out.println(movie.toString());
     }
 
+    @Override
+    public void perform() {
+
+    }
+
 }

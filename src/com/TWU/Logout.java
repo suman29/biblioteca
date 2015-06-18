@@ -14,4 +14,9 @@ public class Logout implements Option {
     public void perform(User customer) {
         //loginController.login();
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

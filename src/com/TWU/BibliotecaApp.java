@@ -77,17 +77,17 @@ public class BibliotecaApp {
 
 
         HashMap<Integer,String> menuListMain = new HashMap<>();
-        HashMap<Integer, MainOption> mappedOptionsMain = new HashMap<>();
+        HashMap<Integer, Option> mappedOptionsMain = new HashMap<>();
         menuListMain.put(1,Messages.LIST_BOOKS);
         menuListMain.put(2,Messages.LIST_MOVIES);
         menuListMain.put(3,Messages.LOGIN_CUSTOMER);
         menuListMain.put(4,Messages.LOGIN_LIBRARIAN);
         menuListMain.put(5,Messages.QUIT);
-        mappedOptionsMain.put(1, (MainOption) new ListBooksAction(availableListOfBooks,library));
-        mappedOptionsMain.put(2, (MainOption) new ListMoviesAction(library,initialiseMovies()));
+        mappedOptionsMain.put(1, new ListBooksAction(availableListOfBooks,library));
+        mappedOptionsMain.put(2, new ListMoviesAction(library,initialiseMovies()));
         mappedOptionsMain.put(3, new CustomerLogin(loginController,menuView,customerMenu));
         mappedOptionsMain.put(4, new LibrarianLogin(loginController,menuView,librarianMenu));
-        mappedOptionsMain.put(5, (MainOption) new QuitAction());
+        mappedOptionsMain.put(5, new QuitAction());
 
 
         MainMenu mainMenu = new MainMenu(menuListMain,mappedOptionsMain);

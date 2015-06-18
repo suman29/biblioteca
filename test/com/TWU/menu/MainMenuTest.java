@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 public class MainMenuTest {
 
     HashMap<Integer, String> menuList;
-    HashMap<Integer, MainOption> mappedOptions;
+    HashMap<Integer, Option> mappedOptions;
 
     @Mock
     LoginController loginController;

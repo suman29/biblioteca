@@ -8,4 +8,9 @@ public class CustomerDetailsAction implements Option{
     public void perform(User customer) {
      System.out.println(customer.toString());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }

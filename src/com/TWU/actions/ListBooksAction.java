@@ -22,4 +22,9 @@ public class ListBooksAction implements Option {
         for (Book book : availableBooks)
             System.out.println(book.toString());
     }
+
+    @Override
+    public void perform() {
+
+    }
 }
