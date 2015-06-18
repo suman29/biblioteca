@@ -60,7 +60,7 @@ public class EntryPoint {
                 customerMenu.performAction(continueLoop);
             else
                 menuView.errorMessage();
-        } while (continueLoop < 7);
+        } while (continueLoop < 8);
     }
 
 

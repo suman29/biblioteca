@@ -138,8 +138,9 @@ public class BibliotecaApp {
         mappedOptions.put(4, new ListMoviesAction(library, movies));
         mappedOptions.put(5, new CheckOutMovieAction((library), new CheckOutMovieView(bufferedReader)));
         mappedOptions.put(6, new ReturnMovieAction(library, new ReturnMovieView(bufferedReader)));
-        mappedOptions.put(8, new Logout(loginController));
-        mappedOptions.put(7, new QuitAction());
+        mappedOptions.put(7, new CustomerDetailsAction());
+        mappedOptions.put(8, new QuitAction());
+        mappedOptions.put(9, new Logout(loginController));
     }
 
     private static void creatingMenu(HashMap<Integer, String> menuList) {
@@ -149,7 +150,8 @@ public class BibliotecaApp {
         menuList.put(4, Messages.LIST_MOVIES);
         menuList.put(5, Messages.CHECKOUT_MOVIE);
         menuList.put(6, Messages.RETURN_MOVIE);
-        menuList.put(7, Messages.QUIT);
-        menuList.put(8, Messages.LOGOUT);
+        menuList.put(7, Messages.MY_DETAILS);
+        menuList.put(8, Messages.QUIT);
+        menuList.put(9, Messages.LOGOUT);
     }
 }
