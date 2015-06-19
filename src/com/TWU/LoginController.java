@@ -24,7 +24,6 @@ public class LoginController {
             loginView.displayPromptEnterPassword();
             String password = loginView.getUserInput();
             user = authenticator.validateUser(libraryNumber, password);
-            loginView.displayMessage(user.getAppropriateMessageOnLogin());
         } while (nullUser.equals(user));
         return user;
     }

@@ -34,4 +34,5 @@ public interface Messages {
     String LIST_CHECKED_MOVIES = "List checked out movies";
     String LOGIN_CUSTOMER = "Login as Customer";
     String LOGIN_LIBRARIAN = "Login as Librarian";
+    String NOT_A_VALID_LIBRARIAN = "Not a valid user";
 }

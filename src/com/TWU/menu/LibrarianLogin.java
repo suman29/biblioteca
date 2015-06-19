@@ -26,10 +26,14 @@ public class LibrarianLogin implements Option {
     @Override
     public void perform() {
       User user = loginController.login();
-        if(user instanceof Customer)
+        if(user instanceof Customer){
+            menuView.displayMessage(user.getAppropriateMessageWhenNotALibrarian());
             return;
+        }
+
         int continueLoop;
         do {
+            menuView.displayMessage(user.getAppropriateMessageOnLogin());
             menuView.displayListOfMenu(librarianMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 

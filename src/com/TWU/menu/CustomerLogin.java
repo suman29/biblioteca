@@ -26,6 +26,7 @@ public class CustomerLogin implements Option {
         User user = loginController.login();
         int continueLoop;
         do {
+            menuView.displayMessage(user.getAppropriateMessageOnLogin());
             menuView.displayListOfMenu(customerMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 

@@ -44,4 +44,7 @@ public class MenuView {
     }
 
 
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
 }

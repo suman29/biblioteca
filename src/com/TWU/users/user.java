@@ -1,5 +1,7 @@
 package com.twu.users;
 
+import com.twu.Messages;
+
 import java.util.ArrayList;
 
 // It is the app user, cab be of two types, customer or librarian.
@@ -43,5 +45,9 @@ public abstract class User {
     public void addToListIfCredentialsMatch(ArrayList<User> list, String libraryNumber, String password) {
         if (this.libraryNumber.equalsIgnoreCase(libraryNumber) && this.password.equalsIgnoreCase(password))
             list.add(this);
+    }
+
+    public String getAppropriateMessageWhenNotALibrarian() {
+        return Messages.NOT_A_VALID_LIBRARIAN;
     }
 }

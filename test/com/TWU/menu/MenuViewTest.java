@@ -83,6 +83,18 @@ public class MenuViewTest {
         assertEquals(expectedInput, actualInput);
     }
 
+    @Test
+    public void shouldDisplayAppropriateMessageGiven(){
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        MenuView menuView = new MenuView(bufferedReader);
+        menuView.displayMessage("hi");
+
+        String actualInput = outputStream.toString();
+        String expectedInput = "hi"+System.lineSeparator();
+
+        assertEquals(expectedInput, actualInput);
+    }
+
     @After
     public void tearDown() throws Exception {
         System.setOut(null);

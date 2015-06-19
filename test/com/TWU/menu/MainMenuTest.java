@@ -1,6 +1,7 @@
 package com.twu.menu;
 
 import com.twu.LoginController;
+import com.twu.users.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +30,8 @@ public class MainMenuTest {
     LibrarianMenu librarianMenu;
     @Mock
     CustomerLogin customerLogin;
+    @Mock
+    User user;
 
 
     @Before
@@ -55,6 +58,7 @@ public class MainMenuTest {
     public void shouldPerformActionOnCorrectInput() {
         MainMenu mainMenu = new MainMenu(menuList, mappedOptions);
         when(menuView.takeUserInputForMainMenu()).thenReturn(8);
+        when(loginController.login()).thenReturn(user);
         mainMenu.performAction(1);
 
         verify(loginController).login();
