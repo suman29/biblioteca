@@ -219,4 +219,19 @@ public class LibraryTest {
 
         assertEquals(actualBook, book1);
     }
+
+    @Test
+    public void shouldGiveACheckedMovieOnSearching() {
+        ArrayList<Movie> movies = new ArrayList<>();
+        Movie movie = new CheckedOutMovie("Movie2", 2001, "abc", 1, customer);
+        movies.add(movie);
+        movies.add(new CheckedOutMovie("Movie3", 2001, "abc", 1, customer));
+        movies.add(new AvailableMovie("movie2", 2014, "abc", 5));
+        movies.add(new AvailableMovie("movie3", 2014, "abc", 5));
+        Library library = new Library(books, movies, new Searcher(nullMovie, nullBook));
+
+        Movie actualMovie = library.checkedMovieSearcher("Movie2");
+
+        assertEquals(actualMovie,movie);
+    }
 }
