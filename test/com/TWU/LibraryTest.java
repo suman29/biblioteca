@@ -187,4 +187,36 @@ public class LibraryTest {
 
         assertEquals(expectedOutput, actualOutput);
     }
+
+    @Test
+    public void shouldGiveAvailableMovies() {
+        ArrayList<Movie> movies = new ArrayList<>();
+        ArrayList<Movie> moviesAvailable = new ArrayList<>();
+        movies.add(new CheckedOutMovie("Movie2", 2001, "abc", 1, customer));
+        movies.add(new CheckedOutMovie("Movie3", 2001, "abc", 1, customer));
+        movies.add(new AvailableMovie("movie2", 2014, "abc", 5));
+        movies.add(new AvailableMovie("movie3", 2014, "abc", 5));
+        Library library = new Library(books, movies, new Searcher(nullMovie, nullBook));
+        library.getAvailableMovies(moviesAvailable);
+
+        int actualOutput = moviesAvailable.size();
+        int expectedOutput = 2;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void shouldGiveACheckedBookOnSearching(){
+        ArrayList<Book> allBooks = new ArrayList<>();
+        Book book1=new CheckedOutBook("abc2", "xyz", 1908, 2, customer);
+        allBooks.add(new AvailableBook("abc2", "xyz", 1908, 2));
+        allBooks.add(new AvailableBook("abc3", "xyz", 1908, 3));
+        allBooks.add(book1);
+        allBooks.add(new CheckedOutBook("abc1", "xyz", 1908, 1, customer));
+        Library library = new Library(allBooks, allMovies, new Searcher(nullMovie, nullBook));
+
+        Book actualBook = library.checkedBookSearcher("abc2");
+
+        assertEquals(actualBook, book1);
+    }
 }
