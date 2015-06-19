@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -31,6 +32,17 @@ public class CustomerLoginTest {
         customerLogin.perform();
 
         verify(menuView).displayListOfMenu(customerMenu, user);
+    }
+
+    @Test
+    public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
+        when(loginController.login()).thenReturn(user);
+        when(menuView.takeUserInputForMainMenu()).thenReturn(7).thenReturn(8);
+        CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu);
+
+        customerLogin.perform();
+
+        verify(menuView,times(2)).displayListOfMenu(customerMenu, user);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.twu.books;
 
+import com.twu.Messages;
 import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
@@ -68,6 +69,16 @@ public class CheckedOutBookTest {
         String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  Customer:ab mn pq";
 
         assertEquals(actualFormat, expectedFormat);
+    }
+
+    @Test
+    public void shouldGiveAppropriateMessageOnReturning(){
+        CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", "", name, email, number));
+
+        String actualOutput = checkoutBook.getAppropriateMessageOnReturnBookAction();
+        String expectedOutput = Messages.RETURN_SUCCESSFUL;
+
+        assertEquals(expectedOutput,actualOutput);
     }
 
     @After

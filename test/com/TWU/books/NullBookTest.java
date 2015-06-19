@@ -1,22 +1,14 @@
 package com.twu.books;
 
-import org.junit.After;
-import org.junit.Before;
+import com.twu.Messages;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class NullBookTest {
-    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
-    @Before
-    public void setUp() throws Exception {
-        System.setOut(new PrintStream(outputStream));
-    }
 
     @Test
     public void shouldNotBeAbleToAddItselfToAvailableListOfBooks() {
@@ -28,9 +20,23 @@ public class NullBookTest {
         assertFalse(list.contains(nullBook));
     }
 
+    @Test
+    public void shouldGiveMessageOnCheckout(){
+        NullBook nullBook = new NullBook("", "", 0, 0);
 
-    @After
-    public void tearDown() throws Exception {
-        System.setOut(null);
+        String actualOutput = nullBook.getAppropriateMessageOnCheckOutAction();
+        String expectedOutput = Messages.CHECKOUT_UNSUCCESSFUL;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void shouldGiveMessageOnReturning(){
+        NullBook nullBook = new NullBook("", "", 0, 0);
+
+        String actualOutput = nullBook.getAppropriateMessageOnReturnBookAction();
+        String expectedOutput = Messages.RETURN_UNSUCCESSFUL;
+
+        assertEquals(expectedOutput,actualOutput);
     }
 }

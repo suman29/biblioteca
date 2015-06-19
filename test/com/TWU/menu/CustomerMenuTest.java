@@ -61,4 +61,24 @@ public class CustomerMenuTest {
         ArrayList<Book> books = new ArrayList<>();
         Mockito.verify(library).getAvailableBooks(books);
     }
+
+    @Test
+    public void checkIfTheInputIsValid() {
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+
+        boolean actualOutput = menuList.isValidInput(7);
+        boolean expectedOutput = true;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void checkIfTheInputIsInValid() {
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+
+        boolean actualOutput = menuList.isValidInput(10);
+        boolean expectedOutput = false;
+
+        assertEquals(expectedOutput,actualOutput);
+    }
 }

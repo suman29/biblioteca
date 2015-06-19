@@ -1,5 +1,6 @@
 package com.twu.books;
 
+import com.twu.Messages;
 import com.twu.users.Customer;
 import org.junit.After;
 import org.junit.Before;
@@ -54,6 +55,16 @@ public class AvailableBookTest {
         CheckedOutBook checkedOutBook = (CheckedOutBook) list.get(list.indexOf(availableBook));
 
         assertTrue(checkedOutBook instanceof CheckedOutBook);
+    }
+
+    @Test
+    public void shouldGiveMessageOnCheckout(){
+        AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
+
+        String actualOutput = availableBook.getAppropriateMessageOnCheckOutAction();
+        String expectedOutput = Messages.CHECKOUT_SUCCESSFUL;
+
+        assertEquals(expectedOutput,actualOutput);
     }
 
     @After
