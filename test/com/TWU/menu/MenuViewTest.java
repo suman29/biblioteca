@@ -1,6 +1,7 @@
 package com.twu.menu;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
@@ -43,7 +44,7 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenu() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
 
@@ -70,6 +71,17 @@ public class MenuViewTest {
         assertEquals(expectedInput, actualInput);
     }
 
+    @Test
+    public void shouldDisplayAppropriateErrorMessage(){
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        MenuView menuView = new MenuView(bufferedReader);
+        menuView.errorMessage();
+
+        String actualInput = outputStream.toString();
+        String expectedInput = Messages.ERROR_MESSAGE+System.lineSeparator();
+
+        assertEquals(expectedInput, actualInput);
+    }
 
     @After
     public void tearDown() throws Exception {

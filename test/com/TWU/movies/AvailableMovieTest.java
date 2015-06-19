@@ -1,24 +1,15 @@
 package com.twu.movies;
 
+import com.twu.Messages;
 import com.twu.users.Customer;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AvailableMovieTest {
-
-    private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
-    @Before
-    public void setUp() throws Exception {
-        System.setOut(new PrintStream(outputStream));
-    }
 
     @Test
     public void shouldMakeItselfCheckedOutIfTheMovieIsCheckedOut() {
@@ -45,8 +36,13 @@ public class AvailableMovieTest {
         assertTrue(list.contains(availableMovie));
     }
 
-    @After
-    public void tearDown() throws Exception {
-        System.setOut(null);
+    @Test
+    public void shouldDisplayAppropriateMessageOnReturning() {
+        AvailableMovie availableMovie = new AvailableMovie("movie1", 2014, "abc", 5);
+
+        String actualOutput = availableMovie.getAppropriateMessageOnReturnMovieAction();
+        String expectedOutput = Messages.MOVIE_ALREADY_AVAILABLE;
+
+        assertEquals(expectedOutput, actualOutput);
     }
 }

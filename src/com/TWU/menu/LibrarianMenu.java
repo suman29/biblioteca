@@ -10,15 +10,13 @@ import java.util.Map;
 public class LibrarianMenu {
     HashMap<Integer, String> menuListLibrarian;
     HashMap<Integer, Option> mappedOptionsLibrarian;
-    Librarian librarian;
 
-    public LibrarianMenu(HashMap<Integer, String> menuListLibrarian, HashMap<Integer, Option> mappedOptionsLibrarian, Librarian librarian) {
+    public LibrarianMenu(HashMap<Integer, String> menuListLibrarian, HashMap<Integer, Option> mappedOptionsLibrarian) {
         this.mappedOptionsLibrarian = mappedOptionsLibrarian;
         this.menuListLibrarian = menuListLibrarian;
-        this.librarian = librarian;
     }
 
-    public void performAction(int option) {
+    public void performAction(int option, Librarian librarian) {
         mappedOptionsLibrarian.get(option).perform(librarian);
     }
 

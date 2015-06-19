@@ -59,4 +59,25 @@ public class MainMenuTest {
 
         verify(loginController).login();
     }
+
+
+    @Test
+    public void checkIfTheInputIsValid() {
+        MainMenu mainMenu = new MainMenu(menuList, mappedOptions);
+
+        boolean actualOutput = mainMenu.isValidInput(4);
+        boolean expectedOutput = true;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void checkIfTheInputIsInValid() {
+        MainMenu mainMenu = new MainMenu(menuList, mappedOptions);
+
+        boolean actualOutput = mainMenu.isValidInput(6);
+        boolean expectedOutput = false;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
 }

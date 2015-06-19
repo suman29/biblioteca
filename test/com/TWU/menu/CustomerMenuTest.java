@@ -45,7 +45,7 @@ public class CustomerMenuTest {
 
     @Test
     public void checkIfMenuIsRepresentedProperly() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
         String actualOutput = menuList.toString();
         String expectedOutput = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:\n\n";
@@ -55,16 +55,16 @@ public class CustomerMenuTest {
 
     @Test
     public void checkIfCorrectActionIsPerformed() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
-        menuList.performAction(1);
+        menuList.performAction(1,user);
         ArrayList<Book> books = new ArrayList<>();
         Mockito.verify(library).getAvailableBooks(books);
     }
 
     @Test
     public void checkIfTheInputIsValid() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
         boolean actualOutput = menuList.isValidInput(7);
         boolean expectedOutput = true;
@@ -74,7 +74,7 @@ public class CustomerMenuTest {
 
     @Test
     public void checkIfTheInputIsInValid() {
-        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions, user);
+        CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
         boolean actualOutput = menuList.isValidInput(10);
         boolean expectedOutput = false;

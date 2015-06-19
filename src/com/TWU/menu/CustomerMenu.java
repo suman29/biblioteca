@@ -11,15 +11,13 @@ import java.util.Map;
 public class CustomerMenu {
     HashMap<Integer, String> menuList;
     HashMap<Integer, Option> mappedOptions;
-    User user;
 
-    public CustomerMenu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions, User user) {
+    public CustomerMenu(HashMap<Integer, String> menuList, HashMap<Integer, Option> mappedOptions) {
         this.mappedOptions = mappedOptions;
         this.menuList = menuList;
-        this.user = user;
     }
 
-    public void performAction(int option) {
+    public void performAction(int option, User user) {
         mappedOptions.get(option).perform((Customer) user);
     }
 

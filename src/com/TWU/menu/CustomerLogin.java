@@ -30,7 +30,7 @@ public class CustomerLogin implements Option {
             continueLoop = menuView.takeUserInputForMainMenu();
 
             if (customerMenu.isValidInput(continueLoop))
-                customerMenu.performAction(continueLoop);
+                customerMenu.performAction(continueLoop,user);
             else
                 menuView.errorMessage();
         } while (continueLoop < 8);

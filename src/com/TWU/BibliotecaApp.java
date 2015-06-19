@@ -80,7 +80,7 @@ public class BibliotecaApp {
         HashMap<Integer, Option> mappedOptionLibrarian = new HashMap<>();
         HashMap<Integer, String> menuListLibrarian = new HashMap<>();
         populatingForLibrarian(mappedOptionLibrarian, library, menuListLibrarian, loginController);
-        return new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian, librarian);
+        return new LibrarianMenu(menuListLibrarian, mappedOptionLibrarian);
     }
 
     private static CustomerMenu getCustomerMenu(BufferedReader bufferedReader, ArrayList<Book> availableListOfBooks, ArrayList<Book> checkedOutListOfBooks, Library library, User user, LoginController loginController) {
@@ -92,7 +92,7 @@ public class BibliotecaApp {
         BooksView checkedOutBooksView = new BooksView(checkedOutBooks);
         creatingMenuForCustomer(menuList);
         initialisingMenuListForCustomer(bufferedReader, availableBooksView, checkedOutBooksView, mappedOptions, library, loginController);
-        return new CustomerMenu(menuList, mappedOptions, user);
+        return new CustomerMenu(menuList, mappedOptions);
     }
 
     private static void populatingUsers(Set<User> allUsers) {

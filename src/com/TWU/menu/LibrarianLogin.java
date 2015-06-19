@@ -2,6 +2,7 @@ package com.twu.menu;
 
 import com.twu.LoginController;
 import com.twu.users.Customer;
+import com.twu.users.Librarian;
 import com.twu.users.User;
 
 // It allows only librarian to log with the correct credentials.
@@ -24,7 +25,7 @@ public class LibrarianLogin implements Option {
 
     @Override
     public void perform() {
-        User user = loginController.login();
+      User user = loginController.login();
         if(user instanceof Customer)
             return;
         int continueLoop;
@@ -33,7 +34,7 @@ public class LibrarianLogin implements Option {
             continueLoop = menuView.takeUserInputForMainMenu();
 
             if (librarianMenu.isValidInput(continueLoop))
-                librarianMenu.performAction(continueLoop);
+                librarianMenu.performAction(continueLoop, (Librarian) user);
             else
                 menuView.errorMessage();
         } while (continueLoop < 3);

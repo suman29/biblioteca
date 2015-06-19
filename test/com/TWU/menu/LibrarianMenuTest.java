@@ -41,7 +41,7 @@ public class LibrarianMenuTest {
 
     @Test
     public void checkIfMenuIsRepresentedProperly() {
-        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptions, user);
+        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptions);
 
         String actualOutput = librarianMenu.toString();
         String expectedOutput = "\n1. Checked out books" + System.lineSeparator() + "2. Checked out movies" + System.lineSeparator() + "Enter your choice:\n\n";
@@ -51,7 +51,7 @@ public class LibrarianMenuTest {
 
     @Test
     public void checkIfTheInputIsValid() {
-        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptions, user);
+        LibrarianMenu librarianMenu = new LibrarianMenu(menuListLibrarian, mappedOptions);
 
         boolean actualOutput = librarianMenu.isValidInput(5);
         boolean expectedOutput = false;
