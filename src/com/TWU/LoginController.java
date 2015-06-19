@@ -18,13 +18,12 @@ public class LoginController {
 
     public User login() {
         User user;
-        do {
+
             loginView.displayPromptEnterLibraryNumber();
             String libraryNumber = loginView.getUserInput();
             loginView.displayPromptEnterPassword();
             String password = loginView.getUserInput();
             user = authenticator.validateUser(libraryNumber, password);
-        } while (nullUser.equals(user));
         return user;
     }
 }

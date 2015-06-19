@@ -3,6 +3,7 @@ package com.twu.menu;
 import com.twu.LoginController;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
+import com.twu.users.NullUser;
 import com.twu.users.User;
 
 // It allows only librarian to log with the correct credentials.
@@ -11,11 +12,13 @@ public class LibrarianLogin implements Option {
     private LoginController loginController;
     private MenuView menuView;
     private LibrarianMenu librarianMenu;
+    private NullUser nullUser;
 
-    public LibrarianLogin(LoginController loginController, MenuView menuView, LibrarianMenu librarianMenu) {
+    public LibrarianLogin(LoginController loginController, MenuView menuView, LibrarianMenu librarianMenu, NullUser nullUser) {
         this.loginController = loginController;
         this.menuView = menuView;
         this.librarianMenu = librarianMenu;
+        this.nullUser = nullUser;
     }
 
     @Override
@@ -30,7 +33,10 @@ public class LibrarianLogin implements Option {
             menuView.displayMessage(user.getAppropriateMessageWhenNotALibrarian());
             return;
         }
-
+        if(user instanceof NullUser){
+            menuView.displayMessage(user.getAppropriateMessageOnLogin());
+            return;
+        }
         int continueLoop;
         do {
             menuView.displayMessage(user.getAppropriateMessageOnLogin());

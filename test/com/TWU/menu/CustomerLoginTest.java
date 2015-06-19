@@ -2,6 +2,7 @@ package com.twu.menu;
 
 import com.twu.LoginController;
 import com.twu.users.Customer;
+import com.twu.users.NullUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -22,12 +23,14 @@ public class CustomerLoginTest {
     MenuView menuView;
     @Mock
     Customer user;
+    @Mock
+    NullUser nullUser;
 
     @Test
     public void shouldNotContinueLoopIfTheUserSelectsQuit() {
         when(loginController.login()).thenReturn(user);
         when(menuView.takeUserInputForMainMenu()).thenReturn(8);
-        CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu);
+        CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu, nullUser);
 
         customerLogin.perform();
 
@@ -38,7 +41,7 @@ public class CustomerLoginTest {
     public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
         when(loginController.login()).thenReturn(user);
         when(menuView.takeUserInputForMainMenu()).thenReturn(7).thenReturn(8);
-        CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu);
+        CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu, nullUser);
 
         customerLogin.perform();
 

@@ -1,6 +1,7 @@
 package com.twu.menu;
 
 import com.twu.LoginController;
+import com.twu.users.NullUser;
 import com.twu.users.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,6 +33,8 @@ public class MainMenuTest {
     CustomerLogin customerLogin;
     @Mock
     User user;
+    @Mock
+    NullUser nullUser;
 
 
     @Before
@@ -40,8 +43,8 @@ public class MainMenuTest {
         mappedOptions = new HashMap<>();
         menuList.put(1, "Customer login");
         menuList.put(2, "Librarian login");
-        mappedOptions.put(1, new CustomerLogin(loginController, menuView, customerMenu));
-        mappedOptions.put(2, new LibrarianLogin(loginController, menuView, librarianMenu));
+        mappedOptions.put(1, new CustomerLogin(loginController, menuView, customerMenu, nullUser));
+        mappedOptions.put(2, new LibrarianLogin(loginController, menuView, librarianMenu, nullUser));
     }
 
     @Test
