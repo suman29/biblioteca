@@ -1,6 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.books.Book;
 import com.twu.books.CheckOutView;
 import com.twu.menu.Option;
@@ -21,6 +22,7 @@ public class CheckOutBookAction implements Option {
 
     @Override
     public void perform(User customer) {
+        checkOutView.displayMessage(Messages.ENTER_BOOK_NAME);
         String bookName = checkOutView.takeUserInputForCheckOutBook();
         Book book = library.bookSearcher(bookName);
         library.checkOutBook(book, (Customer) customer);

@@ -1,6 +1,7 @@
 package com.twu.librarianActions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.menu.Option;
 import com.twu.movies.Movie;
 import com.twu.users.User;
@@ -18,6 +19,7 @@ public class CheckedOutMovieAction implements Option {
 
     @Override
     public void perform(User customer) {
+        librarianActionView.displayMessage(Messages.ENTER_MOVIE_NAME);
         String movieName = librarianActionView.takeUserInputToGetDetailsOfItem();
         Movie movie = library.checkedMovieSearcher(movieName);
         librarianActionView.displayMessage(movie.toString());

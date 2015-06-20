@@ -1,6 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.books.Book;
 import com.twu.books.ReturnBookView;
 import com.twu.menu.Option;
@@ -21,6 +22,7 @@ public class ReturnBookAction implements Option {
 
     @Override
     public void perform(User customer) {
+        returnBookView.displayMessage(Messages.ENTER_BOOK_NAME);
         String bookName = returnBookView.takeUserInputForReturningBook();
         Book book = library.bookSearcher(bookName);
         library.returnBook(book);

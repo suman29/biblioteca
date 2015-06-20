@@ -1,6 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.menu.Option;
 import com.twu.movies.CheckOutMovieView;
 import com.twu.movies.Movie;
@@ -20,6 +21,7 @@ public class CheckOutMovieAction implements Option {
 
     @Override
     public void perform(User customer) {
+        checkOutMovieView.displayMessage(Messages.ENTER_MOVIE_NAME);
         String movieName = checkOutMovieView.takeUserInputForCheckOutMovie();
         Movie movie = library.movieSearcher(movieName);
         library.checkOutMovie(movie, (Customer) customer);

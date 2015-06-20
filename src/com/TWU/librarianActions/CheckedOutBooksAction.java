@@ -1,6 +1,7 @@
 package com.twu.librarianActions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.books.Book;
 import com.twu.menu.Option;
 import com.twu.users.User;
@@ -19,6 +20,7 @@ public class CheckedOutBooksAction implements Option {
 
     @Override
     public void perform(User customer) {
+        librarianActionView.displayMessage(Messages.ENTER_BOOK_NAME);
         String bookName = librarianActionView.takeUserInputToGetDetailsOfItem();
         Book book = library.checkedBookSearcher(bookName);
         librarianActionView.displayMessage(book.toString());

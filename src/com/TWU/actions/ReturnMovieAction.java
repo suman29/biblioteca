@@ -1,6 +1,7 @@
 package com.twu.actions;
 
 import com.twu.Library;
+import com.twu.Messages;
 import com.twu.menu.Option;
 import com.twu.movies.Movie;
 import com.twu.movies.ReturnMovieView;
@@ -19,6 +20,7 @@ public class ReturnMovieAction implements Option {
 
     @Override
     public void perform(User customer) {
+        returnMovieView.displayMessage(Messages.ENTER_MOVIE_NAME);
         String movieTitle = returnMovieView.takeUserInputForReturningMovie();
         Movie movie = library.movieSearcher(movieTitle);
         library.returnMovie(movie);

@@ -35,4 +35,6 @@ public interface Messages {
     String LOGIN_CUSTOMER = "Login as Customer";
     String LOGIN_LIBRARIAN = "Login as Librarian";
     String NOT_A_VALID_LIBRARIAN = "Not a valid user";
+    String ENTER_MOVIE_NAME = "Enter the movie name:";
+    String ENTER_BOOK_NAME = "Enter the book name:";
 }
