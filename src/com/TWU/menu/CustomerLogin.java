@@ -31,9 +31,9 @@ public class CustomerLogin implements Option {
             menuView.displayMessage(user.getAppropriateMessageOnLogin());
             return;
         }
+        menuView.displayMessage(user.getAppropriateMessageOnLogin());
         int continueLoop;
         do {
-            menuView.displayMessage(user.getAppropriateMessageOnLogin());
             menuView.displayListOfMenu(customerMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 
@@ -41,6 +41,6 @@ public class CustomerLogin implements Option {
                 customerMenu.performAction(continueLoop,user);
             else
                 menuView.errorMessage();
-        } while (continueLoop < 8);
+        } while (continueLoop < 9);
     }
 }

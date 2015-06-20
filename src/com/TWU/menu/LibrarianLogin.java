@@ -38,8 +38,8 @@ public class LibrarianLogin implements Option {
             return;
         }
         int continueLoop;
+        menuView.displayMessage(user.getAppropriateMessageOnLogin());
         do {
-            menuView.displayMessage(user.getAppropriateMessageOnLogin());
             menuView.displayListOfMenu(librarianMenu, user);
             continueLoop = menuView.takeUserInputForMainMenu();
 
