@@ -29,7 +29,7 @@ public class CustomerLoginTest {
     @Test
     public void shouldNotContinueLoopIfTheUserSelectsQuit() {
         when(loginController.login()).thenReturn(user);
-        when(menuView.takeUserInputForMainMenu()).thenReturn(8);
+        when(menuView.takeUserInputForMainMenu()).thenReturn(9);
         CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu, nullUser);
 
         customerLogin.perform();
@@ -40,7 +40,7 @@ public class CustomerLoginTest {
     @Test
     public void shouldContinueLoopIfTheUserDoesNotSelectsQuit() {
         when(loginController.login()).thenReturn(user);
-        when(menuView.takeUserInputForMainMenu()).thenReturn(7).thenReturn(8);
+        when(menuView.takeUserInputForMainMenu()).thenReturn(7).thenReturn(9);
         CustomerLogin customerLogin = new CustomerLogin(loginController, menuView, customerMenu, nullUser);
 
         customerLogin.perform();

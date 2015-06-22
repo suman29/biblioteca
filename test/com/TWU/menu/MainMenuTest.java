@@ -60,7 +60,7 @@ public class MainMenuTest {
     @Test
     public void shouldPerformActionOnCorrectInput() {
         MainMenu mainMenu = new MainMenu(menuList, mappedOptions);
-        when(menuView.takeUserInputForMainMenu()).thenReturn(8);
+        when(menuView.takeUserInputForMainMenu()).thenReturn(9);
         when(loginController.login()).thenReturn(user);
         mainMenu.performAction(1);
 

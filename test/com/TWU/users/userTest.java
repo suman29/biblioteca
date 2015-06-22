@@ -1,5 +1,6 @@
 package com.twu.users;
 
+import com.twu.Messages;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,10 +16,20 @@ public class UserTest {
 
     @Test
     public void shouldDisplayTheUserNumberProperly() {
-        User user = new Customer("123-4567", "abcd", name, email, number);
+        User user = new Librarian("123-4567", "abcd");
 
         String actualOutput = user.toString();
-        String expectedOutput = "ashray 123@yh.com 7205787250";
+        String expectedOutput = "123-4567"+System.lineSeparator();
+
+        assertEquals(actualOutput, expectedOutput);
+    }
+
+    @Test
+    public void shouldDisplayMessageIfNotAValidLibrarian() {
+        User user = new Customer("123-4567", "abcd", name, email, number);
+
+        String actualOutput = user.getAppropriateMessageWhenNotALibrarian();
+        String expectedOutput = Messages.NOT_A_VALID_LIBRARIAN;
 
         assertEquals(actualOutput, expectedOutput);
     }

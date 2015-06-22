@@ -6,7 +6,8 @@ import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
 import com.twu.books.BooksView;
-import com.twu.users.User;
+import com.twu.users.Customer;
+import com.twu.users.Librarian;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +29,9 @@ public class MenuViewTest {
     @Mock
     Library library;
     @Mock
-    User user;
+    Librarian librarian;
+    @Mock
+    Customer customer;
 
     @Before
     public void setUp() throws Exception {
@@ -43,7 +46,7 @@ public class MenuViewTest {
     }
 
     @Test
-    public void shouldPrintTheCorrectMenu() {
+    public void shouldPrintTheCorrectMenuForCustomer() {
         CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
@@ -52,7 +55,37 @@ public class MenuViewTest {
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         MenuView menuView = new MenuView(bufferedReader);
-        menuView.displayListOfMenu(menuList, user);
+        menuView.displayListOfMenu(menuList, customer);
+
+        assertEquals(menuString, outputStream.toString());
+    }
+
+    @Test
+    public void shouldPrintTheCorrectMenuForLibrarian() {
+        LibrarianMenu menuList = new LibrarianMenu(this.menuList, mappedOptions);
+
+        String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
+
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
+        InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        MenuView menuView = new MenuView(bufferedReader);
+        menuView.displayListOfMenu(menuList, librarian);
+
+        assertEquals(menuString, outputStream.toString());
+    }
+
+    @Test
+    public void shouldPrintTheCorrectMenuForMainMenu() {
+        MainMenu menuList = new MainMenu(this.menuList,mappedOptions);
+
+        String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
+
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1".getBytes());
+        InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        MenuView menuView = new MenuView(bufferedReader);
+        menuView.displayListOfMenu(menuList);
 
         assertEquals(menuString, outputStream.toString());
     }
