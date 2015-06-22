@@ -64,7 +64,7 @@ public class CheckedOutMovieTest {
         Movie movie = new CheckedOutMovie("Movie1", 2001, "abc", 1, new Customer("abc", "", "ab", "mn", "pq"));
 
         String actualOutput = movie.toString();
-        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 customer:ab mn pq";
+        String expectedOutput = "Movie1                                            abc                           2001 rating: 1 | customer:ab                  mn                  pq";
 
         assertEquals(expectedOutput, actualOutput);
     }

@@ -134,13 +134,10 @@ public class BibliotecaApp {
 
     private static ArrayList<Movie> initialiseMovies() {
         ArrayList<Movie> allMovies = new ArrayList<>();
-        String name = "ashray";
-        String email = "123@yh.com";
-        String number = "7205787250";
         allMovies.add(new AvailableMovie("Batman Begins", 2005, "Christopher Nolan", 9));
         allMovies.add(new AvailableMovie("The Dark Knight", 2008, "Christopher Nolan", 9));
-        allMovies.add(new CheckedOutMovie("movie1", 2008, "Christopher Nolan", 9, new Customer("Ashray", "", name, email, number)));
-        allMovies.add(new CheckedOutMovie("movie2", 2008, "Christopher Nolan", 9, new Customer("Suman", "", name, email, number)));
+        allMovies.add(new CheckedOutMovie("movie1", 2008, "Christopher Nolan", 9, new Customer("123-1111", "1111", "Ashray", "123@gmail.com", "123456789")));
+        allMovies.add(new CheckedOutMovie("movie2", 2008, "Christopher Nolan", 9, new Customer("123-2222","2222","Suman", "suman@gmail.com", "7205787250")));
         return allMovies;
     }
 

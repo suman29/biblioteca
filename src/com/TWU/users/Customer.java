@@ -23,7 +23,7 @@ public class Customer extends User {
     }
 
     public String toString() {
-        return name + " " + email + " " + phoneNumber;
+        return String.format("%-20s", name)+String.format("%-20s", email)+phoneNumber;
     }
 
 }

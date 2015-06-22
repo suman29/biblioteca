@@ -66,7 +66,7 @@ public class CheckedOutBookTest {
         Book book = new CheckedOutBook(name, author, year, id, customer);
 
         String actualFormat = book.toString();
-        String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  Customer:ab mn pq";
+        String expectedFormat = "1.  Introduction to Algorithms                        John                          1920  | Customer:ab                  mn                  pq";
 
         assertEquals(actualFormat, expectedFormat);
     }

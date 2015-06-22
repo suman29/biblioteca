@@ -50,7 +50,7 @@ public class CheckedOutMovie extends Movie {
     }
 
     public String toString() {
-        return (String.format("%-50s", name) + String.format("%-30s", director) + String.format("%-5s", year) + "rating: " + rating + " customer:" + customer.toString());
+        return (String.format("%-50s", name) + String.format("%-30s", director) + String.format("%-5s", year) + "rating: " + rating + " | customer:" + customer.toString());
     }
 
     public static CheckedOutMovie create(AvailableMovie availableMovie, Customer customer) {

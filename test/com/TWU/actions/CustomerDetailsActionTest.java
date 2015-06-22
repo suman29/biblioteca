@@ -26,7 +26,7 @@ public class CustomerDetailsActionTest {
         customerDetailsAction.perform(user);
 
         String actualOutput = outputStream.toString();
-        String expectedOutput = "name email 123456789" + System.lineSeparator();
+        String expectedOutput = "name                email               123456789" + System.lineSeparator();
 
         assertEquals(actualOutput, expectedOutput);
     }
