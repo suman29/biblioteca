@@ -115,7 +115,7 @@ public class BibliotecaApp {
         ArrayList<Movie> movies = new ArrayList<>();
         mappedOptionsMain.put(1, new ListBooksAction(books, library));
         mappedOptionsMain.put(2, new ListMoviesAction(library, movies));
-        mappedOptionsMain.put(3, new CustomerLogin(loginController, menuView, customerMenu,nullUser));
+        mappedOptionsMain.put(3, new CustomerLogin(loginController, menuView, customerMenu, nullUser));
         mappedOptionsMain.put(4, new LibrarianLogin(loginController, menuView, librarianMenu, nullUser));
         mappedOptionsMain.put(5, new QuitAction());
     }

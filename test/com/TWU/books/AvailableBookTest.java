@@ -58,13 +58,13 @@ public class AvailableBookTest {
     }
 
     @Test
-    public void shouldGiveMessageOnCheckout(){
+    public void shouldGiveMessageOnCheckout() {
         AvailableBook availableBook = new AvailableBook("god", "helpme", 2013, 1);
 
         String actualOutput = availableBook.getAppropriateMessageOnCheckOutAction();
         String expectedOutput = Messages.CHECKOUT_SUCCESSFUL;
 
-        assertEquals(expectedOutput,actualOutput);
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @After

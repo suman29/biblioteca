@@ -77,7 +77,7 @@ public class MenuViewTest {
 
     @Test
     public void shouldPrintTheCorrectMenuForMainMenu() {
-        MainMenu menuList = new MainMenu(this.menuList,mappedOptions);
+        MainMenu menuList = new MainMenu(this.menuList, mappedOptions);
 
         String menuString = "\n1. List Of Books" + System.lineSeparator() + "2. Quit" + System.lineSeparator() + "Enter your choice:" + System.lineSeparator() + System.lineSeparator();
 
@@ -105,25 +105,25 @@ public class MenuViewTest {
     }
 
     @Test
-    public void shouldDisplayAppropriateErrorMessage(){
+    public void shouldDisplayAppropriateErrorMessage() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         MenuView menuView = new MenuView(bufferedReader);
         menuView.errorMessage();
 
         String actualInput = outputStream.toString();
-        String expectedInput = Messages.ERROR_MESSAGE+System.lineSeparator();
+        String expectedInput = Messages.ERROR_MESSAGE + System.lineSeparator();
 
         assertEquals(expectedInput, actualInput);
     }
 
     @Test
-    public void shouldDisplayAppropriateMessageGiven(){
+    public void shouldDisplayAppropriateMessageGiven() {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         MenuView menuView = new MenuView(bufferedReader);
         menuView.displayMessage("hi");
 
         String actualInput = outputStream.toString();
-        String expectedInput = "hi"+System.lineSeparator();
+        String expectedInput = "hi" + System.lineSeparator();
 
         assertEquals(expectedInput, actualInput);
     }

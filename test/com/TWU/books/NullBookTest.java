@@ -21,7 +21,7 @@ public class NullBookTest {
     }
 
     @Test
-    public void shouldGiveMessageOnCheckout(){
+    public void shouldGiveMessageOnCheckout() {
         NullBook nullBook = new NullBook("", "", 0, 0);
 
         String actualOutput = nullBook.getAppropriateMessageOnCheckOutAction();
@@ -31,12 +31,12 @@ public class NullBookTest {
     }
 
     @Test
-    public void shouldGiveMessageOnReturning(){
+    public void shouldGiveMessageOnReturning() {
         NullBook nullBook = new NullBook("", "", 0, 0);
 
         String actualOutput = nullBook.getAppropriateMessageOnReturnBookAction();
         String expectedOutput = Messages.RETURN_UNSUCCESSFUL;
 
-        assertEquals(expectedOutput,actualOutput);
+        assertEquals(expectedOutput, actualOutput);
     }
 }

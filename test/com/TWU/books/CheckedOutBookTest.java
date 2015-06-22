@@ -72,13 +72,13 @@ public class CheckedOutBookTest {
     }
 
     @Test
-    public void shouldGiveAppropriateMessageOnReturning(){
+    public void shouldGiveAppropriateMessageOnReturning() {
         CheckedOutBook checkoutBook = new CheckedOutBook("God", "helpme", 2015, 10, new Customer("", "", name, email, number));
 
         String actualOutput = checkoutBook.getAppropriateMessageOnReturnBookAction();
         String expectedOutput = Messages.RETURN_SUCCESSFUL;
 
-        assertEquals(expectedOutput,actualOutput);
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @After

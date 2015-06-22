@@ -19,7 +19,7 @@ public class UserTest {
         User user = new Librarian("123-4567", "abcd");
 
         String actualOutput = user.toString();
-        String expectedOutput = "123-4567"+System.lineSeparator();
+        String expectedOutput = "123-4567" + System.lineSeparator();
 
         assertEquals(actualOutput, expectedOutput);
     }

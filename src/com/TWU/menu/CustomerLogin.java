@@ -27,7 +27,7 @@ public class CustomerLogin implements Option {
     @Override
     public void perform() {
         User user = loginController.login();
-        if(nullUser.equals(user)){
+        if (nullUser.equals(user)) {
             menuView.displayMessage(user.getAppropriateMessageOnLogin());
             return;
         }
@@ -38,7 +38,7 @@ public class CustomerLogin implements Option {
             continueLoop = menuView.takeUserInputForMainMenu();
 
             if (customerMenu.isValidInput(continueLoop))
-                customerMenu.performAction(continueLoop,user);
+                customerMenu.performAction(continueLoop, user);
             else
                 menuView.errorMessage();
         } while (continueLoop < 9);

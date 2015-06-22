@@ -57,7 +57,7 @@ public class CustomerMenuTest {
     public void checkIfCorrectActionIsPerformed() {
         CustomerMenu menuList = new CustomerMenu(this.menuList, mappedOptions);
 
-        menuList.performAction(1,user);
+        menuList.performAction(1, user);
         ArrayList<Book> books = new ArrayList<>();
         Mockito.verify(library).getAvailableBooks(books);
     }
@@ -79,6 +79,6 @@ public class CustomerMenuTest {
         boolean actualOutput = menuList.isValidInput(10);
         boolean expectedOutput = false;
 
-        assertEquals(expectedOutput,actualOutput);
+        assertEquals(expectedOutput, actualOutput);
     }
 }

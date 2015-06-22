@@ -28,12 +28,12 @@ public class LibrarianLogin implements Option {
 
     @Override
     public void perform() {
-      User user = loginController.login();
-        if(user instanceof Customer){
+        User user = loginController.login();
+        if (user instanceof Customer) {
             menuView.displayMessage(user.getAppropriateMessageWhenNotALibrarian());
             return;
         }
-        if(user instanceof NullUser){
+        if (user instanceof NullUser) {
             menuView.displayMessage(user.getAppropriateMessageOnLogin());
             return;
         }

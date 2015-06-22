@@ -8,9 +8,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerLoginTest {
@@ -45,7 +43,7 @@ public class CustomerLoginTest {
 
         customerLogin.perform();
 
-        verify(menuView,times(2)).displayListOfMenu(customerMenu, user);
+        verify(menuView, times(2)).displayListOfMenu(customerMenu, user);
     }
 
 }

@@ -19,11 +19,11 @@ public class LoginController {
     public User login() {
         User user;
 
-            loginView.displayPromptEnterLibraryNumber();
-            String libraryNumber = loginView.getUserInput();
-            loginView.displayPromptEnterPassword();
-            String password = loginView.getUserInput();
-            user = authenticator.validateUser(libraryNumber, password);
+        loginView.displayPromptEnterLibraryNumber();
+        String libraryNumber = loginView.getUserInput();
+        loginView.displayPromptEnterPassword();
+        String password = loginView.getUserInput();
+        user = authenticator.validateUser(libraryNumber, password);
         return user;
     }
 }
