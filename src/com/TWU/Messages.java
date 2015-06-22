@@ -37,4 +37,6 @@ public interface Messages {
     String NOT_A_VALID_LIBRARIAN = "Not a valid user";
     String ENTER_MOVIE_NAME = "Enter the movie name:";
     String ENTER_BOOK_NAME = "Enter the book name:";
+    String BOOK_NOT_FOUND_IN_LIBRARY = "Book not found in library.";
+    String MOVIE_NOT_FOUND = "Movie not found in library.";
 }

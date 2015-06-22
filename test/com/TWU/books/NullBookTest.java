@@ -39,4 +39,14 @@ public class NullBookTest {
 
         assertEquals(expectedOutput, actualOutput);
     }
+
+    @Test
+    public void shouldGiveMessageOnToString() {
+        NullBook nullBook = new NullBook("", "", 0, 0);
+
+        String actualOutput = nullBook.toString();
+        String expectedOutput = Messages.BOOK_NOT_FOUND_IN_LIBRARY;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
 }

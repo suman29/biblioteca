@@ -46,4 +46,8 @@ public class NullMovie extends Movie {
     public void addItselfToCheckedoutListOfMovieIfApplicable(ArrayList<Movie> checkedOutMovies) {
 
     }
+
+    public String toString(){
+        return Messages.MOVIE_NOT_FOUND;
+    }
 }

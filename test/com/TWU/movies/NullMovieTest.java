@@ -33,4 +33,14 @@ public class NullMovieTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
+    @Test
+    public void shouldDisplayAppropriateMessageOnToString() {
+        NullMovie nullMovie = new NullMovie("", 0, "", 0, new Customer("", "", name, email, number));
+
+        String actualOutput = nullMovie.toString();
+        String expectedOutput = Messages.MOVIE_NOT_FOUND;
+
+        assertEquals(expectedOutput, actualOutput);
+    }
+
 }

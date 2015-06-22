@@ -41,4 +41,8 @@ public class NullBook extends Book {
     public void addItselfToCheckedOutListOfBooksIfApplicable(ArrayList<Book> checkedoutBooks) {
 
     }
+
+    public String toString(){
+        return Messages.BOOK_NOT_FOUND_IN_LIBRARY;
+    }
 }
