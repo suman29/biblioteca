@@ -1,5 +1,6 @@
-package com.twu.movies;
+package com.twu.views;
 
+import com.twu.views.LibrarianActionView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +9,7 @@ import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class CheckOutMovieViewTest {
+public class LibrarianActionViewTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     @Before
@@ -17,14 +18,14 @@ public class CheckOutMovieViewTest {
     }
 
     @Test
-    public void shouldTakeUserInputToCheckOutAMovie() {
+    public void shouldTakeUserInputToGetDetailsOfTheCheckOutItem() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("Good".getBytes());
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(bufferedReader);
+        LibrarianActionView librarianActionView = new LibrarianActionView(bufferedReader);
 
-        String actualInput = checkOutMovieView.takeUserInputForCheckOutMovie();
+        String actualInput = librarianActionView.takeUserInputToGetDetailsOfItem();
         String expectedInput = "Good";
 
         assertEquals(expectedInput, actualInput);
@@ -32,17 +33,15 @@ public class CheckOutMovieViewTest {
 
     @Test
     public void shouldPrintMessageAsGiven() {
-        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(bufferedReader);
-        checkOutMovieView.displayMessage("hi");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        LibrarianActionView librarianActionView = new LibrarianActionView(bufferedReader);
+        librarianActionView.displayMessage("hi");
 
-        String actualInput = outputStream.toString();
-        String expectedInput = "hi" + System.lineSeparator();
+        String actualOutput = outputStream.toString();
+        String expectedOutput = "hi" + System.lineSeparator();
 
-        assertEquals(expectedInput, actualInput);
+        assertEquals(expectedOutput, actualOutput);
     }
-
 
     @After
     public void tearDown() throws Exception {

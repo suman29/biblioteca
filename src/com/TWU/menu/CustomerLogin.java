@@ -3,6 +3,7 @@ package com.twu.menu;
 import com.twu.LoginController;
 import com.twu.users.NullUser;
 import com.twu.users.User;
+import com.twu.views.MenuView;
 
 // It allows the customer to login and gives the present user.
 

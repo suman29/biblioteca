@@ -4,7 +4,7 @@ import com.twu.Library;
 import com.twu.Logout;
 import com.twu.librarianActions.CheckedOutBooksAction;
 import com.twu.librarianActions.CheckedOutMovieAction;
-import com.twu.librarianActions.LibrarianActionView;
+import com.twu.views.LibrarianActionView;
 import com.twu.users.Librarian;
 import org.junit.Before;
 import org.junit.Test;

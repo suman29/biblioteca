@@ -4,6 +4,7 @@ import com.twu.LoginController;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
 import com.twu.users.NullUser;
+import com.twu.views.MenuView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

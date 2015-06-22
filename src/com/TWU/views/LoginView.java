@@ -1,4 +1,6 @@
-package com.twu;
+package com.twu.views;
+
+import com.twu.Messages;
 
 import java.io.BufferedReader;
 

@@ -1,13 +1,18 @@
-package com.twu.menu;
+package com.twu.views;
 
 import com.twu.Library;
 import com.twu.Messages;
 import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
-import com.twu.books.BooksView;
+import com.twu.menu.CustomerMenu;
+import com.twu.menu.LibrarianMenu;
+import com.twu.menu.MainMenu;
+import com.twu.menu.Option;
+import com.twu.views.BooksView;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
+import com.twu.views.MenuView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

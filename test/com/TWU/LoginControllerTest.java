@@ -2,6 +2,7 @@ package com.twu;
 
 import com.twu.users.Customer;
 import com.twu.users.NullUser;
+import com.twu.views.LoginView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

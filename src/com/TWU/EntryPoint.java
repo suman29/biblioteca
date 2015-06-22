@@ -3,7 +3,7 @@ package com.twu;
 //Entry point of the App, it has MenuView, CustomerMenu and ConsoleOutput.
 
 import com.twu.menu.MainMenu;
-import com.twu.menu.MenuView;
+import com.twu.views.MenuView;
 
 public class EntryPoint {
 

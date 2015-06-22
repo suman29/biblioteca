@@ -3,7 +3,7 @@ package com.twu.actions;
 import com.twu.Library;
 import com.twu.Messages;
 import com.twu.books.Book;
-import com.twu.books.CheckOutView;
+import com.twu.views.CheckOutView;
 import com.twu.menu.Option;
 import com.twu.users.Customer;
 import com.twu.users.User;

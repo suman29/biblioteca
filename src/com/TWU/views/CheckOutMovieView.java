@@ -1,18 +1,18 @@
-package com.twu.movies;
+package com.twu.views;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-// It is a view which is used to take input and display output while returning view.
+// It is a view which takes input and display output while checking out a movie.
 
-public class ReturnMovieView {
+public class CheckOutMovieView {
     private BufferedReader bufferedReader;
 
-    public ReturnMovieView(BufferedReader bufferedReader) {
+    public CheckOutMovieView(BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
     }
 
-    public String takeUserInputForReturningMovie() {
+    public String takeUserInputForCheckOutMovie() {
         try {
             String input = bufferedReader.readLine();
             if (input != null)

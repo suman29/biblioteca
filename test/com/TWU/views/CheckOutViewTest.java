@@ -1,5 +1,7 @@
-package com.twu.books;
+package com.twu.views;
 
+import com.twu.views.BooksView;
+import com.twu.views.CheckOutView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -4,7 +4,7 @@ import com.twu.Library;
 import com.twu.actions.ListBooksAction;
 import com.twu.actions.QuitAction;
 import com.twu.books.Book;
-import com.twu.books.BooksView;
+import com.twu.views.BooksView;
 import com.twu.users.Customer;
 import org.junit.Before;
 import org.junit.Test;

@@ -5,6 +5,7 @@ import com.twu.Messages;
 import com.twu.menu.Option;
 import com.twu.movies.Movie;
 import com.twu.users.User;
+import com.twu.views.LibrarianActionView;
 
 // It gives details of a checked out movie, whenever user searches for a particular movie.
 

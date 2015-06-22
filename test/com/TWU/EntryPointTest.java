@@ -2,7 +2,7 @@ package com.twu;
 
 import com.twu.menu.LibrarianMenu;
 import com.twu.menu.MainMenu;
-import com.twu.menu.MenuView;
+import com.twu.views.MenuView;
 import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

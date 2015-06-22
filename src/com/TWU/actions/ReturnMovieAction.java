@@ -4,7 +4,7 @@ import com.twu.Library;
 import com.twu.Messages;
 import com.twu.menu.Option;
 import com.twu.movies.Movie;
-import com.twu.movies.ReturnMovieView;
+import com.twu.views.ReturnMovieView;
 import com.twu.users.User;
 
 // It allows the customer to return the movie to library.

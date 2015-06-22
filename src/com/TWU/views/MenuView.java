@@ -1,6 +1,9 @@
-package com.twu.menu;
+package com.twu.views;
 
 import com.twu.Messages;
+import com.twu.menu.CustomerMenu;
+import com.twu.menu.LibrarianMenu;
+import com.twu.menu.MainMenu;
 import com.twu.users.User;
 
 import java.io.BufferedReader;

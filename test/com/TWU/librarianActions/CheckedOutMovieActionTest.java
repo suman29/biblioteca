@@ -5,6 +5,7 @@ import com.twu.movies.CheckedOutMovie;
 import com.twu.movies.Movie;
 import com.twu.users.Customer;
 import com.twu.users.Librarian;
+import com.twu.views.LibrarianActionView;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

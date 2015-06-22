@@ -2,7 +2,7 @@ package com.twu.actions;
 
 import com.twu.Library;
 import com.twu.books.Book;
-import com.twu.books.BooksView;
+import com.twu.views.BooksView;
 import com.twu.users.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

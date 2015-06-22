@@ -1,5 +1,6 @@
-package com.twu.movies;
+package com.twu.views;
 
+import com.twu.views.CheckOutMovieView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +9,7 @@ import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
-public class ReturnMovieViewTest {
+public class CheckOutMovieViewTest {
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     @Before
@@ -17,14 +18,14 @@ public class ReturnMovieViewTest {
     }
 
     @Test
-    public void shouldTakeUserInputToReturnAMovie() {
+    public void shouldTakeUserInputToCheckOutAMovie() {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("Good".getBytes());
         System.setIn(byteArrayInputStream);
         InputStreamReader inputStreamReader = new InputStreamReader(byteArrayInputStream);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        ReturnMovieView returnMovieView = new ReturnMovieView(bufferedReader);
+        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(bufferedReader);
 
-        String actualInput = returnMovieView.takeUserInputForReturningMovie();
+        String actualInput = checkOutMovieView.takeUserInputForCheckOutMovie();
         String expectedInput = "Good";
 
         assertEquals(expectedInput, actualInput);
@@ -34,8 +35,8 @@ public class ReturnMovieViewTest {
     public void shouldPrintMessageAsGiven() {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        ReturnMovieView returnMovieView = new ReturnMovieView(bufferedReader);
-        returnMovieView.displayMessage("hi");
+        CheckOutMovieView checkOutMovieView = new CheckOutMovieView(bufferedReader);
+        checkOutMovieView.displayMessage("hi");
 
         String actualInput = outputStream.toString();
         String expectedInput = "hi" + System.lineSeparator();

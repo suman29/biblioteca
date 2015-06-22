@@ -2,6 +2,7 @@ package com.twu;
 
 import com.twu.users.NullUser;
 import com.twu.users.User;
+import com.twu.views.LoginView;
 
 // It allows user to login the app.
 

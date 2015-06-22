@@ -2,7 +2,7 @@ package com.twu.actions;
 
 import com.twu.Library;
 import com.twu.books.Book;
-import com.twu.books.CheckOutView;
+import com.twu.views.CheckOutView;
 import com.twu.books.CheckedOutBook;
 import com.twu.users.Customer;
 import org.junit.Test;

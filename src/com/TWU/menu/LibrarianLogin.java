@@ -5,6 +5,7 @@ import com.twu.users.Customer;
 import com.twu.users.Librarian;
 import com.twu.users.NullUser;
 import com.twu.users.User;
+import com.twu.views.MenuView;
 
 // It allows only librarian to log with the correct credentials.
 
