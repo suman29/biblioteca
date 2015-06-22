@@ -96,12 +96,12 @@ public class BibliotecaApp {
     }
 
     private static void populatingUsers(Set<User> allUsers) {
-        allUsers.add(new Customer("123-abc1", "1234", "suman", "abc@gmail.com", "7205787250"));
-        allUsers.add(new Customer("123-abc2", "1234", "ashray", "abc@gmail.com", "7205787250"));
-        allUsers.add(new Customer("123-abc3", "1234", "sourav", "abc@gmail.com", "7205787250"));
-        allUsers.add(new Librarian("abc-1234", "abcd"));
-        allUsers.add(new Librarian("abc-2345", "abcd"));
-        allUsers.add(new Librarian("abc-3456", "abcd"));
+        allUsers.add(new Customer("123-1111", "1111", "suman", "abc@gmail.com", "7205787250"));
+        allUsers.add(new Customer("123-2222", "2222", "ashray", "abc@gmail.com", "7205787250"));
+        allUsers.add(new Customer("123-3333", "3333", "sourav", "abc@gmail.com", "7205787250"));
+        allUsers.add(new Librarian("1111-1234", "abc1"));
+        allUsers.add(new Librarian("2222-2345", "abc2"));
+        allUsers.add(new Librarian("3333-3456", "abc3"));
     }
 
     private static void populatingMainMenu(Library library, CustomerMenu customerMenu, MenuView menuView, LoginController loginController, LibrarianMenu librarianMenu, HashMap<Integer, String> menuListMain, HashMap<Integer, Option> mappedOptionsMain) {
