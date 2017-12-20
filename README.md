@@ -1,5 +1,5 @@
-# Biblioteca-suman
-## Biblioteca project done for TWU
+# Biblioteca
+## Project done for TWU
 
 To run the project, write `ant run` on terminal.
 
